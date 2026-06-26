@@ -76,5 +76,16 @@ const API = {
   pvpList: () => API.get('/pvp_list'),
   startPvp: (opp_id) => API.post('/start_pvp', { opp_id }),
   startSectWar: () => API.post('/start_sect_war', {}),
-  joinSectWar: () => API.post('/join_sect_war', {})
+  joinSectWar: () => API.post('/join_sect_war', {}),
+  // 角色创建
+  characterStatus: () => API.get('/character_status'),
+  createCharacter: (name, spiritual_root, start_technique) => API.post('/create_character', { name, spiritual_root, start_technique }),
+  // 采药小游戏
+  gatherHerbStart: (resource_id) => API.post('/gather_herb_start', { resource_id }),
+  gatherHerbComplete: (resource_id, timing_score) => API.post('/gather_herb_complete', { resource_id, timing_score }),
+  // 突破小游戏
+  breakthroughMinigameStart: (method) => API.post('/breakthrough_minigame_start', { method }),
+  breakthroughMinigameComplete: (method, scores) => API.post('/breakthrough_minigame_complete', { method, scores }),
+  // 拍卖刷新
+  refreshAuction: () => API.post('/refresh_auction', {})
 };

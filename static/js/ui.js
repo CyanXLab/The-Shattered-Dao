@@ -45,9 +45,14 @@ const UI = {
       if (r.x === x && r.y === y) {
         const mv = await API.moveTo(x, y);
         if (mv.action === 'gather') {
-          const g = await API.gather(r.id);
-          this.toast(g.msg, g.ok ? 'success' : 'error');
-          await this.refresh();
+          // 草药用小游戏，其他直接采集
+          if (r.type === 'herb') {
+            Minigames.gatherHerb(r.id, r.name, this._getHerbTier(r.item));
+          } else {
+            const g = await API.gather(r.id);
+            this.toast(g.msg, g.ok ? 'success' : 'error');
+            await this.refresh();
+          }
         } else if (mv.ok) {
           await this.refresh();
           if (mv.msg) this.toast(mv.msg, 'info');
@@ -69,9 +74,15 @@ const UI = {
     const r = await API.moveTo(x, y);
     await this.refresh();
     if (r.action === 'gather') {
-      const g = await API.gather(r.resource_id);
-      this.toast(g.msg, g.ok ? 'success' : 'error');
-      await this.refresh();
+      // 检查是否草药
+      const res = this.state.visible_resources.find(rr => rr.id === r.resource_id);
+      if (res && res.type === 'herb') {
+        Minigames.gatherHerb(r.resource_id, res.name, this._getHerbTier(res.item));
+      } else {
+        const g = await API.gather(r.resource_id);
+        this.toast(g.msg, g.ok ? 'success' : 'error');
+        await this.refresh();
+      }
     } else if (r.action === 'combat') {
       // 战斗开始
     } else if (r.action === 'talk') {
@@ -81,6 +92,11 @@ const UI = {
     } else if (r.msg) {
       this.toast(r.msg, 'info');
     }
+  },
+
+  _getHerbTier(itemId) {
+    const inv = this.state.player.inventory.find(i => i.item_id === itemId);
+    return inv ? inv.tier : 1;
   },
 
   handleBuildingAction(r) {
@@ -344,26 +360,28 @@ const UI = {
 
   async doBreakthrough(method) {
     this.closeModal();
-    // 检查是否需要天劫（大境界突破）
+    // 大境界突破需先渡劫
     const p = this.state.player;
     const realmId = p.realm;
     const majorRealms = ['foundation_1', 'golden_core_1', 'nascent_soul_1', 'divine_transformation_1', 'void_refining_1'];
-    // 找下一个境界
-    const realmOrder = REALM_ORDER;
-    const idx = realmOrder.indexOf(realmId);
-    const nextRealm = idx >= 0 && idx + 1 < realmOrder.length ? realmOrder[idx + 1] : null;
-    if (nextRealm && majorRealms.includes(nextRealm)) {
-      // 需要渡劫
+    const idx = REALM_ORDER.indexOf(realmId);
+    const nextRealm = idx >= 0 && idx + 1 < REALM_ORDER.length ? REALM_ORDER[idx + 1] : null;
+    // 启动突破小游戏
+    Minigames.breakthrough(method);
+    // 小游戏完成后的天劫检查在 Minigames.btCollect 中处理
+    // 这里记录是否需要渡劫
+    Minigames._pendingTribulation = (nextRealm && majorRealms.includes(nextRealm));
+  },
+
+  async afterBreakthroughMinigame(success, method) {
+    if (success && Minigames._pendingTribulation) {
+      // 大境界突破成功，触发天劫
       const r = await API.triggerTribulation();
       if (r.action === 'tribulation') {
         Tribulation.start(r.tribulation);
-        return;
       }
     }
-    const r = await API.breakthrough(method);
-    this.toast(r.msg, r.ok ? 'success' : 'error');
-    await this.refresh();
-    if (r.breakthrough) this.toast('突破成功！', 'success');
+    Minigames._pendingTribulation = false;
   },
 
   openRest() {

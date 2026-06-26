@@ -116,7 +116,11 @@ UI.openStory = async function() {
 UI.openAuction = async function() {
   const items = await API.auctionList();
   let html = `<div class="detail-box"><div style="color:#d4af37;margin-bottom:6px">拍卖行</div><div style="color:#8a7a9a;font-size:12px">当前灵石：${this.state.player.spirit_stones_value}</div></div>`;
+  html += '<button class="btn gold" onclick="UI.refreshAuction()" style="margin-bottom:10px">刷新拍卖物品（50灵石）</button>';
   html += '<div class="section-title">拍卖物品</div>';
+  if (items.length === 0) {
+    html += '<div class="detail-box" style="color:#8a7a9a">暂无拍卖物品</div>';
+  }
   for (const it of items) {
     const rarityClass = `rarity-${it.rarity}`;
     html += `<div class="item-row">
@@ -133,6 +137,13 @@ UI.openAuction = async function() {
     </div>`;
   }
   this.openModal('拍卖行', html);
+};
+
+UI.refreshAuction = async function() {
+  const r = await API.refreshAuction();
+  this.toast(r.msg, r.ok ? 'success' : 'error');
+  await this.refresh();
+  this.openAuction();
 };
 
 UI.auctionBid = async function(aucId) {

@@ -212,9 +212,10 @@ class GameEngine(EngineExtension):
         w["minute"] = rem % 60
         p = self.state["player"]
         days_pass = minutes / (24 * 60)
-        p["age"] += days_pass / 365
-        # 寿元消耗（更慢，更真实）
-        p["lifespan"] -= days_pass
+        years_pass = days_pass / 365
+        p["age"] += years_pass
+        # 寿元单位是"年"，按年扣除
+        p["lifespan"] -= years_pass
         # HP/QI自然恢复（根据年龄阶段）
         if not p["in_combat"]:
             stage = self._get_lifespan_stage()
@@ -633,61 +634,83 @@ class GameEngine(EngineExtension):
             return {"ok": True, "msg": msg + "\n境界圆满，可尝试突破！", "can_breakthrough": True}
         return {"ok": True, "msg": msg, "progress": p["realm_progress"]}
 
+    def _is_minor_breakthrough(self, cur_realm, next_realm):
+        """判断是否为小境界突破（同一大境界内）"""
+        def prefix(rid):
+            for p in ["qi_refining", "foundation", "golden_core", "nascent_soul",
+                      "divine_transformation", "void_refining", "body_integration",
+                      "mahayana", "tribulation"]:
+                if rid.startswith(p):
+                    return p
+            return rid
+        return prefix(cur_realm) == prefix(next_realm)
+
     def try_breakthrough(self, method="water_grind"):
         """尝试突破
         method: water_grind(水磨工夫) / pill(破境丹) / life_death_battle(生死战) / comprehension(顿悟)
+        小境界突破：低风险、短时间、不扣寿元
+        大境界突破：需渡劫、长时间、失败可能重伤
         """
         p = self.state["player"]
         next_realm = get_next_realm(p["realm"])
         if not next_realm:
             p["realm_progress"] = 1.0
             return {"ok": False, "msg": "已达境界上限"}
-        # 基础成功率
-        base_rate = 0.7
+        is_minor = self._is_minor_breakthrough(p["realm"], next_realm["id"])
+        # 基础成功率（小境界高，大境界低）
+        base_rate = 0.85 if is_minor else 0.6
         if p["spiritual_root"] == "pseudo":
-            base_rate = 0.4
-        # 突破方式
-        method_config = {
-            "water_grind": {"rate_bonus": 0, "risk": 0.05, "time_cost": 365 * 24 * 60, "desc": "水磨工夫，需1年"},
-            "pill": {"rate_bonus": 0.3, "risk": 0.2, "time_cost": 24 * 60, "desc": "破境丹辅助"},
-            "life_death_battle": {"rate_bonus": 0.4, "risk": 0.5, "time_cost": 60, "desc": "生死战中突破"},
-            "comprehension": {"rate_bonus": 0.5, "risk": 0, "time_cost": 0, "desc": "顿悟，需悟性100+"}
-        }
+            base_rate -= 0.2
+        # 突破方式配置（小境界 vs 大境界）
+        if is_minor:
+            method_config = {
+                "water_grind": {"rate_bonus": 0, "risk": 0.02, "time_cost": 3 * 24 * 60, "desc": "闭关3日"},
+                "pill": {"rate_bonus": 0.1, "risk": 0.05, "time_cost": 12 * 60, "desc": "丹药辅助"},
+                "life_death_battle": {"rate_bonus": 0.1, "risk": 0.2, "time_cost": 30, "desc": "生死战"},
+                "comprehension": {"rate_bonus": 0.13, "risk": 0, "time_cost": 0, "desc": "顿悟"}
+            }
+        else:
+            method_config = {
+                "water_grind": {"rate_bonus": 0, "risk": 0.1, "time_cost": 365 * 24 * 60, "desc": "水磨1年"},
+                "pill": {"rate_bonus": 0.3, "risk": 0.2, "time_cost": 24 * 60, "desc": "破境丹"},
+                "life_death_battle": {"rate_bonus": 0.4, "risk": 0.5, "time_cost": 60, "desc": "生死战"},
+                "comprehension": {"rate_bonus": 0.5, "risk": 0, "time_cost": 0, "desc": "顿悟"}
+            }
         mc = method_config.get(method, method_config["water_grind"])
         # 顿悟需要悟性
         if method == "comprehension" and p["comprehension"] < 100:
             return {"ok": False, "msg": "悟性不足，无法顿悟"}
-        # 破境丹消耗
-        if method == "pill":
+        # 破境丹消耗（仅大境界）
+        if method == "pill" and not is_minor:
             pill_id = "foundation_pill" if next_realm["id"].startswith("foundation") else \
                       "golden_core_pill" if next_realm["id"].startswith("golden_core") else None
             if pill_id and not self._has_item(pill_id):
                 return {"ok": False, "msg": "无破境丹"}
             if pill_id:
                 self._remove_item(pill_id, 1)
-        # 丹田品质要求
-        if p["body"]["dantian"]["quality"] == "impure" and next_realm["id"].startswith("golden_core"):
+        # 丹田品质要求（仅大境界）
+        if not is_minor and p["body"]["dantian"]["quality"] == "impure" and next_realm["id"].startswith("golden_core"):
             base_rate -= 0.3
         # 经脉损伤减成
         avg_meridian = sum(m["integrity"] for m in p["body"]["meridians"].values()) / len(p["body"]["meridians"])
         if avg_meridian < 70:
-            base_rate -= 0.2
-        # 业力影响心魔
+            base_rate -= 0.15
+        # 业力影响心魔（仅大境界）
         heart_devil_prob = 0
-        if p["karma"] < -500:
+        if not is_minor and p["karma"] < -500:
             heart_devil_prob = 0.5
             self._log(None, "业力深重，突破时心魔入侵！", "warn")
-        # 最终成功率
-        final_rate = min(0.95, base_rate + mc["rate_bonus"])
+        final_rate = min(0.98, base_rate + mc["rate_bonus"])
         # 心魔考验
         if random.random() < heart_devil_prob:
             self._log(None, "心魔考验！回想你做过的亏心事...", "event")
-            # 玩家可选择坚持道心或被心魔吞噬（简化为50%概率）
             if random.random() < 0.5:
                 self._log(None, "你战胜了心魔！", "info")
             else:
                 self._log(None, "心魔入侵，突破失败，修为倒退！", "warn")
-                p["realm_progress"] = 0.1
+                p["realm_progress"] = 0.2
+                # 心魔失败只扣HP和进度，不扣寿元
+                p["hp"] = max(1, p["hp"] - int(p["max_hp"] * 0.2))
                 self._advance_time(mc["time_cost"])
                 return {"ok": False, "msg": "心魔入侵，突破失败"}
         # 推进时间
@@ -698,29 +721,42 @@ class GameEngine(EngineExtension):
             old_realm = p["realm"]
             p["realm"] = next_realm["id"]
             p["realm_progress"] = 0.0
-            p["max_hp"] = int(p["max_hp"] * 1.5)
+            # 小境界小幅提升，大境界大幅提升
+            mult = 1.3 if is_minor else 1.6
+            p["max_hp"] = int(p["max_hp"] * mult)
             p["hp"] = p["max_hp"]
-            p["max_qi"] = int(p["max_qi"] * 1.5)
+            p["max_qi"] = int(p["max_qi"] * mult)
             p["qi"] = p["max_qi"]
-            p["body"]["dantian"]["capacity"] = int(p["body"]["dantian"]["capacity"] * 1.5)
-            p["lifespan"] = max(p["lifespan"], next_realm["lifespan"])
-            self._log(None, f"突破成功！现在境界：{next_realm['name']}，寿元上限：{next_realm['lifespan']}年", "breakthrough")
-            # 因果：突破成功 +10 业力
-            self.add_karma(10, "突破成功", "cultivation")
-            return {"ok": True, "msg": f"突破成功！现在境界：{next_realm['name']}", "breakthrough": True}
+            p["body"]["dantian"]["capacity"] = int(p["body"]["dantian"]["capacity"] * mult)
+            if not is_minor:
+                p["lifespan"] = max(p["lifespan"], next_realm["lifespan"])
+            self._log(None, f"突破成功！现在境界：{next_realm['name']}" + (f"，寿元上限：{next_realm['lifespan']}年" if not is_minor else ""), "breakthrough")
+            self.add_karma(10 if is_minor else 30, "突破成功", "cultivation")
+            return {"ok": True, "msg": f"突破成功！现在境界：{next_realm['name']}", "breakthrough": True, "is_minor": is_minor}
         else:
-            p["realm_progress"] = 0.3
-            p["hp"] = max(1, p["hp"] - int(p["max_hp"] * mc["risk"]))
-            if mc["risk"] > 0.3:
-                # 经脉损伤
+            # 失败：只扣HP和进度，不扣寿元（除非生死战大境界失败）
+            p["realm_progress"] = 0.3 if is_minor else 0.15
+            hp_loss = int(p["max_hp"] * mc["risk"])
+            p["hp"] = max(1, p["hp"] - hp_loss)
+            if mc["risk"] > 0.3 and not is_minor:
+                # 大境界高风险失败：经脉损伤
                 for m in p["body"]["meridians"]:
-                    p["body"]["meridians"][m]["integrity"] = max(0, p["body"]["meridians"][m]["integrity"] - 20)
+                    p["body"]["meridians"][m]["integrity"] = max(0, p["body"]["meridians"][m]["integrity"] - 15)
                 self._log(None, "突破失败！经脉受损！", "warn")
-            self._log(None, "突破失败！", "warn")
-            return {"ok": False, "msg": "突破失败！HP受损"}
+                return {"ok": False, "msg": f"突破失败！HP-{hp_loss}，经脉受损"}
+            self._log(None, "突破失败，走火入魔", "warn")
+            return {"ok": False, "msg": f"突破失败！HP-{hp_loss}"}
 
     # ==================== 移动 ====================
+    def _is_building_tile(self, region, x, y):
+        """判断是否是建筑瓦片"""
+        for b in region.get("buildings", []):
+            if b["x"] <= x < b["x"]+b["w"] and b["y"] <= y < b["y"]+b["h"]:
+                return b
+        return None
+
     def move_player(self, direction):
+        """键盘单步移动：绝不自动进入建筑，建筑是障碍物"""
         p = self.state["player"]
         if p["in_combat"]:
             return {"ok": False, "msg": "战斗中无法移动！"}
@@ -737,9 +773,9 @@ class GameEngine(EngineExtension):
         else: return {"ok": False, "msg": "无效方向"}
         if nx < 0 or nx >= region["width"] or ny < 0 or ny >= region["height"]:
             return {"ok": False, "msg": "边界外"}
-        for b in region.get("buildings", []):
-            if b["x"] <= nx < b["x"]+b["w"] and b["y"] <= ny < b["y"]+b["h"]:
-                return self._enter_building(b)
+        # 建筑是障碍物，不能走入
+        if self._is_building_tile(region, nx, ny):
+            return {"ok": True, "msg": "前方是建筑，无法通行（点击建筑可进入）"}
         p["x"], p["y"] = nx, ny
         for ex in region.get("exits", []):
             if ex["x"] == nx and ex["y"] == ny:
@@ -760,6 +796,7 @@ class GameEngine(EngineExtension):
         return {"ok": True, "msg": ""}
 
     def move_player_to(self, x, y):
+        """点击移动：建筑是障碍物，绕行；点击建筑=进入建筑意图"""
         p = self.state["player"]
         if p["in_combat"]:
             return {"ok": False, "msg": "战斗中无法移动！"}
@@ -770,6 +807,19 @@ class GameEngine(EngineExtension):
             return {"ok": False, "msg": "未知区域"}
         if x < 0 or x >= region["width"] or y < 0 or y >= region["height"]:
             return {"ok": False, "msg": "边界外"}
+        # 点击建筑 = 进入建筑意图
+        clicked_building = self._is_building_tile(region, x, y)
+        if clicked_building:
+            # 找建筑门口（建筑边缘外的相邻可达格）
+            door = self._find_building_door(region, clicked_building, p["x"], p["y"])
+            if door is None:
+                return {"ok": False, "msg": "无法到达该建筑"}
+            # 先走到门口
+            walk_result = self._walk_to(door[0], door[1], region, allow_building=False)
+            if walk_result.get("action"):
+                return walk_result
+            # 到达门口，进入建筑
+            return self._enter_building(clicked_building)
         # 追踪妖兽
         clicked_beast = None
         for b in self.state["world"]["beasts"]:
@@ -779,42 +829,93 @@ class GameEngine(EngineExtension):
         target_x, target_y = x, y
         if clicked_beast:
             target_x, target_y = clicked_beast["x"], clicked_beast["y"]
+        return self._walk_to(target_x, target_y, region, allow_building=False, clicked_beast=clicked_beast)
+
+    def _find_building_door(self, region, building, from_x, from_y):
+        """找建筑最近的门口（建筑外圈相邻格）"""
+        b = building
+        candidates = []
+        for dx in range(b["w"]):
+            candidates.append((b["x"]+dx, b["y"]-1))  # 上
+            candidates.append((b["x"]+dx, b["y"]+b["h"]))  # 下
+        for dy in range(b["h"]):
+            candidates.append((b["x"]-1, b["y"]+dy))  # 左
+            candidates.append((b["x"]+b["w"], b["y"]+dy))  # 右
+        # 过滤越界
+        valid = [(x,y) for x,y in candidates if 0<=x<region["width"] and 0<=y<region["height"] and not self._is_building_tile(region, x, y)]
+        if not valid:
+            return None
+        # 选离玩家最近的
+        valid.sort(key=lambda c: abs(c[0]-from_x) + abs(c[1]-from_y))
+        return valid[0]
+
+    def _walk_to(self, target_x, target_y, region, allow_building=False, clicked_beast=None):
+        """走到目标格，建筑视为障碍（绕行简化为直线，遇建筑停下）"""
+        p = self.state["player"]
         if p["x"] == target_x and p["y"] == target_y:
-            for beast in self.state["world"]["beasts"]:
-                if beast["alive"] and beast["region"] == p["region"] and beast["x"] == p["x"] and beast["y"] == p["y"]:
-                    return self._start_combat(beast)
+            if clicked_beast and clicked_beast["alive"]:
+                return self._start_combat(clicked_beast)
             return {"ok": True, "msg": "已在此处"}
         steps = 0
-        while (p["x"] != target_x or p["y"] != target_y) and steps < 30:
+        while (p["x"] != target_x or p["y"] != target_y) and steps < 50:
             steps += 1
             if clicked_beast and clicked_beast["alive"]:
                 target_x, target_y = clicked_beast["x"], clicked_beast["y"]
-            if p["x"] < target_x: p["x"] += 1
-            elif p["x"] > target_x: p["x"] -= 1
-            elif p["y"] < target_y: p["y"] += 1
-            elif p["y"] > target_y: p["y"] -= 1
-            for b in region.get("buildings", []):
-                if b["x"] <= p["x"] < b["x"]+b["w"] and b["y"] <= p["y"] < b["y"]+b["h"]:
-                    result = self._enter_building(b)
-                    if result.get("action"):
-                        return result
+            # 计算下一步
+            nx, ny = p["x"], p["y"]
+            if p["x"] < target_x: nx += 1
+            elif p["x"] > target_x: nx -= 1
+            elif p["y"] < target_y: ny += 1
+            elif p["y"] > target_y: ny -= 1
+            # 建筑阻挡：尝试绕行（先走另一轴）
+            if not allow_building and self._is_building_tile(region, nx, ny):
+                # 尝试垂直方向
+                alt_x, alt_y = p["x"], p["y"]
+                if nx != p["x"]:  # 想走x但被挡，走y
+                    if p["y"] < target_y: alt_y += 1
+                    elif p["y"] > target_y: alt_y -= 1
+                    elif p["y"] < region["height"]//2: alt_y += 1
+                    else: alt_y -= 1
+                    if 0 <= alt_y < region["height"] and not self._is_building_tile(region, alt_x, alt_y):
+                        nx, ny = alt_x, alt_y
+                    else:
+                        break  # 真的过不去
+                elif ny != p["y"]:  # 想走y但被挡，走x
+                    if p["x"] < target_x: alt_x += 1
+                    elif p["x"] > target_x: alt_x -= 1
+                    elif p["x"] < region["width"]//2: alt_x += 1
+                    else: alt_x -= 1
+                    if 0 <= alt_x < region["width"] and not self._is_building_tile(region, alt_x, alt_y):
+                        nx, ny = alt_x, alt_y
+                    else:
+                        break
+                else:
                     break
+            # 边界
+            if nx < 0 or nx >= region["width"] or ny < 0 or ny >= region["height"]:
+                break
+            p["x"], p["y"] = nx, ny
+            # 检查出口
             for ex in region.get("exits", []):
                 if ex["x"] == p["x"] and ex["y"] == p["y"]:
                     return self._change_region(ex["target"], ex["tx"], ex["ty"])
+            # 检查资源
             for res in self.state["world"]["resources"]:
                 if res["region"] == p["region"] and res["x"] == p["x"] and res["y"] == p["y"] and res["available"]:
                     m = get_material(res["item"])
                     name = m["name"] if m else res["item"]
                     return {"ok": True, "msg": f"发现{name}，可采集", "action": "gather", "resource_id": res["id"]}
+            # 检查妖兽
             for beast in self.state["world"]["beasts"]:
                 if beast["alive"] and beast["region"] == p["region"] and beast["x"] == p["x"] and beast["y"] == p["y"]:
                     return self._start_combat(beast)
+            # 检查NPC
             for npc in self.state["world"]["npcs"]:
                 if npc["alive"] and npc["region"] == p["region"] and npc["x"] == p["x"] and npc["y"] == p["y"]:
                     cfg = get_npc_config(npc["id"])
                     return {"ok": True, "msg": f"遇到{cfg['name']}", "action": "talk", "npc_id": npc["id"]}
             self._advance_time_for_move(1)
+        # 到达后检查妖兽
         for beast in self.state["world"]["beasts"]:
             if beast["alive"] and beast["region"] == p["region"] and beast["x"] == p["x"] and beast["y"] == p["y"]:
                 return self._start_combat(beast)
@@ -831,8 +932,10 @@ class GameEngine(EngineExtension):
         w["minute"] = rem % 60
         p = self.state["player"]
         days_pass = minutes / (24 * 60)
-        p["age"] += days_pass / 365
-        p["lifespan"] -= days_pass
+        years_pass = days_pass / 365
+        p["age"] += years_pass
+        # 寿元单位是"年"，按年扣除
+        p["lifespan"] -= years_pass
         if not p["in_combat"]:
             p["hp"] = min(p["max_hp"], p["hp"] + int(minutes * 0.3))
             p["qi"] = min(p["max_qi"], p["qi"] + int(minutes * 0.5))
@@ -1919,3 +2022,223 @@ class GameEngine(EngineExtension):
         self.state = self._new_game()
         self.save_state()
         return {"ok": True, "msg": "游戏已重置"}
+
+    # ==================== 角色创建 ====================
+    def create_character(self, name, spiritual_root, start_technique):
+        """注册后创建角色"""
+        p = self.state["player"]
+        p["name"] = name or "无名"
+        root_names = {"pseudo": "伪灵根", "false": "假灵根", "true": "真灵根", "heavenly": "天灵根"}
+        p["spiritual_root"] = spiritual_root if spiritual_root in root_names else "pseudo"
+        # 灵根影响初始属性
+        if spiritual_root == "heavenly":
+            p["max_hp"] = 120; p["hp"] = 120
+            p["max_qi"] = 400; p["qi"] = 100
+            p["attributes"]["wood_affinity"] = 15
+            p["comprehension"] = 30
+        elif spiritual_root == "true":
+            p["max_hp"] = 100; p["hp"] = 100
+            p["max_qi"] = 300; p["qi"] = 80
+            p["attributes"]["wood_affinity"] = 10
+            p["comprehension"] = 20
+        elif spiritual_root == "false":
+            p["max_hp"] = 90; p["hp"] = 90
+            p["max_qi"] = 250; p["qi"] = 60
+            p["attributes"]["wood_affinity"] = 7
+            p["comprehension"] = 15
+        else:  # pseudo
+            p["max_hp"] = 80; p["hp"] = 80
+            p["max_qi"] = 200; p["qi"] = 50
+            p["attributes"]["wood_affinity"] = 5
+            p["comprehension"] = 10
+        # 学习起始功法
+        if start_technique:
+            tech_ids = ["wood_basic","fire_basic","ice_basic","metal_basic","earth_basic"]
+            if start_technique in tech_ids:
+                # 直接学习（不消耗玉简）
+                if not any(t["id"] == start_technique for t in p["techniques"]):
+                    p["techniques"].append({"id": start_technique, "exp": 0})
+                    p["active_technique"] = start_technique
+        p["character_created"] = True
+        # 开局剧情
+        self._trigger_opening_story()
+        self.save_state()
+        return {"ok": True, "msg": f"角色创建成功：{p['name']}（{root_names.get(spiritual_root,'伪灵根')}）"}
+
+    def is_character_created(self):
+        return self.state["player"].get("character_created", False)
+
+    def _trigger_opening_story(self):
+        """触发开局剧情"""
+        self._log(None, "════════════════════════════════", "story")
+        self._log(None, "【序章·玉简苏醒】", "story")
+        self._log(None, "你是青云山下一个普通少年。一觉醒来，手中握着一块温润的玉简——逆道玉简。", "story")
+        self._log(None, "玉简低语：天道有缺，万物皆可逆。这便是你踏入修仙之路的契机。", "story")
+        self._log(None, "青云宗掌门收你为记名弟子。寿元一百二十载，已是倒计时。", "story")
+        self._log(None, "════════════════════════════════", "story")
+        self._log(None, "提示：先打开【行囊】使用青木诀玉简学习功法，再【修炼】提升境界。", "info")
+        self.state["player"]["story_progress"] = {"main_reverse_jade": 1}
+
+    # ==================== 采药小游戏（觅长生风格） ====================
+    def gather_herb_minigame(self, resource_id):
+        """采药小游戏：判断时机点击采集"""
+        w = self.state["world"]
+        p = self.state["player"]
+        for res in w["resources"]:
+            if res["id"] == resource_id and res["available"]:
+                if res["region"] != p["region"] or abs(res["x"]-p["x"])+abs(res["y"]-p["y"]) > 2:
+                    return {"ok": False, "msg": "距离太远"}
+                m = get_material(res["item"])
+                if not m or m["type"] != "herb":
+                    # 非草药，直接采集
+                    res["available"] = False
+                    res["respawn_at"] = w["game_time"] + res["respawn"]
+                    self._add_item(res["item"], 1)
+                    self._advance_time(5)
+                    return {"ok": True, "msg": f"采集到{m['name'] if m else res['item']}×1", "minigame": False}
+                # 草药：返回小游戏数据
+                return {
+                    "ok": True, "minigame": True,
+                    "resource_id": resource_id,
+                    "herb_name": m["name"],
+                    "herb_tier": m["tier"],
+                    "desc": m.get("desc","")
+                }
+        return {"ok": False, "msg": "无此资源"}
+
+    def gather_herb_complete(self, resource_id, timing_score):
+        """采药小游戏完成
+        timing_score: 0-100 时机评分
+        """
+        w = self.state["world"]
+        p = self.state["player"]
+        for res in w["resources"]:
+            if res["id"] == resource_id and res["available"]:
+                m = get_material(res["item"])
+                # 神识影响成功率
+                spirit_bonus = p["body"]["spirit"]["sharpness"] * 0.3
+                final_score = timing_score + spirit_bonus
+                res["available"] = False
+                res["respawn_at"] = w["game_time"] + res["respawn"]
+                self._advance_time(5)
+                if final_score >= 80:
+                    # 完美采集：双倍
+                    qty = 2
+                    self._add_item(res["item"], qty)
+                    self._log(None, f"完美采集！获得{m['name']}×{qty}", "gather")
+                    return {"ok": True, "msg": f"完美采集！{m['name']}×{qty}", "quality": "perfect", "qty": qty}
+                elif final_score >= 50:
+                    qty = 1
+                    self._add_item(res["item"], qty)
+                    self._log(None, f"采集到{m['name']}×{qty}", "gather")
+                    return {"ok": True, "msg": f"采集到{m['name']}×{qty}", "quality": "good", "qty": qty}
+                elif final_score >= 25:
+                    # 勉强采集，品质差
+                    qty = 1
+                    self._add_item(res["item"], qty)
+                    self._log(None, f"勉强采集到{m['name']}×{qty}（药力流失）", "gather")
+                    return {"ok": True, "msg": f"勉强采集{m['name']}×{qty}", "quality": "poor", "qty": qty}
+                else:
+                    self._log(None, "采集失败，药草损坏！", "warn")
+                    return {"ok": False, "msg": "采集失败，药草损坏"}
+        return {"ok": False, "msg": "无此资源"}
+
+    # ==================== 突破小游戏 ====================
+    def breakthrough_minigame_start(self, method):
+        """开始突破小游戏"""
+        p = self.state["player"]
+        if p["realm_progress"] < 1.0:
+            return {"ok": False, "msg": "境界未圆满，无法突破"}
+        next_realm = get_next_realm(p["realm"])
+        if not next_realm:
+            return {"ok": False, "msg": "已达境界上限"}
+        is_minor = self._is_minor_breakthrough(p["realm"], next_realm["id"])
+        # 小游戏参数
+        if is_minor:
+            rounds = 3
+            difficulty = 30 + get_realm_index(p["realm"]) * 2
+        else:
+            rounds = 5
+            difficulty = 60 + get_realm_index(p["realm"]) * 3
+        return {
+            "ok": True, "minigame": True,
+            "rounds": rounds, "difficulty": difficulty,
+            "is_minor": is_minor,
+            "next_realm": next_realm["name"],
+            "method": method
+        }
+
+    def breakthrough_minigame_complete(self, method, scores):
+        """突破小游戏完成
+        scores: 每回合0-100的评分列表
+        """
+        p = self.state["player"]
+        avg_score = sum(scores) / len(scores) if scores else 0
+        # 评分转成功率
+        success_rate = min(0.98, avg_score / 100 * 0.9 + 0.1)
+        # 灵根加成
+        if p["spiritual_root"] == "heavenly":
+            success_rate += 0.1
+        elif p["spiritual_root"] == "true":
+            success_rate += 0.05
+        elif p["spiritual_root"] == "pseudo":
+            success_rate -= 0.1
+        success_rate = min(0.99, success_rate)
+        # 业力影响
+        if p["karma"] < -500:
+            success_rate -= 0.2
+        # 临时设置method并调用try_breakthrough
+        if random.random() < success_rate:
+            # 直接成功
+            next_realm = get_next_realm(p["realm"])
+            is_minor = self._is_minor_breakthrough(p["realm"], next_realm["id"])
+            p["realm"] = next_realm["id"]
+            p["realm_progress"] = 0.0
+            mult = 1.3 if is_minor else 1.6
+            p["max_hp"] = int(p["max_hp"] * mult)
+            p["hp"] = p["max_hp"]
+            p["max_qi"] = int(p["max_qi"] * mult)
+            p["qi"] = p["max_qi"]
+            if not is_minor:
+                p["lifespan"] = max(p["lifespan"], next_realm["lifespan"])
+            self._log(None, f"突破成功！现在境界：{next_realm['name']}", "breakthrough")
+            self.add_karma(10 if is_minor else 30, "突破成功", "cultivation")
+            return {"ok": True, "msg": f"突破成功！现在境界：{next_realm['name']}", "breakthrough": True, "avg_score": avg_score}
+        else:
+            # 失败：扣HP和进度，不扣寿元
+            p["realm_progress"] = 0.3
+            hp_loss = int(p["max_hp"] * 0.1)
+            p["hp"] = max(1, p["hp"] - hp_loss)
+            self._log(None, f"突破失败！HP-{hp_loss}", "warn")
+            return {"ok": False, "msg": f"突破失败！HP-{hp_loss}", "avg_score": avg_score}
+
+    # ==================== 拍卖刷新 ====================
+    def refresh_auction(self):
+        """刷新拍卖物品（消耗灵石）"""
+        p = self.state["player"]
+        cost = 50
+        if self.get_spirit_stones_value() < cost:
+            return {"ok": False, "msg": f"刷新需要{cost}灵石"}
+        self.spend_spirit_stones(cost)
+        self.state["world"]["auction_refresh_time"] = self.state["world"]["game_time"]
+        return {"ok": True, "msg": "拍卖物品已刷新"}
+
+    def get_auction_list(self):
+        """获取拍卖列表（每次刷新随机生成）"""
+        from data_loader import get_auction_items
+        items = get_auction_items()
+        result = []
+        refresh_seed = self.state["world"].get("auction_refresh_time", 0)
+        rng = random.Random(refresh_seed)
+        # 随机选12个
+        sample = rng.sample(items, min(12, len(items)))
+        for auc in sample:
+            m = get_material(auc["item_id"])
+            if m:
+                current_price = int(auc["base_price"] * rng.uniform(0.8, 1.6))
+                result.append({
+                    "id": auc["id"], "item_id": auc["item_id"], "name": m["name"],
+                    "base_price": auc["base_price"], "current_price": current_price,
+                    "tier": auc["tier"], "desc": auc["desc"], "rarity": m.get("rarity", "common")
+                })
+        return result

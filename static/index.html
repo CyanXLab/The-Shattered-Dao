@@ -18,16 +18,33 @@
       <div class="tab" onclick="Auth.switchTab('register')">注册</div>
     </div>
     <div id="login-form">
-      <input type="text" id="login-username" placeholder="用户名" value="admin">
-      <input type="password" id="login-password" placeholder="密码" value="admin123">
+      <input type="text" id="login-username" placeholder="用户名" value="">
+      <input type="password" id="login-password" placeholder="密码" value="">
       <button class="btn-primary" onclick="Auth.doLogin()">登录</button>
     </div>
     <div id="register-form" style="display:none">
-      <input type="text" id="reg-username" placeholder="用户名">
-      <input type="password" id="reg-password" placeholder="密码">
+      <input type="text" id="reg-username" placeholder="用户名（3字符以上）">
+      <input type="password" id="reg-password" placeholder="密码（4字符以上）">
       <button class="btn-primary" onclick="Auth.doRegister()">注册</button>
     </div>
     <div id="auth-msg" class="auth-msg"></div>
+  </div>
+</div>
+
+<!-- 角色创建界面 -->
+<div id="char-create-screen" style="display:none">
+  <div class="login-box" style="width:480px">
+    <h1>创建角色</h1>
+    <p class="subtitle">选择你的道号、灵根与起始功法</p>
+    <div class="detail-box" style="text-align:left">
+      <div class="attr-row"><span class="attr-name">道号</span><input type="text" id="char-name" placeholder="输入道号" style="width:180px;padding:4px;background:#1a1525;border:1px solid #3a3450;color:#e8e0c8;border-radius:3px;"></div>
+    </div>
+    <div class="section-title" style="text-align:left">灵根（决定修炼资质）</div>
+    <div id="root-options" style="text-align:left"></div>
+    <div class="section-title" style="text-align:left">起始功法</div>
+    <div id="technique-options" style="text-align:left"></div>
+    <button class="btn-primary" onclick="Auth.doCreateCharacter()" style="margin-top:16px">踏入修仙之路</button>
+    <div id="char-msg" class="auth-msg"></div>
   </div>
 </div>
 
@@ -195,6 +212,7 @@
 
 <script src="js/api.js"></script>
 <script src="js/auth.js"></script>
+<script src="js/admin.js"></script>
 <script src="js/renderer.js"></script>
 <script src="js/ui.js"></script>
 <script src="js/combat.js"></script>
@@ -202,6 +220,7 @@
 <script src="js/forge.js"></script>
 <script src="js/tribulation.js"></script>
 <script src="js/ext_systems.js"></script>
+<script src="js/minigames.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

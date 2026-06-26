@@ -563,27 +563,6 @@ class EngineExtension:
             p["reputation"] += reward["reputation"]
 
     # ==================== 拍卖系统 ====================
-    def get_auction_list(self):
-        """获取拍卖列表"""
-        items = get_auction_items()
-        result = []
-        for auc in items:
-            m = get_material(auc["item_id"])
-            if m:
-                # 随机加价
-                current_price = int(auc["base_price"] * random.uniform(0.8, 1.5))
-                result.append({
-                    "id": auc["id"],
-                    "item_id": auc["item_id"],
-                    "name": m["name"],
-                    "base_price": auc["base_price"],
-                    "current_price": current_price,
-                    "tier": auc["tier"],
-                    "desc": auc["desc"],
-                    "rarity": m.get("rarity", "common")
-                })
-        return result
-
     def auction_bid(self, auc_id, bid_price):
         """竞拍"""
         p = self.state["player"]
