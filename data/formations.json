@@ -1,0 +1,250 @@
+{
+  "formations": [
+    {
+      "id": "spirit_gather_array",
+      "name": "聚灵阵",
+      "tier": 2,
+      "type": "auxiliary",
+      "effect": {
+        "cultivate_bonus": 0.3,
+        "qi_regen": 5
+      },
+      "duration": 600,
+      "spirit_stone_cost": 5,
+      "materials": [
+        {
+          "item": "spirit_gather_flag",
+          "count": 4
+        }
+      ],
+      "break_difficulty": 30,
+      "desc": "聚集天地灵气，修炼效率+30%。需4面聚灵阵旗。"
+    },
+    {
+      "id": "defense_array",
+      "name": "护身阵",
+      "tier": 2,
+      "type": "defense",
+      "effect": {
+        "defense_boost": 50,
+        "damage_reduce": 0.3
+      },
+      "duration": 600,
+      "spirit_stone_cost": 5,
+      "materials": [
+        {
+          "item": "defense_flag",
+          "count": 4
+        }
+      ],
+      "break_difficulty": 35,
+      "desc": "布设防护，减伤30%。需4面护身阵旗。"
+    },
+    {
+      "id": "kill_array",
+      "name": "杀阵·诛仙",
+      "tier": 4,
+      "type": "attack",
+      "effect": {
+        "damage": 200,
+        "element": "metal"
+      },
+      "duration": 300,
+      "spirit_stone_cost": 20,
+      "materials": [
+        {
+          "item": "kill_flag",
+          "count": 8
+        }
+      ],
+      "break_difficulty": 70,
+      "desc": "杀伐之阵，每秒对范围内敌人造成200点伤害。需8面杀阵阵旗。"
+    },
+    {
+      "id": "illusion_array",
+      "name": "幻阵·迷踪",
+      "tier": 3,
+      "type": "control",
+      "effect": {
+        "stun": true,
+        "confuse": true
+      },
+      "duration": 300,
+      "spirit_stone_cost": 10,
+      "materials": [
+        {
+          "item": "illusion_flag",
+          "count": 6
+        }
+      ],
+      "break_difficulty": 50,
+      "desc": "迷惑敌人，使其无法行动。需6面幻阵阵旗。"
+    },
+    {
+      "id": "time_array",
+      "name": "时间阵",
+      "tier": 6,
+      "type": "special",
+      "effect": {
+        "time_ratio": 365
+      },
+      "duration": -1,
+      "spirit_stone_cost": 1000,
+      "materials": [
+        {
+          "item": "time_disk",
+          "count": 1
+        }
+      ],
+      "break_difficulty": 100,
+      "desc": "时间法宝，内部1日=外部1年。需时间阵盘。维护消耗巨大。"
+    },
+    {
+      "id": "five_element_array",
+      "name": "五行阵",
+      "tier": 5,
+      "type": "composite",
+      "effect": {
+        "all_affinity": 50,
+        "cultivate_bonus": 0.5
+      },
+      "duration": 600,
+      "spirit_stone_cost": 50,
+      "materials": [
+        {
+          "item": "spirit_gather_flag",
+          "count": 5
+        }
+      ],
+      "break_difficulty": 80,
+      "desc": "五行相生相克，全方位提升。需5面不同属性阵旗。"
+    },
+    {
+      "id": "lock_sky_array",
+      "name": "锁天阵",
+      "tier": 6,
+      "type": "trap",
+      "effect": {
+        "prevent_escape": true,
+        "seal_qi": 0.5
+      },
+      "duration": 300,
+      "spirit_stone_cost": 80,
+      "materials": [
+        {
+          "item": "kill_flag",
+          "count": 12
+        }
+      ],
+      "break_difficulty": 90,
+      "desc": "封锁空间，禁止遁逃，封印50%灵气。需12面杀阵阵旗。"
+    },
+    {
+      "id": "fire_array",
+      "name": "烈火阵",
+      "tier": 3,
+      "type": "attack",
+      "effect": {
+        "damage": 100,
+        "element": "fire",
+        "burn": true
+      },
+      "duration": 300,
+      "spirit_stone_cost": 15,
+      "materials": [
+        {
+          "item": "kill_flag",
+          "count": 4
+        }
+      ],
+      "break_difficulty": 45,
+      "desc": "烈火焚烧，每秒造成100点火属性伤害。"
+    },
+    {
+      "id": "ice_array",
+      "name": "寒冰阵",
+      "tier": 3,
+      "type": "control",
+      "effect": {
+        "damage": 80,
+        "element": "ice",
+        "slow": true
+      },
+      "duration": 300,
+      "spirit_stone_cost": 15,
+      "materials": [
+        {
+          "item": "kill_flag",
+          "count": 4
+        }
+      ],
+      "break_difficulty": 45,
+      "desc": "寒冰封锁，减速并造成冰属性伤害。"
+    },
+    {
+      "id": "thunder_array",
+      "name": "九霄雷阵",
+      "tier": 5,
+      "type": "attack",
+      "effect": {
+        "damage": 300,
+        "element": "thunder",
+        "stun": true
+      },
+      "duration": 300,
+      "spirit_stone_cost": 40,
+      "materials": [
+        {
+          "item": "kill_disk",
+          "count": 1
+        }
+      ],
+      "break_difficulty": 75,
+      "desc": "九霄雷降，造成300点雷属性伤害并眩晕。"
+    },
+    {
+      "id": "soul_array",
+      "name": "诛魂阵",
+      "tier": 5,
+      "type": "soul",
+      "effect": {
+        "soul_damage": 100,
+        "confuse": true
+      },
+      "duration": 300,
+      "spirit_stone_cost": 50,
+      "materials": [
+        {
+          "item": "illusion_flag",
+          "count": 8
+        }
+      ],
+      "break_difficulty": 85,
+      "desc": "专伤神魂，造成100点神魂伤害并混乱。"
+    },
+    {
+      "id": "celestial_array",
+      "name": "天罡阵",
+      "tier": 7,
+      "type": "ultimate",
+      "effect": {
+        "all_boost": 100,
+        "invincible": true
+      },
+      "duration": 60,
+      "spirit_stone_cost": 500,
+      "materials": [
+        {
+          "item": "time_disk",
+          "count": 1
+        },
+        {
+          "item": "kill_disk",
+          "count": 1
+        }
+      ],
+      "break_difficulty": 200,
+      "desc": "天罡正气，60秒无敌。极品阵法。"
+    }
+  ]
+}

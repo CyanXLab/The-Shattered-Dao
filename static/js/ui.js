@@ -85,13 +85,13 @@ const UI = {
 
   handleBuildingAction(r) {
     if (r.action === 'alchemy') this.openAlchemy();
-    else if (r.action === 'forge') this.toast('炼器系统开发中', 'info');
+    else if (r.action === 'forge') this.openForge();
     else if (r.action === 'learn') this.openLearnTechnique();
     else if (r.action === 'shop') this.openShop(r.shop_type);
     else if (r.action === 'tavern') this.openTavern();
     else if (r.action === 'sect_master') this.openSectMaster();
     else if (r.action === 'farm') this.openFarm();
-    else if (r.action === 'auction') this.toast('拍卖系统开发中', 'info');
+    else if (r.action === 'auction') this.openAuction();
     else if (r.action === 'mission') this.toast('任务系统开发中', 'info');
     else if (r.msg) this.toast(r.msg, 'info');
   },
@@ -344,6 +344,22 @@ const UI = {
 
   async doBreakthrough(method) {
     this.closeModal();
+    // 检查是否需要天劫（大境界突破）
+    const p = this.state.player;
+    const realmId = p.realm;
+    const majorRealms = ['foundation_1', 'golden_core_1', 'nascent_soul_1', 'divine_transformation_1', 'void_refining_1'];
+    // 找下一个境界
+    const realmOrder = REALM_ORDER;
+    const idx = realmOrder.indexOf(realmId);
+    const nextRealm = idx >= 0 && idx + 1 < realmOrder.length ? realmOrder[idx + 1] : null;
+    if (nextRealm && majorRealms.includes(nextRealm)) {
+      // 需要渡劫
+      const r = await API.triggerTribulation();
+      if (r.action === 'tribulation') {
+        Tribulation.start(r.tribulation);
+        return;
+      }
+    }
     const r = await API.breakthrough(method);
     this.toast(r.msg, r.ok ? 'success' : 'error');
     await this.refresh();

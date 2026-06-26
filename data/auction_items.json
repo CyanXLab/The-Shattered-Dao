@@ -1,0 +1,130 @@
+{
+  "auction_items": [
+    {
+      "id": "auc_1",
+      "item_id": "storage_ring_mid",
+      "base_price": 5000,
+      "tier": 5,
+      "desc": "中品储物戒，100格空间。"
+    },
+    {
+      "id": "auc_2",
+      "item_id": "star_iron",
+      "base_price": 400,
+      "tier": 5,
+      "desc": "天外陨铁，炼器极品。"
+    },
+    {
+      "id": "auc_3",
+      "item_id": "feng_xi_grass",
+      "base_price": 350,
+      "tier": 5,
+      "desc": "凤栖草，传闻凤凰栖息之地生长。"
+    },
+    {
+      "id": "auc_4",
+      "item_id": "ling_zhi_500",
+      "base_price": 600,
+      "tier": 5,
+      "desc": "五百年灵芝，延寿神效。"
+    },
+    {
+      "id": "auc_5",
+      "item_id": "foundation_pill",
+      "base_price": 500,
+      "tier": 3,
+      "desc": "筑基丹，突破筑基必备。"
+    },
+    {
+      "id": "auc_6",
+      "item_id": "golden_core_pill",
+      "base_price": 1500,
+      "tier": 4,
+      "desc": "结金丹，突破金丹必备。"
+    },
+    {
+      "id": "auc_7",
+      "item_id": "lifespan_pill",
+      "base_price": 2000,
+      "tier": 4,
+      "desc": "延寿丹，延寿10年。"
+    },
+    {
+      "id": "auc_8",
+      "item_id": "thunder_sword",
+      "base_price": 1800,
+      "tier": 5,
+      "desc": "雷霆剑，斩之麻痹。"
+    },
+    {
+      "id": "auc_9",
+      "item_id": "dragon_armor",
+      "base_price": 4500,
+      "tier": 6,
+      "desc": "青龙甲，防御无双。"
+    },
+    {
+      "id": "auc_10",
+      "item_id": "time_disk",
+      "base_price": 8000,
+      "tier": 6,
+      "desc": "时间阵盘，1日=1年。"
+    },
+    {
+      "id": "auc_11",
+      "item_id": "dantian_pill",
+      "base_price": 3000,
+      "tier": 5,
+      "desc": "补天丹，修复丹田裂纹。"
+    },
+    {
+      "id": "auc_12",
+      "item_id": "tribulation_pill",
+      "base_price": 5000,
+      "tier": 6,
+      "desc": "渡劫丹，渡劫必备。"
+    },
+    {
+      "id": "auc_13",
+      "item_id": "reverse_jade",
+      "base_price": 100000,
+      "tier": 9,
+      "desc": "逆道玉简（仿品），蕴含逆天之道。"
+    },
+    {
+      "id": "auc_14",
+      "item_id": "phoenix_feather",
+      "base_price": 4500,
+      "tier": 7,
+      "desc": "凤翎，含涅槃意。"
+    },
+    {
+      "id": "auc_15",
+      "item_id": "qilin_horn",
+      "base_price": 5000,
+      "tier": 7,
+      "desc": "麒麟角，仙家至宝。"
+    },
+    {
+      "id": "auc_16",
+      "item_id": "immortal_sword",
+      "base_price": 50000,
+      "tier": 7,
+      "desc": "仙剑·诛仙，上古仙剑。"
+    },
+    {
+      "id": "auc_17",
+      "item_id": "nine_turn_pill",
+      "base_price": 50000,
+      "tier": 7,
+      "desc": "九转金丹，仙丹。"
+    },
+    {
+      "id": "auc_18",
+      "item_id": "storage_ring_high",
+      "base_price": 50000,
+      "tier": 7,
+      "desc": "上品储物戒，500格空间。"
+    }
+  ]
+}

@@ -328,6 +328,132 @@ def reset():
     return jsonify(get_engine().reset_game())
 
 
+# ==================== 扩展系统API ====================
+# 炼器
+@app.route("/api/forge_recipes", methods=["GET"])
+@require_auth
+def forge_recipes():
+    return jsonify(get_engine().get_forge_recipes())
+
+
+@app.route("/api/forge_craft", methods=["POST"])
+@require_auth
+def forge_craft():
+    data = request.json
+    return jsonify(get_engine().forge_craft(data.get("recipe_id"), data.get("materials", {}), data.get("process", {})))
+
+
+# 阵法
+@app.route("/api/formations", methods=["GET"])
+@require_auth
+def formations():
+    return jsonify(get_engine().get_formations_list())
+
+
+@app.route("/api/set_formation", methods=["POST"])
+@require_auth
+def set_formation():
+    return jsonify(get_engine().set_formation(request.json.get("formation_id")))
+
+
+@app.route("/api/break_formation", methods=["POST"])
+@require_auth
+def break_formation():
+    return jsonify(get_engine().break_formation(request.json.get("formation_id")))
+
+
+# 道侣
+@app.route("/api/propose_companion", methods=["POST"])
+@require_auth
+def propose_companion():
+    return jsonify(get_engine().propose_dao_companion(request.json.get("npc_id")))
+
+
+@app.route("/api/dual_cultivate", methods=["POST"])
+@require_auth
+def dual_cultivate():
+    return jsonify(get_engine().dual_cultivate(request.json.get("hours", 1)))
+
+
+@app.route("/api/betray_companion", methods=["POST"])
+@require_auth
+def betray_companion():
+    return jsonify(get_engine().betray_companion())
+
+
+# 转世
+@app.route("/api/choose_reincarnation", methods=["POST"])
+@require_auth
+def choose_reincarnation():
+    return jsonify(get_engine().choose_reincarnation(request.json.get("choice")))
+
+
+# 天劫
+@app.route("/api/trigger_tribulation", methods=["POST"])
+@require_auth
+def trigger_tribulation():
+    return jsonify(get_engine().trigger_tribulation())
+
+
+@app.route("/api/tribulation_round", methods=["POST"])
+@require_auth
+def tribulation_round():
+    data = request.json
+    return jsonify(get_engine().tribulation_round(data.get("action", "endure"), data.get("use_item")))
+
+
+# 剧情
+@app.route("/api/story_progress", methods=["GET"])
+@require_auth
+def story_progress():
+    return jsonify({"ok": True, "progress": get_engine().get_story_progress(), "storylines": get_storylines_data()})
+
+
+# 拍卖
+@app.route("/api/auction_list", methods=["GET"])
+@require_auth
+def auction_list():
+    return jsonify(get_engine().get_auction_list())
+
+
+@app.route("/api/auction_bid", methods=["POST"])
+@require_auth
+def auction_bid():
+    data = request.json
+    return jsonify(get_engine().auction_bid(data.get("auc_id"), data.get("bid_price")))
+
+
+# PVP
+@app.route("/api/pvp_list", methods=["GET"])
+@require_auth
+def pvp_list():
+    return jsonify(get_engine().get_pvp_list())
+
+
+@app.route("/api/start_pvp", methods=["POST"])
+@require_auth
+def start_pvp():
+    return jsonify(get_engine().start_pvp(request.json.get("opp_id")))
+
+
+# 宗门战
+@app.route("/api/start_sect_war", methods=["POST"])
+@require_auth
+def start_sect_war():
+    return jsonify(get_engine().start_sect_war())
+
+
+@app.route("/api/join_sect_war", methods=["POST"])
+@require_auth
+def join_sect_war():
+    return jsonify(get_engine().join_sect_war())
+
+
+def get_storylines_data():
+    from data_loader import get_storylines
+    return get_storylines()
+
+
 if __name__ == "__main__":
     print("=" * 60)
     print("  《逆仙录·天道残卷》服务启动")

@@ -1,0 +1,100 @@
+{
+  "pvp_opponents": [
+    {
+      "id": "pvp_1",
+      "name": "落魄散修",
+      "realm": "qi_refining_7",
+      "hp": 200,
+      "attack": 25,
+      "defense": 15,
+      "reward_stones": 50,
+      "reward_exp": 100,
+      "location": "fang_market",
+      "desc": "一名落魄的散修，看着很好欺负。"
+    },
+    {
+      "id": "pvp_2",
+      "name": "狂妄少主",
+      "realm": "foundation_3",
+      "hp": 800,
+      "attack": 60,
+      "defense": 40,
+      "reward_stones": 300,
+      "reward_exp": 500,
+      "location": "fang_market",
+      "desc": "某小宗门的少主，目中无人。"
+    },
+    {
+      "id": "pvp_3",
+      "name": "邪修血煞",
+      "realm": "foundation_5",
+      "hp": 1200,
+      "attack": 80,
+      "defense": 50,
+      "reward_stones": 500,
+      "reward_exp": 800,
+      "location": "beast_mountain",
+      "desc": "邪修一名，杀人越货。"
+    },
+    {
+      "id": "pvp_4",
+      "name": "剑修青衣",
+      "realm": "golden_core_1",
+      "hp": 3000,
+      "attack": 150,
+      "defense": 80,
+      "reward_stones": 2000,
+      "reward_exp": 2000,
+      "location": "fang_market",
+      "desc": "剑修高手，挑战各路修士。"
+    },
+    {
+      "id": "pvp_5",
+      "name": "魔修黑袍",
+      "realm": "golden_core_5",
+      "hp": 5000,
+      "attack": 200,
+      "defense": 120,
+      "reward_stones": 5000,
+      "reward_exp": 5000,
+      "location": "mo_yuan",
+      "desc": "魔修黑袍，实力深不可测。"
+    },
+    {
+      "id": "pvp_6",
+      "name": "散仙无名",
+      "realm": "nascent_soul_1",
+      "hp": 20000,
+      "attack": 400,
+      "defense": 250,
+      "reward_stones": 20000,
+      "reward_exp": 20000,
+      "location": "xu_kong_lie_feng",
+      "desc": "渡劫失败的散仙，实力强悍。"
+    },
+    {
+      "id": "pvp_7",
+      "name": "天骄·凌霄",
+      "realm": "nascent_soul_3",
+      "hp": 35000,
+      "attack": 600,
+      "defense": 350,
+      "reward_stones": 50000,
+      "reward_exp": 50000,
+      "location": "ling_jie",
+      "desc": "天界下凡的天骄，万中无一。"
+    },
+    {
+      "id": "pvp_8",
+      "name": "古修士·残魂",
+      "realm": "divine_transformation_1",
+      "hp": 100000,
+      "attack": 1500,
+      "defense": 800,
+      "reward_stones": 200000,
+      "reward_exp": 200000,
+      "location": "xue_se_jin_di",
+      "desc": "上古修士残魂，实力恐怖。"
+    }
+  ]
+}

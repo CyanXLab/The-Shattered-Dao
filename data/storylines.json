@@ -3,190 +3,333 @@
     {
       "id": "main_reverse_jade",
       "name": "逆道玉简之谜",
+      "type": "main",
+      "desc": "探索逆道玉简的来历，揭开天道崩碎的真相。",
       "chapters": [
         {
           "id": "ch1",
           "name": "玉简苏醒",
           "trigger": "game_start",
           "objective": "前往青云宗拜师",
+          "target_npc": "npc_master_qingyun",
           "reward": {
-            "exp": 50
-          }
+            "exp": 50,
+            "karma": 10
+          },
+          "desc": "你醒来时手握逆道玉简，必须找到师父指引修行之路。"
         },
         {
           "id": "ch2",
           "name": "藏经阁寻秘",
           "trigger": "join_qingyun",
           "objective": "向赵长老请教玉简来历",
+          "target_npc": "npc_zhao_zhanglao",
+          "precondition": {
+            "realm": "qi_refining_3"
+          },
           "reward": {
             "exp": 100,
             "item": "wood_slip"
-          }
+          },
+          "desc": "赵长老博古通今，或许知道玉简的来历。"
         },
         {
           "id": "ch3",
           "name": "逆修之路",
           "trigger": "learn_technique",
           "objective": "使用玉简逆转功法缺陷",
+          "target_action": "reverse_technique",
+          "precondition": {
+            "realm": "qi_refining_5"
+          },
           "reward": {
-            "exp": 200
-          }
+            "exp": 200,
+            "karma": -10
+          },
+          "desc": "玉简之力可逆天道，试试逆转功法缺陷。"
         },
         {
           "id": "ch4",
           "name": "魔修觊觎",
           "trigger": "foundation_1",
-          "objective": "击败前来抢夺的魔修",
+          "objective": "击败前来抢夺玉简的魔修",
+          "target_beast": "npc_dark_cultivator",
+          "precondition": {
+            "realm": "foundation_1"
+          },
           "reward": {
             "exp": 500,
             "item": "storage_ring_low"
-          }
+          },
+          "desc": "玉简消息走漏，魔修前来抢夺。必须击败他！"
         },
         {
           "id": "ch5",
           "name": "天道碎片",
           "trigger": "golden_core_1",
-          "objective": "寻找天道碎片",
+          "objective": "在虚空裂缝寻找天道碎片",
+          "target_region": "xu_kong_lie_feng",
+          "precondition": {
+            "realm": "golden_core_1"
+          },
           "reward": {
-            "exp": 2000
-          }
+            "exp": 2000,
+            "item": "dao_fragment"
+          },
+          "desc": "传说天道碎片散落万界，虚空裂缝中或许有线索。"
+        },
+        {
+          "id": "ch6",
+          "name": "天道之秘",
+          "trigger": "nascent_soul_1",
+          "objective": "集齐3块天道碎片，参悟天道",
+          "target_item_count": {
+            "dao_fragment": 3
+          },
+          "precondition": {
+            "realm": "nascent_soul_1"
+          },
+          "reward": {
+            "exp": 10000,
+            "technique": "void_basic"
+          },
+          "desc": "天道崩碎的真相，或许就藏在碎片之中。"
         }
       ]
     },
     {
       "id": "main_revenge",
       "name": "血色禁地之谜",
+      "type": "main",
+      "desc": "探索上古战场血色禁地，获得失传传承。",
       "chapters": [
         {
           "id": "ch1",
           "name": "禁地开启",
           "trigger": "foundation_3",
           "objective": "进入血色禁地",
+          "target_region": "xue_se_jin_di",
+          "precondition": {
+            "realm": "foundation_3"
+          },
           "reward": {
             "exp": 300
-          }
+          },
+          "desc": "血色禁地每30日开启一次，机缘难得。"
         },
         {
           "id": "ch2",
           "name": "上古战场",
           "trigger": "enter_xue_se",
-          "objective": "探索古战场遗迹",
+          "objective": "探索古战场遗迹，找到上古传承",
+          "target_building": "core_zone",
           "reward": {
             "exp": 500,
             "item": "star_iron"
-          }
+          },
+          "desc": "禁地核心区有上古战场遗迹，传说有大能传承。"
         },
         {
           "id": "ch3",
-          "name": "传承之秘",
+          "name": "传承之试",
           "trigger": "find_relic",
-          "objective": "获得上古传承",
+          "objective": "通过传承考验",
+          "target_beast": "tian_jie_shou",
           "reward": {
             "exp": 1000,
+            "karma": -50
+          },
+          "desc": "传承被天劫兽守护，必须击败它。"
+        },
+        {
+          "id": "ch4",
+          "name": "踏天之道",
+          "trigger": "golden_core_5",
+          "objective": "获得上古传承",
+          "target_action": "claim_relic",
+          "precondition": {
+            "realm": "golden_core_5"
+          },
+          "reward": {
+            "exp": 5000,
             "technique": "void_basic"
-          }
+          },
+          "desc": "传承蕴含踏天之道，逆天而行的真正功法。"
         }
       ]
     },
     {
       "id": "main_dragon",
       "name": "龙宫寻宝",
+      "type": "main",
+      "desc": "救助龙族，前往龙宫获取至宝。",
       "chapters": [
         {
           "id": "ch1",
           "name": "海难",
           "trigger": "nascent_soul_1",
           "objective": "救助遇险的龙族",
+          "target_npc": "npc_dragon_princess",
+          "precondition": {
+            "realm": "nascent_soul_1"
+          },
           "reward": {
-            "exp": 1000
-          }
+            "exp": 1000,
+            "karma": 50
+          },
+          "desc": "东海传来龙族遇险的消息，速去救援。"
         },
         {
           "id": "ch2",
           "name": "龙宫赴宴",
           "trigger": "save_dragon",
           "objective": "前往龙宫",
+          "target_region": "long_gong",
           "reward": {
             "exp": 2000,
             "item": "dragon_scale"
-          }
+          },
+          "desc": "龙王感谢你救女之恩，邀你赴龙宫宴。"
         },
         {
           "id": "ch3",
           "name": "宝库选择",
           "trigger": "enter_long_gong",
           "objective": "在龙宫宝库中选择一件宝物",
+          "target_action": "choose_treasure",
           "reward": {
             "item": "choice"
-          }
+          },
+          "desc": "龙宫宝库任你挑选一件，是龙鳞、龙角还是龙珠？"
+        }
+      ]
+    },
+    {
+      "id": "main_sect_war",
+      "name": "正魔大战",
+      "type": "main",
+      "desc": "正魔两道爆发大战，你的选择将影响天下格局。",
+      "chapters": [
+        {
+          "id": "ch1",
+          "name": "导火索",
+          "trigger": "kill_demon",
+          "objective": "击败魔修，拯救被掳的凡人",
+          "target_beast": "npc_dark_cultivator",
+          "precondition": {
+            "realm": "foundation_5"
+          },
+          "reward": {
+            "karma": 50,
+            "exp": 500
+          },
+          "desc": "魔修掳掠凡人，你必须出手阻止。"
+        },
+        {
+          "id": "ch2",
+          "name": "宗门征召",
+          "trigger": "sect_war_start",
+          "objective": "响应宗门征召，加入正道联军",
+          "target_npc": "npc_master_qingyun",
+          "precondition": {
+            "realm": "golden_core_1"
+          },
+          "reward": {
+            "exp": 1000,
+            "reputation": 100
+          },
+          "desc": "正魔大战一触即发，宗门征召弟子参战。"
+        },
+        {
+          "id": "ch3",
+          "name": "前线作战",
+          "trigger": "join_war",
+          "objective": "击杀5名魔修",
+          "target_kill_count": 5,
+          "reward": {
+            "exp": 3000,
+            "karma": 20
+          },
+          "desc": "前线战事吃紧，多杀魔修以振军心。"
+        },
+        {
+          "id": "ch4",
+          "name": "决战魔主",
+          "trigger": "reach_demon_lord",
+          "objective": "前往魔渊，击败魔渊之主",
+          "target_npc": "npc_demon_lord",
+          "precondition": {
+            "realm": "divine_transformation_1"
+          },
+          "reward": {
+            "exp": 10000,
+            "item": "legendary",
+            "karma": 100
+          },
+          "desc": "魔渊之主是魔道之首，唯有击败他才能终结大战。"
         }
       ]
     },
     {
       "id": "side_mortal_kindness",
       "name": "凡人恩情",
+      "type": "side",
+      "desc": "一次善举，多年后的回报。体现修仙者的人情味。",
       "chapters": [
         {
           "id": "ch1",
           "name": "救死扶伤",
           "trigger": "help_mortal",
-          "objective": "救助一个凡人家庭",
+          "objective": "救助凡人国度的一个家庭",
+          "target_npc": "npc_liu_lao",
           "reward": {
-            "karma": 50
-          }
+            "karma": 50,
+            "exp": 100
+          },
+          "desc": "凡人刘老汉一家贫病交加，你的一念之仁或成大因果。"
         },
         {
           "id": "ch2",
-          "name": "后裔成才",
+          "name": "凡人后裔",
           "trigger": "30_years_pass",
-          "objective": "等待凡人后裔成长",
+          "objective": "等待30年，看凡人后裔成长",
+          "target_action": "wait_time",
+          "precondition": {
+            "time_pass": 10950
+          },
           "reward": {
             "karma": 100
-          }
+          },
+          "desc": "30年后，当年救下的孩童已长大成人。"
         },
         {
           "id": "ch3",
-          "name": "回报之恩",
+          "name": "天才出世",
           "trigger": "50_years_pass",
+          "objective": "刘家后裔展现修行天赋",
+          "target_action": "check_descendant",
+          "precondition": {
+            "time_pass": 18250
+          },
+          "reward": {
+            "karma": 100
+          },
+          "desc": "刘家后裔竟有修行天赋，被宗门收入门下。"
+        },
+        {
+          "id": "ch4",
+          "name": "回报之恩",
+          "trigger": "100_years_pass",
           "objective": "接受后裔的报恩",
+          "target_npc": "npc_liu_descendant",
+          "precondition": {
+            "time_pass": 36500
+          },
           "reward": {
             "exp": 5000,
             "item": "rare"
-          }
-        }
-      ]
-    },
-    {
-      "id": "side_sect_war",
-      "name": "正魔大战",
-      "chapters": [
-        {
-          "id": "ch1",
-          "name": "导火索",
-          "trigger": "kill_demon",
-          "objective": "击败魔修",
-          "reward": {
-            "karma": 20
-          }
-        },
-        {
-          "id": "ch2",
-          "name": "全面开战",
-          "trigger": "sect_war_start",
-          "objective": "参与正魔大战",
-          "reward": {
-            "exp": 3000
-          }
-        },
-        {
-          "id": "ch3",
-          "name": "决战魔主",
-          "trigger": "reach_demon_lord",
-          "objective": "击败魔渊之主",
-          "reward": {
-            "exp": 10000,
-            "item": "legendary"
-          }
+          },
+          "desc": "百年之后，当年善举终得回报。刘家后裔已成一方大能，前来报恩。"
         }
       ]
     }

@@ -25,9 +25,10 @@ from data_loader import (
     MERIDIANS, ORGANS, ATTR_NAMES, ELEMENT_COUNTERS, LIFESPAN_STAGES
 )
 from user_system import save_player_state, load_player_state
+from engine_ext import EngineExtension
 
 
-class GameEngine:
+class GameEngine(EngineExtension):
     def __init__(self, user_id=None, username=""):
         self.user_id = user_id
         self.username = username
@@ -237,6 +238,8 @@ class GameEngine:
             p["hp"] = 0
         if w["game_time"] % 60 == 0:
             self.save_state()
+        # 剧情触发检查
+        self.check_story_triggers()
 
     def _get_lifespan_stage(self):
         p = self.state["player"]
@@ -1201,6 +1204,19 @@ class GameEngine:
         p["combat_target"] = None
         beast_spawn["alive"] = False
         beast_spawn["respawn_at"] = self.state["world"]["game_time"] + beast_spawn["respawn"]
+        # PVP战斗特殊处理
+        if beast_spawn.get("is_pvp"):
+            opp = beast_spawn.get("pvp_data", {})
+            ss = opp.get("reward_stones", 0)
+            exp = opp.get("reward_exp", 0)
+            self.add_spirit_stones(ss)
+            p["realm_progress"] += exp / 1000.0
+            self.add_karma(-30, f"PVP击杀{opp.get('name','')}", "murder")
+            self._log(None, f"击败{opp.get('name','')}！获得{ss}灵石，经验+{exp}，业力-30", "victory")
+            # 移除临时PVP对象
+            if beast_spawn in self.state["world"]["beasts"]:
+                self.state["world"]["beasts"].remove(beast_spawn)
+            return {"ok": True, "msg": f"击败{opp.get('name','')}！获得{ss}灵石", "action": "victory"}
         drops = []
         for drop in beast_cfg["drops"]:
             if random.random() < drop["prob"]:

@@ -57,5 +57,24 @@ const API = {
   plantSeed: (seed_id, plot_idx) => API.post('/plant_seed', { seed_id, plot_idx }),
   harvest: (plot_idx) => API.post('/harvest', { plot_idx }),
   tameBeast: (beast_id) => API.post('/tame_beast', { beast_id }),
-  reset: () => API.post('/reset', {})
+  reset: () => API.post('/reset', {}),
+  // 扩展系统
+  forgeRecipes: () => API.get('/forge_recipes'),
+  forgeCraft: (recipe_id, materials, process) => API.post('/forge_craft', { recipe_id, materials, process }),
+  formations: () => API.get('/formations'),
+  setFormation: (formation_id) => API.post('/set_formation', { formation_id }),
+  breakFormation: (formation_id) => API.post('/break_formation', { formation_id }),
+  proposeCompanion: (npc_id) => API.post('/propose_companion', { npc_id }),
+  dualCultivate: (hours) => API.post('/dual_cultivate', { hours }),
+  betrayCompanion: () => API.post('/betray_companion', {}),
+  chooseReincarnation: (choice) => API.post('/choose_reincarnation', { choice }),
+  triggerTribulation: () => API.post('/trigger_tribulation', {}),
+  tribulationRound: (action, use_item) => API.post('/tribulation_round', { action, use_item }),
+  storyProgress: () => API.get('/story_progress'),
+  auctionList: () => API.get('/auction_list'),
+  auctionBid: (auc_id, bid_price) => API.post('/auction_bid', { auc_id, bid_price }),
+  pvpList: () => API.get('/pvp_list'),
+  startPvp: (opp_id) => API.post('/start_pvp', { opp_id }),
+  startSectWar: () => API.post('/start_sect_war', {}),
+  joinSectWar: () => API.post('/join_sect_war', {})
 };

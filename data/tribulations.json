@@ -1,0 +1,49 @@
+{
+  "tribulations": [
+    {
+      "id": "trib_foundation",
+      "name": "筑基天劫",
+      "realm": "foundation_1",
+      "rounds": 3,
+      "damage_per_round": 100,
+      "element": "thunder",
+      "desc": "突破筑基时降下的天劫，3道雷劫，每道100伤害。"
+    },
+    {
+      "id": "trib_golden_core",
+      "name": "结丹天劫",
+      "realm": "golden_core_1",
+      "rounds": 5,
+      "damage_per_round": 300,
+      "element": "thunder",
+      "desc": "突破金丹时降下的天劫，5道雷劫，每道300伤害。"
+    },
+    {
+      "id": "trib_nascent_soul",
+      "name": "化婴天劫",
+      "realm": "nascent_soul_1",
+      "rounds": 9,
+      "damage_per_round": 1000,
+      "element": "thunder",
+      "desc": "突破元婴时降下的九重天劫，9道雷劫，每道1000伤害。"
+    },
+    {
+      "id": "trib_divine",
+      "name": "化神天劫",
+      "realm": "divine_transformation_1",
+      "rounds": 18,
+      "damage_per_round": 3000,
+      "element": "thunder",
+      "desc": "突破化神时降下的十八重天劫，极其凶险。"
+    },
+    {
+      "id": "trib_void",
+      "name": "炼虚天劫",
+      "realm": "void_refining_1",
+      "rounds": 27,
+      "damage_per_round": 10000,
+      "element": "thunder",
+      "desc": "突破炼虚时降下的二十七重天劫，九死一生。"
+    }
+  ]
+}

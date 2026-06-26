@@ -1,0 +1,689 @@
+{
+  "forge_recipes": [
+    {
+      "id": "forge_iron_sword",
+      "name": "铁剑",
+      "tier": 1,
+      "output": "iron_sword",
+      "inputs": {
+        "core": {
+          "type": "ore",
+          "min_tier": 1,
+          "count": 2
+        },
+        "handle": {
+          "type": "misc",
+          "id": "wood_block",
+          "count": 1
+        }
+      },
+      "process": {
+        "smelting": {
+          "min": 200,
+          "max": 500,
+          "optimal": 350
+        },
+        "hammering": {
+          "min": 5,
+          "max": 15,
+          "optimal": 10
+        },
+        "quenching": {
+          "liquid": "water",
+          "duration": {
+            "min": 3,
+            "max": 10,
+            "optimal": 5
+          }
+        }
+      },
+      "desc": "凡铁所铸，新手用剑。"
+    },
+    {
+      "id": "forge_spirit_sword",
+      "name": "灵纹剑",
+      "tier": 3,
+      "output": "spirit_sword",
+      "inputs": {
+        "core": {
+          "type": "ore",
+          "min_tier": 3,
+          "count": 2
+        },
+        "edge": {
+          "type": "ore",
+          "min_tier": 2,
+          "count": 1
+        },
+        "handle": {
+          "type": "misc",
+          "id": "wood_block",
+          "count": 2
+        },
+        "inscription": {
+          "type": "ore",
+          "id": "ling_crystal",
+          "count": 1
+        }
+      },
+      "process": {
+        "smelting": {
+          "min": 400,
+          "max": 800,
+          "optimal": 600
+        },
+        "hammering": {
+          "min": 10,
+          "max": 25,
+          "optimal": 18
+        },
+        "quenching": {
+          "liquid": "spirit_water",
+          "duration": {
+            "min": 5,
+            "max": 15,
+            "optimal": 10
+          }
+        }
+      },
+      "desc": "刻有灵纹，可灌注灵气。"
+    },
+    {
+      "id": "forge_fire_sword",
+      "name": "赤焰剑",
+      "tier": 4,
+      "output": "fire_sword",
+      "inputs": {
+        "core": {
+          "type": "ore",
+          "min_tier": 3,
+          "count": 2
+        },
+        "edge": {
+          "type": "beast_part",
+          "min_tier": 3,
+          "element": "fire",
+          "count": 1
+        },
+        "handle": {
+          "type": "misc",
+          "id": "wood_block",
+          "count": 2
+        },
+        "inscription": {
+          "type": "ore",
+          "id": "huo_jing",
+          "count": 1
+        }
+      },
+      "process": {
+        "smelting": {
+          "min": 600,
+          "max": 1000,
+          "optimal": 800
+        },
+        "hammering": {
+          "min": 15,
+          "max": 30,
+          "optimal": 22
+        },
+        "quenching": {
+          "liquid": "fire_essence",
+          "duration": {
+            "min": 8,
+            "max": 18,
+            "optimal": 12
+          }
+        }
+      },
+      "desc": "蕴含火灵，挥之生焰。"
+    },
+    {
+      "id": "forge_ice_sword",
+      "name": "寒冰剑",
+      "tier": 4,
+      "output": "ice_sword",
+      "inputs": {
+        "core": {
+          "type": "ore",
+          "min_tier": 3,
+          "count": 2
+        },
+        "edge": {
+          "type": "beast_part",
+          "min_tier": 3,
+          "element": "ice",
+          "count": 1
+        },
+        "handle": {
+          "type": "misc",
+          "id": "wood_block",
+          "count": 2
+        },
+        "inscription": {
+          "type": "ore",
+          "id": "bing_jing",
+          "count": 1
+        }
+      },
+      "process": {
+        "smelting": {
+          "min": 500,
+          "max": 900,
+          "optimal": 700
+        },
+        "hammering": {
+          "min": 15,
+          "max": 30,
+          "optimal": 22
+        },
+        "quenching": {
+          "liquid": "ice_essence",
+          "duration": {
+            "min": 8,
+            "max": 18,
+            "optimal": 12
+          }
+        }
+      },
+      "desc": "寒气逼人，斩之冻髓。"
+    },
+    {
+      "id": "forge_thunder_sword",
+      "name": "雷霆剑",
+      "tier": 5,
+      "output": "thunder_sword",
+      "inputs": {
+        "core": {
+          "type": "ore",
+          "min_tier": 4,
+          "count": 2
+        },
+        "edge": {
+          "type": "ore",
+          "min_tier": 4,
+          "count": 1
+        },
+        "handle": {
+          "type": "misc",
+          "id": "yang_soul_wood",
+          "count": 1
+        },
+        "inscription": {
+          "type": "ore",
+          "id": "lei_jing",
+          "count": 1
+        }
+      },
+      "process": {
+        "smelting": {
+          "min": 700,
+          "max": 1100,
+          "optimal": 900
+        },
+        "hammering": {
+          "min": 20,
+          "max": 40,
+          "optimal": 30
+        },
+        "quenching": {
+          "liquid": "thunder_essence",
+          "duration": {
+            "min": 10,
+            "max": 20,
+            "optimal": 15
+          }
+        }
+      },
+      "desc": "雷霆所凝，斩之麻痹。"
+    },
+    {
+      "id": "forge_leather_armor",
+      "name": "皮甲",
+      "tier": 2,
+      "output": "leather_armor",
+      "inputs": {
+        "core": {
+          "type": "misc",
+          "id": "leather",
+          "count": 3
+        },
+        "lining": {
+          "type": "misc",
+          "id": "wood_block",
+          "count": 1
+        }
+      },
+      "process": {
+        "smelting": {
+          "min": 100,
+          "max": 300,
+          "optimal": 200
+        },
+        "hammering": {
+          "min": 5,
+          "max": 12,
+          "optimal": 8
+        },
+        "quenching": {
+          "liquid": "oil",
+          "duration": {
+            "min": 3,
+            "max": 8,
+            "optimal": 5
+          }
+        }
+      },
+      "desc": "兽皮所制，轻便耐用。"
+    },
+    {
+      "id": "forge_spirit_armor",
+      "name": "灵纹甲",
+      "tier": 3,
+      "output": "spirit_armor",
+      "inputs": {
+        "core": {
+          "type": "ore",
+          "min_tier": 3,
+          "count": 3
+        },
+        "lining": {
+          "type": "misc",
+          "id": "leather",
+          "count": 2
+        },
+        "inscription": {
+          "type": "ore",
+          "id": "ling_crystal",
+          "count": 1
+        }
+      },
+      "process": {
+        "smelting": {
+          "min": 400,
+          "max": 800,
+          "optimal": 600
+        },
+        "hammering": {
+          "min": 12,
+          "max": 25,
+          "optimal": 18
+        },
+        "quenching": {
+          "liquid": "spirit_water",
+          "duration": {
+            "min": 5,
+            "max": 12,
+            "optimal": 8
+          }
+        }
+      },
+      "desc": "刻有灵纹，可御灵气。"
+    },
+    {
+      "id": "forge_dragon_sword",
+      "name": "青龙剑",
+      "tier": 6,
+      "output": "dragon_sword",
+      "inputs": {
+        "core": {
+          "type": "ore",
+          "min_tier": 5,
+          "count": 3
+        },
+        "edge": {
+          "type": "beast_part",
+          "min_tier": 6,
+          "element": "wood",
+          "count": 1
+        },
+        "handle": {
+          "type": "beast_part",
+          "min_tier": 6,
+          "count": 1
+        },
+        "inscription": {
+          "type": "ore",
+          "id": "xian_tie",
+          "count": 1
+        }
+      },
+      "process": {
+        "smelting": {
+          "min": 900,
+          "max": 1300,
+          "optimal": 1100
+        },
+        "hammering": {
+          "min": 30,
+          "max": 50,
+          "optimal": 40
+        },
+        "quenching": {
+          "liquid": "dragon_blood",
+          "duration": {
+            "min": 15,
+            "max": 25,
+            "optimal": 20
+          }
+        }
+      },
+      "desc": "青龙之魂所附，威力绝伦。"
+    },
+    {
+      "id": "forge_void_sword",
+      "name": "虚空剑",
+      "tier": 6,
+      "output": "void_sword",
+      "inputs": {
+        "core": {
+          "type": "ore",
+          "min_tier": 5,
+          "count": 3
+        },
+        "edge": {
+          "type": "ore",
+          "id": "xu_kong_jing",
+          "count": 1
+        },
+        "handle": {
+          "type": "misc",
+          "id": "yang_soul_wood",
+          "count": 2
+        },
+        "inscription": {
+          "type": "ore",
+          "id": "chen_jing_shi",
+          "count": 1
+        }
+      },
+      "process": {
+        "smelting": {
+          "min": 800,
+          "max": 1200,
+          "optimal": 1000
+        },
+        "hammering": {
+          "min": 25,
+          "max": 45,
+          "optimal": 35
+        },
+        "quenching": {
+          "liquid": "void_essence",
+          "duration": {
+            "min": 12,
+            "max": 22,
+            "optimal": 17
+          }
+        }
+      },
+      "desc": "虚空所化，可破空间。"
+    },
+    {
+      "id": "forge_bone_sword",
+      "name": "白骨剑",
+      "tier": 4,
+      "output": "bone_sword",
+      "inputs": {
+        "core": {
+          "type": "beast_part",
+          "min_tier": 3,
+          "count": 2
+        },
+        "edge": {
+          "type": "beast_part",
+          "min_tier": 4,
+          "count": 1
+        },
+        "handle": {
+          "type": "misc",
+          "id": "wood_block",
+          "count": 1
+        }
+      },
+      "process": {
+        "smelting": {
+          "min": 300,
+          "max": 700,
+          "optimal": 500
+        },
+        "hammering": {
+          "min": 12,
+          "max": 25,
+          "optimal": 18
+        },
+        "quenching": {
+          "liquid": "blood",
+          "duration": {
+            "min": 5,
+            "max": 12,
+            "optimal": 8
+          }
+        }
+      },
+      "desc": "妖骨所制，阴气重。"
+    },
+    {
+      "id": "forge_poison_sword",
+      "name": "碧毒剑",
+      "tier": 3,
+      "output": "poison_sword",
+      "inputs": {
+        "core": {
+          "type": "ore",
+          "min_tier": 2,
+          "count": 2
+        },
+        "edge": {
+          "type": "beast_part",
+          "min_tier": 3,
+          "count": 1
+        },
+        "poison": {
+          "type": "herb",
+          "min_tier": 3,
+          "count": 2
+        }
+      },
+      "process": {
+        "smelting": {
+          "min": 300,
+          "max": 600,
+          "optimal": 450
+        },
+        "hammering": {
+          "min": 10,
+          "max": 20,
+          "optimal": 15
+        },
+        "quenching": {
+          "liquid": "poison",
+          "duration": {
+            "min": 5,
+            "max": 12,
+            "optimal": 8
+          }
+        }
+      },
+      "desc": "淬毒之剑，斩之中毒。"
+    },
+    {
+      "id": "forge_crystal_sword",
+      "name": "水晶剑",
+      "tier": 3,
+      "output": "crystal_sword",
+      "inputs": {
+        "core": {
+          "type": "ore",
+          "id": "ling_crystal",
+          "count": 3
+        },
+        "handle": {
+          "type": "misc",
+          "id": "wood_block",
+          "count": 1
+        }
+      },
+      "process": {
+        "smelting": {
+          "min": 250,
+          "max": 550,
+          "optimal": 400
+        },
+        "hammering": {
+          "min": 8,
+          "max": 18,
+          "optimal": 13
+        },
+        "quenching": {
+          "liquid": "spirit_water",
+          "duration": {
+            "min": 4,
+            "max": 10,
+            "optimal": 7
+          }
+        }
+      },
+      "desc": "灵晶所制，灵气传导佳。"
+    },
+    {
+      "id": "forge_fire_armor",
+      "name": "赤焰甲",
+      "tier": 4,
+      "output": "fire_armor",
+      "inputs": {
+        "core": {
+          "type": "ore",
+          "min_tier": 3,
+          "count": 3
+        },
+        "lining": {
+          "type": "beast_part",
+          "min_tier": 3,
+          "element": "fire",
+          "count": 1
+        },
+        "inscription": {
+          "type": "ore",
+          "id": "huo_jing",
+          "count": 1
+        }
+      },
+      "process": {
+        "smelting": {
+          "min": 600,
+          "max": 1000,
+          "optimal": 800
+        },
+        "hammering": {
+          "min": 15,
+          "max": 30,
+          "optimal": 22
+        },
+        "quenching": {
+          "liquid": "fire_essence",
+          "duration": {
+            "min": 8,
+            "max": 18,
+            "optimal": 12
+          }
+        }
+      },
+      "desc": "火抗加成，火焰不侵。"
+    },
+    {
+      "id": "forge_demon_sword",
+      "name": "魔剑·血煞",
+      "tier": 6,
+      "output": "demon_sword",
+      "inputs": {
+        "core": {
+          "type": "ore",
+          "id": "mo_tie",
+          "count": 2
+        },
+        "edge": {
+          "type": "beast_part",
+          "min_tier": 6,
+          "element": "dark",
+          "count": 1
+        },
+        "handle": {
+          "type": "misc",
+          "id": "yang_soul_wood",
+          "count": 1
+        },
+        "inscription": {
+          "type": "ore",
+          "id": "an_jing",
+          "count": 1
+        }
+      },
+      "process": {
+        "smelting": {
+          "min": 700,
+          "max": 1100,
+          "optimal": 900
+        },
+        "hammering": {
+          "min": 25,
+          "max": 45,
+          "optimal": 35
+        },
+        "quenching": {
+          "liquid": "demon_blood",
+          "duration": {
+            "min": 12,
+            "max": 22,
+            "optimal": 17
+          }
+        }
+      },
+      "desc": "魔气所凝，斩之吸血，但损业力。"
+    },
+    {
+      "id": "forge_black_turtle_armor",
+      "name": "玄武甲",
+      "tier": 7,
+      "output": "black_turtle_armor",
+      "inputs": {
+        "core": {
+          "type": "beast_part",
+          "id": "black_turtle_shell",
+          "count": 2
+        },
+        "lining": {
+          "type": "ore",
+          "id": "xian_tie",
+          "count": 1
+        },
+        "inscription": {
+          "type": "ore",
+          "id": "chen_jing_shi",
+          "count": 2
+        }
+      },
+      "process": {
+        "smelting": {
+          "min": 1000,
+          "max": 1400,
+          "optimal": 1200
+        },
+        "hammering": {
+          "min": 40,
+          "max": 60,
+          "optimal": 50
+        },
+        "quenching": {
+          "liquid": "celestial_water",
+          "duration": {
+            "min": 20,
+            "max": 30,
+            "optimal": 25
+          }
+        }
+      },
+      "desc": "玄武之甲，万法不侵。"
+    }
+  ]
+}

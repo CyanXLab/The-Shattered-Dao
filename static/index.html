@@ -95,11 +95,17 @@
           <button class="action-btn" onclick="UI.openInventory()">行囊</button>
           <button class="action-btn" onclick="UI.openTechniques()">功法</button>
           <button class="action-btn" onclick="UI.openAlchemy()">炼丹</button>
+          <button class="action-btn" onclick="UI.openForge()">炼器</button>
+          <button class="action-btn" onclick="UI.openFormations()">阵法</button>
           <button class="action-btn" onclick="UI.openCharacter()">角色</button>
           <button class="action-btn" onclick="UI.openBody()">身体</button>
           <button class="action-btn" onclick="UI.openFarm()">药园</button>
           <button class="action-btn" onclick="UI.openPets()">灵兽</button>
+          <button class="action-btn" onclick="UI.openCompanion()">道侣</button>
           <button class="action-btn" onclick="UI.openSects()">宗门</button>
+          <button class="action-btn" onclick="UI.openStory()">剧情</button>
+          <button class="action-btn" onclick="UI.openAuction()">拍卖</button>
+          <button class="action-btn" onclick="UI.openPVP()">切磋</button>
           <button class="action-btn danger" onclick="UI.confirmReset()">重置</button>
         </div>
       </div>
@@ -162,12 +168,40 @@
 
 <div id="toast-container"></div>
 
+<!-- 天劫界面 -->
+<div id="tribulation-overlay" style="display:none">
+  <div id="tribulation-panel">
+    <div id="trib-title">天劫降临</div>
+    <div id="trib-desc"></div>
+    <div class="bar-container" style="width:300px;margin:10px auto"><div id="trib-hp-bar" class="bar-fill hp-fill"></div><span id="trib-hp-text" class="bar-text">80/80</span></div>
+    <div id="trib-round-info"></div>
+    <div id="trib-log" style="height:100px;overflow-y:auto;background:rgba(0,0,0,0.5);border:1px solid #444;border-radius:4px;padding:8px;margin:10px 0;font-size:13px;"></div>
+    <div id="trib-actions">
+      <button class="combat-btn" onclick="Tribulation.round('endure')">硬抗</button>
+      <button class="combat-btn skill" onclick="Tribulation.round('dodge')">闪避</button>
+      <button class="combat-btn item" onclick="Tribulation.useItem()">使用护身符</button>
+    </div>
+  </div>
+</div>
+
+<!-- 死亡转世界面 -->
+<div id="death-overlay" style="display:none">
+  <div id="death-panel">
+    <div id="death-title">你已陨落</div>
+    <div id="death-desc">修仙之路未尽，尚有三条路可选...</div>
+    <div id="death-options"></div>
+  </div>
+</div>
+
 <script src="js/api.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/renderer.js"></script>
 <script src="js/ui.js"></script>
 <script src="js/combat.js"></script>
 <script src="js/alchemy.js"></script>
+<script src="js/forge.js"></script>
+<script src="js/tribulation.js"></script>
+<script src="js/ext_systems.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

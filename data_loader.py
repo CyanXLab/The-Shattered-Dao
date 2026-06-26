@@ -138,6 +138,54 @@ def get_causal_chains():
     return _load("causal_chains")["causal_chains"]
 
 
+def get_forge_recipes():
+    return _load("forge_recipes")["forge_recipes"]
+
+
+def get_forge_recipe(fid):
+    for r in get_forge_recipes():
+        if r["id"] == fid:
+            return r
+    return None
+
+
+def get_formations():
+    return _load("formations")["formations"]
+
+
+def get_formation(fid):
+    for f in get_formations():
+        if f["id"] == fid:
+            return f
+    return None
+
+
+def get_auction_items():
+    return _load("auction_items")["auction_items"]
+
+
+def get_pvp_opponents():
+    return _load("pvp_opponents")["pvp_opponents"]
+
+
+def get_pvp_opponent(pid):
+    for p in get_pvp_opponents():
+        if p["id"] == pid:
+            return p
+    return None
+
+
+def get_tribulations():
+    return _load("tribulations")["tribulations"]
+
+
+def get_tribulation(realm):
+    for t in get_tribulations():
+        if t["realm"] == realm:
+            return t
+    return None
+
+
 # 经脉定义（12正经 + 8奇经）
 MERIDIANS = [
     "任脉", "督脉", "冲脉", "带脉",
