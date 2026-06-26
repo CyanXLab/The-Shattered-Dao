@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逆仙录·天道残卷</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="loading">正在踏入修仙之路...</div>
+
+<div id="login-screen" style="display:none">
+  <div class="login-box">
+    <h1>逆仙录·天道残卷</h1>
+    <p class="subtitle">天道有缺，万物皆可逆</p>
+    <div class="tabs">
+      <div class="tab active" onclick="Auth.switchTab('login')">登录</div>
+      <div class="tab" onclick="Auth.switchTab('register')">注册</div>
+    </div>
+    <div id="login-form">
+      <input type="text" id="login-username" placeholder="用户名" value="admin">
+      <input type="password" id="login-password" placeholder="密码" value="admin123">
+      <button class="btn-primary" onclick="Auth.doLogin()">登录</button>
+    </div>
+    <div id="register-form" style="display:none">
+      <input type="text" id="reg-username" placeholder="用户名">
+      <input type="password" id="reg-password" placeholder="密码">
+      <button class="btn-primary" onclick="Auth.doRegister()">注册</button>
+    </div>
+    <div id="auth-msg" class="auth-msg"></div>
+  </div>
+</div>
+
+<div id="game-container" style="display:none">
+  <div id="top-bar">
+    <div class="status-block">
+      <span class="status-label">道号</span>
+      <span id="player-name" class="status-value">陈平安</span>
+    </div>
+    <div class="status-block">
+      <span class="status-label">境界</span>
+      <span id="player-realm" class="status-value">练气一层</span>
+      <div class="progress-bar small"><div id="realm-progress" class="progress-fill"></div></div>
+    </div>
+    <div class="status-block">
+      <span class="status-label">寿元</span>
+      <span id="player-lifespan" class="status-value">120.0年</span>
+    </div>
+    <div class="status-block">
+      <span class="status-label">年龄</span>
+      <span id="player-age" class="status-value">16.0</span>
+    </div>
+    <div class="status-block hp-block">
+      <span class="status-label">气血</span>
+      <div class="bar-container"><div id="hp-bar" class="bar-fill hp-fill"></div><span id="hp-text" class="bar-text">80/80</span></div>
+    </div>
+    <div class="status-block qi-block">
+      <span class="status-label">灵气</span>
+      <div class="bar-container"><div id="qi-bar" class="bar-fill qi-fill"></div><span id="qi-text" class="bar-text">50/200</span></div>
+    </div>
+    <div class="status-block">
+      <span class="status-label">灵石</span>
+      <span id="player-money" class="status-value">100</span>
+    </div>
+    <div class="status-block">
+      <span class="status-label">业力</span>
+      <span id="player-karma" class="status-value">0</span>
+    </div>
+    <div class="status-block time-block">
+      <span class="status-label">时辰</span>
+      <span id="game-time" class="status-value">第1日 06:00</span>
+    </div>
+    <div class="status-block">
+      <button class="btn-sm" onclick="Auth.logout()">登出</button>
+    </div>
+  </div>
+
+  <div id="main-area">
+    <div id="map-container">
+      <canvas id="game-canvas" width="832" height="624"></canvas>
+      <div id="region-info">
+        <span id="region-name">青云宗</span>
+        <span id="region-desc">正道宗门</span>
+      </div>
+      <div id="coords">坐标: (32, 8)</div>
+    </div>
+
+    <div id="side-panel">
+      <div class="panel-section">
+        <h3>修行</h3>
+        <div class="btn-grid">
+          <button class="action-btn" onclick="UI.openCultivate()">修炼</button>
+          <button class="action-btn" onclick="UI.openRest()">打坐</button>
+          <button class="action-btn" onclick="UI.openSeclusion()">闭关</button>
+          <button class="action-btn" onclick="UI.openInventory()">行囊</button>
+          <button class="action-btn" onclick="UI.openTechniques()">功法</button>
+          <button class="action-btn" onclick="UI.openAlchemy()">炼丹</button>
+          <button class="action-btn" onclick="UI.openCharacter()">角色</button>
+          <button class="action-btn" onclick="UI.openBody()">身体</button>
+          <button class="action-btn" onclick="UI.openFarm()">药园</button>
+          <button class="action-btn" onclick="UI.openPets()">灵兽</button>
+          <button class="action-btn" onclick="UI.openSects()">宗门</button>
+          <button class="action-btn danger" onclick="UI.confirmReset()">重置</button>
+        </div>
+      </div>
+      <div class="panel-section log-section">
+        <h3>道途见闻</h3>
+        <div id="event-log"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="modal-overlay" style="display:none">
+  <div id="modal-content">
+    <div id="modal-header">
+      <span id="modal-title">标题</span>
+      <button class="close-btn" onclick="UI.closeModal()">×</button>
+    </div>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<div id="combat-overlay" style="display:none">
+  <div id="combat-panel">
+    <div id="combat-beast-info">
+      <div id="combat-beast-name">赤焰虎</div>
+      <div class="bar-container"><div id="combat-beast-hp" class="bar-fill beast-hp-fill"></div><span id="combat-beast-hp-text" class="bar-text">300/300</span></div>
+    </div>
+    <div id="combat-player-info">
+      <div id="combat-player-name">陈平安</div>
+      <div class="bar-container"><div id="combat-player-hp" class="bar-fill hp-fill"></div><span id="combat-player-hp-text" class="bar-text">80/80</span></div>
+      <div class="bar-container"><div id="combat-player-qi" class="bar-fill qi-fill"></div><span id="combat-player-qi-text" class="bar-text">50/200</span></div>
+    </div>
+    <div id="combat-log"></div>
+    <div id="combat-actions">
+      <button class="combat-btn" onclick="Combat.attack()">普通攻击</button>
+      <button class="combat-btn skill" onclick="Combat.openSkills()">施展神通</button>
+      <button class="combat-btn item" onclick="Combat.openItems()">使用物品</button>
+      <button class="combat-btn flee" onclick="Combat.flee()">逃跑</button>
+    </div>
+    <div id="combat-options" style="display:none">
+      <div class="combat-option-group">
+        <label>瞄准部位:</label>
+        <select id="combat-target-part">
+          <option value="body">躯体(1.0x)</option>
+          <option value="head">头部(1.5x,眩晕)</option>
+          <option value="dantian">丹田(1.3x,断灵)</option>
+          <option value="limb">肢体(0.8x)</option>
+        </select>
+      </div>
+      <div class="combat-option-group">
+        <label>灵气分配:</label>
+        <input type="range" id="combat-qi-allocation" min="10" max="100" value="50">
+        <span id="combat-qi-val">50%</span>
+      </div>
+    </div>
+    <div id="combat-skills" style="display:none"></div>
+    <div id="combat-items" style="display:none"></div>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/renderer.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/combat.js"></script>
+<script src="js/alchemy.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

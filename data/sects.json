@@ -1,0 +1,251 @@
+{
+  "sects": [
+    {
+      "id": "qingyun_sect_info",
+      "name": "青云宗",
+      "type": "orthodox",
+      "alignment": "good",
+      "realm_required": "qi_refining_1",
+      "leader": "npc_master_qingyun",
+      "description": "正道大宗，传承千年，掌门元婴期，门下弟子数千。",
+      "positions": [
+        "掌门",
+        "长老",
+        "执事",
+        "内门弟子",
+        "外门弟子",
+        "记名弟子"
+      ],
+      "benefits": {
+        "spirit_density_bonus": 0.2,
+        "technique_access": [
+          "wood_basic",
+          "fire_basic",
+          "ice_basic",
+          "metal_basic",
+          "earth_basic"
+        ]
+      },
+      "rules": [
+        "不得残害同门",
+        "不得泄露宗门机密",
+        "每月需完成门派任务"
+      ],
+      "treasury": 100000,
+      "members": 500
+    },
+    {
+      "id": "blood_demon_sect",
+      "name": "血魔宗",
+      "type": "demon",
+      "alignment": "evil",
+      "realm_required": "foundation_1",
+      "leader": "npc_demon_lord",
+      "description": "魔道大宗，以血炼功，正道之敌。",
+      "positions": [
+        "魔主",
+        "护法",
+        "长老",
+        "魔使",
+        "魔子",
+        "魔兵"
+      ],
+      "benefits": {
+        "cultivation_speed_bonus": 0.3,
+        "karma_cost": -100
+      },
+      "rules": [
+        "强者为尊",
+        "弱肉强食"
+      ],
+      "treasury": 50000,
+      "members": 200
+    },
+    {
+      "id": "dan_dao_zong",
+      "name": "丹道宗",
+      "type": "orthodox",
+      "alignment": "neutral",
+      "realm_required": "qi_refining_3",
+      "leader": "npc_dan_master",
+      "description": "专精炼丹的宗门，丹药天下第一。",
+      "positions": [
+        "宗主",
+        "丹师",
+        "丹徒",
+        "杂役"
+      ],
+      "benefits": {
+        "alchemy_bonus": 0.3,
+        "pill_access": true
+      },
+      "rules": [
+        "不得私售宗门丹方"
+      ],
+      "treasury": 200000,
+      "members": 150
+    },
+    {
+      "id": "qi_zong",
+      "name": "器宗",
+      "type": "orthodox",
+      "alignment": "neutral",
+      "realm_required": "qi_refining_3",
+      "leader": "npc_qi_master",
+      "description": "专精炼器的宗门，法器天下第一。",
+      "positions": [
+        "宗主",
+        "器师",
+        "器徒",
+        "杂役"
+      ],
+      "benefits": {
+        "forge_bonus": 0.3,
+        "weapon_access": true
+      },
+      "rules": [
+        "不得私售宗门器方"
+      ],
+      "treasury": 200000,
+      "members": 150
+    },
+    {
+      "id": "wan_yao_men",
+      "name": "万兽门",
+      "type": "neutral",
+      "alignment": "neutral",
+      "realm_required": "foundation_1",
+      "leader": "npc_beast_master",
+      "description": "专精御兽的宗门，与妖兽为友。",
+      "positions": [
+        "门主",
+        "御兽师",
+        "兽使",
+        "杂役"
+      ],
+      "benefits": {
+        "tame_bonus": 0.3,
+        "beast_access": true
+      },
+      "rules": [
+        "不得残害门中灵兽"
+      ],
+      "treasury": 80000,
+      "members": 100
+    },
+    {
+      "id": "jian_ge",
+      "name": "剑阁",
+      "type": "orthodox",
+      "alignment": "good",
+      "realm_required": "foundation_3",
+      "leader": "npc_jian_master",
+      "description": "剑修圣地，一剑破万法。",
+      "positions": [
+        "阁主",
+        "剑师",
+        "剑徒",
+        "杂役"
+      ],
+      "benefits": {
+        "sword_bonus": 0.5,
+        "attack_bonus": 0.2
+      },
+      "rules": [
+        "剑在人在，剑毁人亡"
+      ],
+      "treasury": 120000,
+      "members": 80
+    },
+    {
+      "id": "fu_zong",
+      "name": "符箓宗",
+      "type": "orthodox",
+      "alignment": "neutral",
+      "realm_required": "qi_refining_5",
+      "leader": "npc_fu_master",
+      "description": "专精符箓的宗门。",
+      "positions": [
+        "宗主",
+        "符师",
+        "符徒",
+        "杂役"
+      ],
+      "benefits": {
+        "talisman_bonus": 0.3
+      },
+      "rules": [
+        "不得伪造符箓"
+      ],
+      "treasury": 100000,
+      "members": 120
+    },
+    {
+      "id": "zhen_fa_men",
+      "name": "阵法门",
+      "type": "orthodox",
+      "alignment": "neutral",
+      "realm_required": "foundation_1",
+      "leader": "npc_zhen_master",
+      "description": "专精阵法的宗门。",
+      "positions": [
+        "门主",
+        "阵师",
+        "阵徒",
+        "杂役"
+      ],
+      "benefits": {
+        "formation_bonus": 0.3
+      },
+      "rules": [
+        "不得私设杀阵"
+      ],
+      "treasury": 90000,
+      "members": 90
+    },
+    {
+      "id": "hua_shen_men",
+      "name": "化神门",
+      "type": "orthodox",
+      "alignment": "good",
+      "realm_required": "golden_core_1",
+      "leader": "npc_huashen_master",
+      "description": "化神期才能加入的高阶宗门。",
+      "positions": [
+        "门主",
+        "长老",
+        "弟子"
+      ],
+      "benefits": {
+        "breakthrough_bonus": 0.2
+      },
+      "rules": [
+        "不得下界作乱"
+      ],
+      "treasury": 500000,
+      "members": 30
+    },
+    {
+      "id": "tian_ji_ge",
+      "name": "天机阁",
+      "type": "neutral",
+      "alignment": "neutral",
+      "realm_required": "foundation_5",
+      "leader": "npc_tianji_master",
+      "description": "知晓天下事的神秘组织，卖情报为生。",
+      "positions": [
+        "阁主",
+        "天机师",
+        "天机徒"
+      ],
+      "benefits": {
+        "info_access": true
+      },
+      "rules": [
+        "不得泄露天机"
+      ],
+      "treasury": 300000,
+      "members": 50
+    }
+  ]
+}

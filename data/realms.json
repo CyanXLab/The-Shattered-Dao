@@ -1,0 +1,249 @@
+{
+  "realms": [
+    {
+      "id": "qi_refining_1",
+      "name": "练气一层",
+      "lifespan": 120,
+      "qi_mult": 1,
+      "combat_mult": 1
+    },
+    {
+      "id": "qi_refining_2",
+      "name": "练气二层",
+      "lifespan": 120,
+      "qi_mult": 1.2,
+      "combat_mult": 1.1
+    },
+    {
+      "id": "qi_refining_3",
+      "name": "练气三层",
+      "lifespan": 120,
+      "qi_mult": 1.5,
+      "combat_mult": 1.2
+    },
+    {
+      "id": "qi_refining_4",
+      "name": "练气四层",
+      "lifespan": 120,
+      "qi_mult": 1.8,
+      "combat_mult": 1.3
+    },
+    {
+      "id": "qi_refining_5",
+      "name": "练气五层",
+      "lifespan": 120,
+      "qi_mult": 2.2,
+      "combat_mult": 1.5
+    },
+    {
+      "id": "qi_refining_6",
+      "name": "练气六层",
+      "lifespan": 120,
+      "qi_mult": 2.6,
+      "combat_mult": 1.7
+    },
+    {
+      "id": "qi_refining_7",
+      "name": "练气七层",
+      "lifespan": 120,
+      "qi_mult": 3.0,
+      "combat_mult": 1.9
+    },
+    {
+      "id": "qi_refining_8",
+      "name": "练气八层",
+      "lifespan": 120,
+      "qi_mult": 3.5,
+      "combat_mult": 2.1
+    },
+    {
+      "id": "qi_refining_9",
+      "name": "练气九层",
+      "lifespan": 120,
+      "qi_mult": 4.0,
+      "combat_mult": 2.3
+    },
+    {
+      "id": "foundation_1",
+      "name": "筑基初期",
+      "lifespan": 200,
+      "qi_mult": 8,
+      "combat_mult": 4
+    },
+    {
+      "id": "foundation_3",
+      "name": "筑基中期",
+      "lifespan": 200,
+      "qi_mult": 12,
+      "combat_mult": 5
+    },
+    {
+      "id": "foundation_5",
+      "name": "筑基后期",
+      "lifespan": 200,
+      "qi_mult": 16,
+      "combat_mult": 6
+    },
+    {
+      "id": "foundation_7",
+      "name": "筑基大圆满",
+      "lifespan": 200,
+      "qi_mult": 20,
+      "combat_mult": 7
+    },
+    {
+      "id": "golden_core_1",
+      "name": "金丹初期",
+      "lifespan": 500,
+      "qi_mult": 40,
+      "combat_mult": 12
+    },
+    {
+      "id": "golden_core_3",
+      "name": "金丹中期",
+      "lifespan": 500,
+      "qi_mult": 60,
+      "combat_mult": 15
+    },
+    {
+      "id": "golden_core_5",
+      "name": "金丹后期",
+      "lifespan": 500,
+      "qi_mult": 80,
+      "combat_mult": 18
+    },
+    {
+      "id": "golden_core_9",
+      "name": "金丹大圆满",
+      "lifespan": 500,
+      "qi_mult": 100,
+      "combat_mult": 22
+    },
+    {
+      "id": "nascent_soul_1",
+      "name": "元婴初期",
+      "lifespan": 1000,
+      "qi_mult": 200,
+      "combat_mult": 35
+    },
+    {
+      "id": "nascent_soul_3",
+      "name": "元婴中期",
+      "lifespan": 1000,
+      "qi_mult": 300,
+      "combat_mult": 45
+    },
+    {
+      "id": "nascent_soul_5",
+      "name": "元婴后期",
+      "lifespan": 1000,
+      "qi_mult": 400,
+      "combat_mult": 55
+    },
+    {
+      "id": "divine_transformation_1",
+      "name": "化神初期",
+      "lifespan": 3000,
+      "qi_mult": 800,
+      "combat_mult": 90
+    },
+    {
+      "id": "divine_transformation_3",
+      "name": "化神中期",
+      "lifespan": 3000,
+      "qi_mult": 1200,
+      "combat_mult": 120
+    },
+    {
+      "id": "divine_transformation_5",
+      "name": "化神后期",
+      "lifespan": 3000,
+      "qi_mult": 1600,
+      "combat_mult": 150
+    },
+    {
+      "id": "void_refining_1",
+      "name": "炼虚初期",
+      "lifespan": 10000,
+      "qi_mult": 3000,
+      "combat_mult": 250
+    },
+    {
+      "id": "void_refining_3",
+      "name": "炼虚中期",
+      "lifespan": 10000,
+      "qi_mult": 5000,
+      "combat_mult": 350
+    },
+    {
+      "id": "void_refining_5",
+      "name": "炼虚后期",
+      "lifespan": 10000,
+      "qi_mult": 8000,
+      "combat_mult": 500
+    },
+    {
+      "id": "body_integration_1",
+      "name": "合体初期",
+      "lifespan": 30000,
+      "qi_mult": 15000,
+      "combat_mult": 800
+    },
+    {
+      "id": "body_integration_3",
+      "name": "合体中期",
+      "lifespan": 30000,
+      "qi_mult": 25000,
+      "combat_mult": 1200
+    },
+    {
+      "id": "body_integration_5",
+      "name": "合体后期",
+      "lifespan": 30000,
+      "qi_mult": 40000,
+      "combat_mult": 1800
+    },
+    {
+      "id": "mahayana_1",
+      "name": "大乘初期",
+      "lifespan": 100000,
+      "qi_mult": 80000,
+      "combat_mult": 3000
+    },
+    {
+      "id": "mahayana_3",
+      "name": "大乘中期",
+      "lifespan": 100000,
+      "qi_mult": 150000,
+      "combat_mult": 5000
+    },
+    {
+      "id": "mahayana_5",
+      "name": "大乘后期",
+      "lifespan": 100000,
+      "qi_mult": 250000,
+      "combat_mult": 8000
+    },
+    {
+      "id": "tribulation_1",
+      "name": "渡劫初期",
+      "lifespan": 500000,
+      "qi_mult": 500000,
+      "combat_mult": 15000
+    },
+    {
+      "id": "tribulation_3",
+      "name": "渡劫中期",
+      "lifespan": 500000,
+      "qi_mult": 800000,
+      "combat_mult": 25000
+    },
+    {
+      "id": "tribulation_5",
+      "name": "渡劫后期",
+      "lifespan": 500000,
+      "qi_mult": 1200000,
+      "combat_mult": 40000
+    }
+  ]
+}

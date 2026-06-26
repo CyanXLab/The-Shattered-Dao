@@ -1,0 +1,982 @@
+{
+  "npcs": [
+    {
+      "id": "npc_master_qingyun",
+      "name": "青云掌门",
+      "title": "元婴期·掌门",
+      "realm": "nascent_soul_1",
+      "region": "qingyun_sect",
+      "x": 34,
+      "y": 23,
+      "role": "sect_master",
+      "schedule": {
+        "06:00": "cultivate",
+        "09:00": "audience",
+        "12:00": "meditate",
+        "14:00": "audience",
+        "18:00": "cultivate",
+        "21:00": "study",
+        "23:00": "sleep"
+      },
+      "knowledge": {
+        "reverse_jade": true,
+        "player_progress": true,
+        "ancient_records": true
+      },
+      "goals": [
+        "maintain_sect",
+        "find_talent"
+      ],
+      "relationship": 30,
+      "quests": [],
+      "dialogue": {
+        "default": "修行之路，重在心诚。你既得逆道玉简，便是天选之人，但切记不可逆天而行。",
+        "low_relation": "你资质平庸，老夫看在玉简份上才收你，切勿令老夫失望。",
+        "high_relation": "你进步神速，假以时日必成大器。"
+      }
+    },
+    {
+      "id": "npc_li_shixiong",
+      "name": "李师兄",
+      "title": "筑基后期·大师兄",
+      "realm": "foundation_5",
+      "region": "qingyun_sect",
+      "x": 24,
+      "y": 16,
+      "role": "senior_disciple",
+      "schedule": {
+        "06:00": "wake_up",
+        "07:00": "morning_cultivation",
+        "09:00": "patrol",
+        "12:00": "meal",
+        "14:00": "practice",
+        "18:00": "market",
+        "21:00": "evening_cultivation",
+        "23:00": "sleep"
+      },
+      "knowledge": {
+        "player_killed_wang": false,
+        "secret_cave_location": true
+      },
+      "goals": [
+        "breakthrough_golden_core",
+        "protect_sect"
+      ],
+      "relationship": 20,
+      "emotional_state": {
+        "angry": 0,
+        "jealous": 30,
+        "grateful": 0
+      },
+      "quests": [
+        {
+          "id": "q_herb_collect",
+          "name": "采药任务",
+          "desc": "帮我采集5株云灵草",
+          "type": "collect",
+          "target": "yun_ling_grass",
+          "count": 5,
+          "reward": {
+            "spirit_stones": 20,
+            "exp": 30
+          }
+        }
+      ],
+      "dialogue": {
+        "default": "师弟初来乍到，有事尽管找我。我平日卯时打坐，午后练剑。",
+        "jealous": "哼，资质平平却得玉简认可，无非是运道好罢了。",
+        "grateful": "多谢师弟相助，这件皮甲赠你。"
+      }
+    },
+    {
+      "id": "npc_wang_shimei",
+      "name": "王师妹",
+      "title": "练气七层·炼丹弟子",
+      "realm": "qi_refining_7",
+      "region": "qingyun_sect",
+      "x": 20,
+      "y": 16,
+      "role": "alchemist_disciple",
+      "schedule": {
+        "06:00": "wake_up",
+        "07:00": "gather_herb",
+        "09:00": "alchemy",
+        "12:00": "meal",
+        "14:00": "alchemy",
+        "18:00": "study",
+        "21:00": "cultivate",
+        "23:00": "sleep"
+      },
+      "knowledge": {
+        "pill_recipe": true,
+        "market_news": true
+      },
+      "goals": [
+        "learn_advanced_alchemy",
+        "find_rare_herb"
+      ],
+      "relationship": 25,
+      "emotional_state": {
+        "angry": 0,
+        "jealous": 0,
+        "grateful": 10
+      },
+      "quests": [
+        {
+          "id": "q_alchemy_help",
+          "name": "炼丹材料",
+          "desc": "帮我找3颗妖丹用于炼丹研究",
+          "type": "collect",
+          "target": "any_beast_core",
+          "count": 3,
+          "reward": {
+            "pill": "qi_pill",
+            "qty": 5,
+            "exp": 40
+          }
+        }
+      ],
+      "dialogue": {
+        "default": "炼丹之道在于火候。师弟若想学，可来炼丹房旁观。",
+        "low_relation": "我现在很忙，请勿打扰。",
+        "high_relation": "师弟，这是我新研究的丹方，你看看。"
+      }
+    },
+    {
+      "id": "npc_zhang_tiejiang",
+      "name": "张铁匠",
+      "title": "筑基中期·炼器师",
+      "realm": "foundation_3",
+      "region": "qingyun_sect",
+      "x": 44,
+      "y": 16,
+      "role": "blacksmith",
+      "schedule": {
+        "06:00": "wake_up",
+        "07:00": "prepare",
+        "09:00": "forge",
+        "12:00": "meal",
+        "14:00": "forge",
+        "18:00": "market",
+        "21:00": "rest",
+        "23:00": "sleep"
+      },
+      "knowledge": {
+        "ore_source": true,
+        "weapon_recipe": true
+      },
+      "goals": [
+        "forge_spirit_weapon",
+        "find_star_iron"
+      ],
+      "relationship": 15,
+      "quests": [
+        {
+          "id": "q_ore_help",
+          "name": "矿石采集",
+          "desc": "采集5份玄铁矿",
+          "type": "collect",
+          "target": "xuan_iron",
+          "count": 5,
+          "reward": {
+            "weapon": "iron_sword",
+            "exp": 50
+          }
+        }
+      ],
+      "dialogue": {
+        "default": "锻造需要好材料，更需要好技术。",
+        "low_relation": "炼器房重地，闲人免进。",
+        "high_relation": "师弟，这把剑我为你打造的，拿去用。"
+      }
+    },
+    {
+      "id": "npc_zhao_zhanglao",
+      "name": "赵长老",
+      "title": "化神期·藏经阁守",
+      "realm": "divine_transformation_1",
+      "region": "qingyun_sect",
+      "x": 20,
+      "y": 32,
+      "role": "elder_library",
+      "schedule": {
+        "06:00": "cultivate",
+        "09:00": "library",
+        "12:00": "meditate",
+        "14:00": "library",
+        "18:00": "teach",
+        "21:00": "study",
+        "23:00": "sleep"
+      },
+      "knowledge": {
+        "ancient_records": true,
+        "reverse_jade_history": true
+      },
+      "goals": [
+        "preserve_knowledge",
+        "find_successor"
+      ],
+      "relationship": 20,
+      "quests": [
+        {
+          "id": "q_knowledge_test",
+          "name": "悟性考验",
+          "desc": "回答长老的问题",
+          "type": "quiz",
+          "reward": {
+            "technique": "fire_basic",
+            "exp": 100
+          }
+        }
+      ],
+      "dialogue": {
+        "default": "藏经阁万卷藏书，皆上古传承。",
+        "low_relation": "你尚不够资格阅读深阁藏书。",
+        "high_relation": "逆道玉简，上古之物。你可愿听老夫讲述其来历？"
+      }
+    },
+    {
+      "id": "npc_sun_shidi",
+      "name": "孙师弟",
+      "title": "练气四层·同门",
+      "realm": "qi_refining_4",
+      "region": "qingyun_sect",
+      "x": 32,
+      "y": 38,
+      "role": "junior_disciple",
+      "schedule": {
+        "06:00": "wake_up",
+        "07:00": "cultivate",
+        "09:00": "task",
+        "12:00": "meal",
+        "14:00": "practice",
+        "18:00": "wander",
+        "21:00": "cultivate",
+        "23:00": "sleep"
+      },
+      "knowledge": {
+        "sect_gossip": true
+      },
+      "goals": [
+        "breakthrough_foundation",
+        "befriend_player"
+      ],
+      "relationship": 40,
+      "emotional_state": {
+        "angry": 0,
+        "jealous": 0,
+        "grateful": 20
+      },
+      "dialogue": {
+        "default": "师兄！我也想去万妖山脉历练，带我一起吧？",
+        "high_relation": "师兄，这是我攒的灵石，你拿去买药。"
+      }
+    },
+    {
+      "id": "npc_shopkeeper_herb",
+      "name": "百草堂掌柜",
+      "title": "筑基初期·商人",
+      "realm": "foundation_1",
+      "region": "fang_market",
+      "x": 16,
+      "y": 16,
+      "role": "shopkeeper_herb",
+      "schedule": {
+        "06:00": "wake_up",
+        "08:00": "open_shop",
+        "12:00": "meal",
+        "14:00": "open_shop",
+        "18:00": "close_shop",
+        "21:00": "rest",
+        "23:00": "sleep"
+      },
+      "knowledge": {
+        "herb_prices": true,
+        "rare_herb_source": true
+      },
+      "goals": [
+        "profit",
+        "find_rare_herb"
+      ],
+      "relationship": 10,
+      "shop": {
+        "type": "herb",
+        "items": [
+          "yun_ling_grass",
+          "qing_xin_lotus",
+          "chi_yan_grass",
+          "bing_lotus",
+          "ling_zhi_100",
+          "wood_block",
+          "bai_lu_grass",
+          "zi_ye_grass"
+        ]
+      },
+      "dialogue": {
+        "default": "客官要买什么？本店灵药货真价实。",
+        "high_relation": "老朋友来了，今日有批好货，便宜卖你。"
+      }
+    },
+    {
+      "id": "npc_shopkeeper_ore",
+      "name": "千锤铺掌柜",
+      "title": "筑基初期·商人",
+      "realm": "foundation_1",
+      "region": "fang_market",
+      "x": 45,
+      "y": 16,
+      "role": "shopkeeper_ore",
+      "schedule": {
+        "06:00": "wake_up",
+        "08:00": "open_shop",
+        "12:00": "meal",
+        "14:00": "open_shop",
+        "18:00": "close_shop",
+        "21:00": "rest",
+        "23:00": "sleep"
+      },
+      "knowledge": {
+        "ore_prices": true,
+        "mine_location": true
+      },
+      "goals": [
+        "profit"
+      ],
+      "relationship": 10,
+      "shop": {
+        "type": "ore",
+        "items": [
+          "han_iron",
+          "chi_copper",
+          "xuan_iron",
+          "ling_crystal",
+          "purple_gold",
+          "wu_jin_shi",
+          "shan_jing_shi"
+        ]
+      },
+      "dialogue": {
+        "default": "矿石、灵晶，应有尽有。",
+        "high_relation": "兄弟又来了，今日新到一批陨星铁。"
+      }
+    },
+    {
+      "id": "npc_shopkeeper_pill",
+      "name": "丹药阁掌柜",
+      "title": "金丹中期·炼丹大师",
+      "realm": "golden_core_3",
+      "region": "fang_market",
+      "x": 16,
+      "y": 30,
+      "role": "shopkeeper_pill",
+      "schedule": {
+        "06:00": "wake_up",
+        "08:00": "open_shop",
+        "12:00": "meal",
+        "14:00": "alchemy",
+        "18:00": "open_shop",
+        "21:00": "rest",
+        "23:00": "sleep"
+      },
+      "knowledge": {
+        "pill_prices": true,
+        "pill_recipe": true
+      },
+      "goals": [
+        "profit",
+        "learn_recipe"
+      ],
+      "relationship": 10,
+      "shop": {
+        "type": "pill",
+        "items": [
+          "qi_pill",
+          "flesh_renew_pill",
+          "fire_resist_pill",
+          "ice_resist_pill",
+          "foundation_pill",
+          "detox_pill",
+          "qi_gathering_pill",
+          "swift_pill"
+        ]
+      },
+      "dialogue": {
+        "default": "丹药固本培元，客官请便。",
+        "high_relation": "你这小辈炼丹天赋不错，这丹方送你研究。"
+      }
+    },
+    {
+      "id": "npc_shopkeeper_weapon",
+      "name": "兵器坊掌柜",
+      "title": "金丹中期·炼器大师",
+      "realm": "golden_core_3",
+      "region": "fang_market",
+      "x": 45,
+      "y": 30,
+      "role": "shopkeeper_weapon",
+      "schedule": {
+        "06:00": "wake_up",
+        "08:00": "open_shop",
+        "12:00": "meal",
+        "14:00": "forge",
+        "18:00": "open_shop",
+        "21:00": "rest",
+        "23:00": "sleep"
+      },
+      "knowledge": {
+        "weapon_prices": true
+      },
+      "goals": [
+        "profit",
+        "find_star_iron"
+      ],
+      "relationship": 10,
+      "shop": {
+        "type": "weapon",
+        "items": [
+          "iron_sword",
+          "spirit_sword",
+          "cloth_armor",
+          "leather_armor",
+          "spirit_armor",
+          "wood_sword",
+          "earth_sword"
+        ]
+      },
+      "dialogue": {
+        "default": "刀剑无眼，客官选好。",
+        "high_relation": "老朋友，这把新打的灵纹剑，便宜给你。"
+      }
+    },
+    {
+      "id": "npc_shopkeeper_talisman",
+      "name": "符箓阁掌柜",
+      "title": "筑基后期·符箓师",
+      "realm": "foundation_5",
+      "region": "fang_market",
+      "x": 30,
+      "y": 38,
+      "role": "shopkeeper_talisman",
+      "schedule": {
+        "06:00": "wake_up",
+        "08:00": "open_shop",
+        "12:00": "meal",
+        "14:00": "craft",
+        "18:00": "open_shop",
+        "21:00": "rest",
+        "23:00": "sleep"
+      },
+      "knowledge": {
+        "talisman_prices": true
+      },
+      "goals": [
+        "profit"
+      ],
+      "relationship": 10,
+      "shop": {
+        "type": "talisman",
+        "items": [
+          "talisman_fire",
+          "talisman_ice",
+          "talisman_heal",
+          "talisman_shield",
+          "talisman_escape",
+          "talisman_wood",
+          "talisman_metal"
+        ]
+      },
+      "dialogue": {
+        "default": "符箓之道，在于一念之间。",
+        "high_relation": "道友，这护身符我亲手画的，送你。"
+      }
+    },
+    {
+      "id": "npc_innkeeper",
+      "name": "醉仙楼掌柜",
+      "title": "练气二层·凡人",
+      "realm": "qi_refining_2",
+      "region": "fang_market",
+      "x": 30,
+      "y": 36,
+      "role": "innkeeper",
+      "schedule": {
+        "06:00": "wake_up",
+        "08:00": "open_shop",
+        "12:00": "meal",
+        "14:00": "open_shop",
+        "18:00": "open_shop",
+        "22:00": "close_shop",
+        "23:00": "sleep"
+      },
+      "knowledge": {
+        "gossip": true,
+        "secret_news": true
+      },
+      "goals": [
+        "profit",
+        "gather_info"
+      ],
+      "relationship": 15,
+      "services": [
+        {
+          "name": "住宿",
+          "cost": 5,
+          "effect": "rest_full"
+        },
+        {
+          "name": "情报",
+          "cost": 20,
+          "effect": "info"
+        }
+      ],
+      "dialogue": {
+        "default": "客官住店还是用饭？消息灵通，价格公道。",
+        "high_relation": "客官，最近听说万妖山脉深处有大能遗迹现世。"
+      }
+    },
+    {
+      "id": "npc_qing_gu",
+      "name": "青姑",
+      "title": "筑基中期·散修",
+      "realm": "foundation_3",
+      "region": "fang_market",
+      "x": 32,
+      "y": 24,
+      "role": "wanderer",
+      "schedule": {
+        "06:00": "wake_up",
+        "08:00": "market",
+        "12:00": "meal",
+        "14:00": "wander",
+        "18:00": "tavern",
+        "21:00": "rest",
+        "23:00": "sleep"
+      },
+      "knowledge": {
+        "auction_news": true,
+        "treasure_rumor": true
+      },
+      "goals": [
+        "find_treasure",
+        "profit"
+      ],
+      "relationship": 0,
+      "dialogue": {
+        "default": "道友也是来找宝物的？听说拍卖行下月有大动作。",
+        "high_relation": "道友，我打听到一处秘境入口，但需两人方能进入。"
+      }
+    },
+    {
+      "id": "npc_liu_lao",
+      "name": "刘老汉",
+      "title": "凡人·农夫",
+      "realm": "mortal",
+      "region": "fang_market",
+      "x": 26,
+      "y": 38,
+      "role": "mortal",
+      "schedule": {
+        "05:00": "wake_up",
+        "06:00": "farm",
+        "12:00": "meal",
+        "14:00": "farm",
+        "18:00": "rest",
+        "20:00": "sleep"
+      },
+      "knowledge": {
+        "local_news": true,
+        "ancient_legend": true
+      },
+      "goals": [
+        "survive"
+      ],
+      "relationship": 0,
+      "dialogue": {
+        "default": "仙人老爷，老汉只是凡人，不懂修行之事。但祖上传说万妖山脉深处有上古仙人遗迹。",
+        "high_relation": "恩公，这点心意请收下。"
+      }
+    },
+    {
+      "id": "npc_hunter_wang",
+      "name": "猎户老王",
+      "title": "练气五层·散修",
+      "realm": "qi_refining_5",
+      "region": "beast_mountain",
+      "x": 32,
+      "y": 8,
+      "role": "hunter",
+      "schedule": {
+        "06:00": "wake_up",
+        "07:00": "hunt",
+        "12:00": "rest",
+        "14:00": "hunt",
+        "18:00": "camp",
+        "21:00": "rest",
+        "23:00": "sleep"
+      },
+      "knowledge": {
+        "beast_habits": true,
+        "safe_route": true
+      },
+      "goals": [
+        "survive",
+        "find_rare_beast"
+      ],
+      "relationship": 10,
+      "quests": [
+        {
+          "id": "q_beast_bounty",
+          "name": "妖兽悬赏",
+          "desc": "猎杀2只赤焰虎",
+          "type": "kill",
+          "target": "chiyan_tiger",
+          "count": 2,
+          "reward": {
+            "spirit_stones": 100,
+            "exp": 80
+          }
+        }
+      ],
+      "dialogue": {
+        "default": "万妖山脉危险重重，道友小心。火系妖兽怕冰，冰系妖兽怕火。",
+        "high_relation": "兄弟，跟我来，我知道一处赤焰虎巢穴。"
+      }
+    },
+    {
+      "id": "npc_dark_cultivator",
+      "name": "神秘黑衣人",
+      "title": "金丹后期·魔修",
+      "realm": "golden_core_5",
+      "region": "beast_mountain",
+      "x": 14,
+      "y": 38,
+      "role": "dark_cultivator",
+      "schedule": {
+        "00:00": "wander",
+        "06:00": "hide",
+        "12:00": "hide",
+        "18:00": "wander",
+        "23:00": "cultivate"
+      },
+      "knowledge": {
+        "dark_technique": true,
+        "forbidden_pill": true
+      },
+      "goals": [
+        "steal_reverse_jade",
+        "kill_talented_cultivator"
+      ],
+      "relationship": -20,
+      "emotional_state": {
+        "angry": 30,
+        "jealous": 50,
+        "grateful": 0
+      },
+      "hostile": true,
+      "dialogue": {
+        "default": "嘿嘿，逆道玉简在你这种废物手中，真是暴殄天物。交出来，饶你不死。",
+        "combat": "受死吧！"
+      }
+    },
+    {
+      "id": "npc_emperor",
+      "name": "洛京皇帝",
+      "title": "凡人·皇帝",
+      "realm": "mortal",
+      "region": "fan_ren_guo_du",
+      "x": 32,
+      "y": 18,
+      "role": "emperor",
+      "schedule": {
+        "05:00": "wake_up",
+        "06:00": "court",
+        "12:00": "meal",
+        "14:00": "study",
+        "18:00": "rest",
+        "22:00": "sleep"
+      },
+      "knowledge": {
+        "empire_secrets": true,
+        "ancient_treasure": true
+      },
+      "goals": [
+        "maintain_empire",
+        "seek_immortality"
+      ],
+      "relationship": 0,
+      "dialogue": {
+        "default": "仙长降临，蓬荜生辉。朕听闻仙长能延年益寿，不知可否赐教？",
+        "high_relation": "仙长救我王朝，朕愿以国库相赠。"
+      }
+    },
+    {
+      "id": "npc_doctor_li",
+      "name": "李神医",
+      "title": "练气九层·医修",
+      "realm": "qi_refining_9",
+      "region": "fan_ren_guo_du",
+      "x": 42,
+      "y": 14,
+      "role": "doctor",
+      "schedule": {
+        "06:00": "wake_up",
+        "07:00": "herb",
+        "09:00": "heal",
+        "12:00": "meal",
+        "14:00": "heal",
+        "18:00": "study",
+        "21:00": "rest",
+        "23:00": "sleep"
+      },
+      "knowledge": {
+        "medicine": true,
+        "rare_herb": true
+      },
+      "goals": [
+        "heal_people",
+        "find_successor"
+      ],
+      "relationship": 10,
+      "quests": [
+        {
+          "id": "q_heal_people",
+          "name": "悬壶济世",
+          "desc": "帮助李神医治疗10名病人",
+          "type": "custom",
+          "count": 10,
+          "reward": {
+            "exp": 100,
+            "technique": "wood_basic"
+          }
+        }
+      ],
+      "dialogue": {
+        "default": "医者父母心。道友若有医术天赋，可学我这身本事。",
+        "high_relation": "道友心善，这本《青囊经》送你。"
+      }
+    },
+    {
+      "id": "npc_dragon_king",
+      "name": "东海龙王",
+      "title": "化神后期·龙族之主",
+      "realm": "divine_transformation_5",
+      "region": "long_gong",
+      "x": 32,
+      "y": 26,
+      "role": "dragon_king",
+      "schedule": {
+        "06:00": "court",
+        "12:00": "rest",
+        "18:00": "cultivate",
+        "22:00": "sleep"
+      },
+      "knowledge": {
+        "ocean_secrets": true,
+        "treasure_vault": true
+      },
+      "goals": [
+        "protect_ocean",
+        "find_daughter"
+      ],
+      "relationship": 0,
+      "dialogue": {
+        "default": "龙族祖地，凡人勿入。你既来之，必有缘由。",
+        "high_relation": "道友救我女儿，龙宫宝库任你挑选。"
+      }
+    },
+    {
+      "id": "npc_demon_lord",
+      "name": "魔渊之主",
+      "title": "化神中期·魔主",
+      "realm": "divine_transformation_3",
+      "region": "mo_yuan",
+      "x": 24,
+      "y": 24,
+      "role": "demon_lord",
+      "schedule": {
+        "00:00": "cultivate",
+        "12:00": "court",
+        "18:00": "wander"
+      },
+      "knowledge": {
+        "demon_technique": true,
+        "karma_secret": true
+      },
+      "goals": [
+        "conquer_world",
+        "gather_dark_cultivator"
+      ],
+      "relationship": -50,
+      "hostile": true,
+      "dialogue": {
+        "default": "嘿嘿，正道伪君子，来我魔渊做什么？想入魔道吗？",
+        "high_relation": "你既与我魔道为伍，这魔功便传你。"
+      }
+    },
+    {
+      "id": "npc_jade_emperor",
+      "name": "玉帝",
+      "title": "渡劫后期·天界之主",
+      "realm": "tribulation_5",
+      "region": "tian_jie",
+      "x": 48,
+      "y": 55,
+      "role": "jade_emperor",
+      "schedule": {
+        "06:00": "court",
+        "12:00": "rest",
+        "18:00": "cultivate",
+        "22:00": "sleep"
+      },
+      "knowledge": {
+        "heaven_secrets": true,
+        "all_realm_info": true
+      },
+      "goals": [
+        "maintain_heaven"
+      ],
+      "relationship": 0,
+      "dialogue": {
+        "default": "凡人修士，竟能飞升至此，汝之机缘不浅。",
+        "high_relation": "汝有大功于天界，赐汝仙籍。"
+      }
+    },
+    {
+      "id": "npc_random_1",
+      "name": "云游道人",
+      "title": "筑基初期·散修",
+      "realm": "foundation_1",
+      "region": "fang_market",
+      "x": 20,
+      "y": 24,
+      "role": "wanderer",
+      "schedule": {
+        "06:00": "wake_up",
+        "08:00": "wander",
+        "12:00": "meal",
+        "18:00": "tavern",
+        "22:00": "sleep"
+      },
+      "knowledge": {
+        "treasure_rumor": true
+      },
+      "goals": [
+        "find_treasure"
+      ],
+      "relationship": 0,
+      "dialogue": {
+        "default": "贫道云游四方，道友可曾听闻什么宝物现世？"
+      }
+    },
+    {
+      "id": "npc_random_2",
+      "name": "落魄书生",
+      "title": "练气三层·读书人",
+      "realm": "qi_refining_3",
+      "region": "fan_ren_guo_du",
+      "x": 18,
+      "y": 14,
+      "role": "scholar",
+      "schedule": {
+        "06:00": "wake_up",
+        "07:00": "study",
+        "12:00": "meal",
+        "14:00": "study",
+        "18:00": "tea",
+        "22:00": "sleep"
+      },
+      "knowledge": {
+        "ancient_books": true,
+        "history": true
+      },
+      "goals": [
+        "pass_exam"
+      ],
+      "relationship": 0,
+      "dialogue": {
+        "default": "书中自有黄金屋，书中自有颜如玉。道友可愿听我讲古？"
+      }
+    },
+    {
+      "id": "npc_random_3",
+      "name": "神秘老者",
+      "title": "？？·高人",
+      "realm": "unknown",
+      "region": "beast_mountain",
+      "x": 30,
+      "y": 30,
+      "role": "mysterious_elder",
+      "schedule": {
+        "00:00": "meditate"
+      },
+      "knowledge": {
+        "everything": true
+      },
+      "goals": [
+        "find_successor"
+      ],
+      "relationship": 0,
+      "dialogue": {
+        "default": "天道有缺，万物皆可逆。年轻人，你可愿听老夫一言？",
+        "high_relation": "你是有缘人，这逆道残卷送你。"
+      }
+    },
+    {
+      "id": "npc_random_4",
+      "name": "采药少女",
+      "title": "练气一层·凡人",
+      "realm": "qi_refining_1",
+      "region": "beast_mountain",
+      "x": 26,
+      "y": 14,
+      "role": "herb_gatherer",
+      "schedule": {
+        "06:00": "wake_up",
+        "07:00": "gather_herb",
+        "12:00": "rest",
+        "14:00": "gather_herb",
+        "18:00": "return",
+        "22:00": "sleep"
+      },
+      "knowledge": {
+        "herb_location": true
+      },
+      "goals": [
+        "gather_herb",
+        "survive"
+      ],
+      "relationship": 10,
+      "dialogue": {
+        "default": "道友小心，这山脉里有妖兽出没。"
+      }
+    },
+    {
+      "id": "npc_random_5",
+      "name": "落难公主",
+      "title": "凡人·皇族",
+      "realm": "mortal",
+      "region": "beast_mountain",
+      "x": 18,
+      "y": 20,
+      "role": "princess",
+      "schedule": {
+        "06:00": "hide",
+        "12:00": "hide",
+        "18:00": "hide",
+        "22:00": "sleep"
+      },
+      "knowledge": {
+        "royal_secret": true
+      },
+      "goals": [
+        "escape",
+        "find_help"
+      ],
+      "relationship": 0,
+      "dialogue": {
+        "default": "仙长救我！我是洛京公主，被妖兽追杀至此。",
+        "high_relation": "仙长大恩大德，他日必当重谢。"
+      }
+    }
+  ]
+}

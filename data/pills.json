@@ -1,0 +1,832 @@
+{
+  "pill_recipes": [
+    {
+      "id": "recipe_qi_pill",
+      "name": "回气丹",
+      "tier": 1,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "min_tier": 1,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "spirit_stone",
+          "min_tier": 1,
+          "count": 1
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 100,
+          "max": 400,
+          "optimal": 250
+        },
+        "duration": {
+          "min": 60,
+          "max": 180,
+          "optimal": 120
+        },
+        "stirring": {
+          "min": 1,
+          "max": 3,
+          "optimal": 2
+        }
+      },
+      "output": {
+        "pill": "qi_pill",
+        "qty": 2
+      }
+    },
+    {
+      "id": "recipe_flesh_pill",
+      "name": "续骨丹",
+      "tier": 2,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "min_tier": 2,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 1,
+          "count": 2
+        },
+        "catalyst": {
+          "type": "beast_part",
+          "min_tier": 2,
+          "count": 1
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 200,
+          "max": 500,
+          "optimal": 350
+        },
+        "duration": {
+          "min": 90,
+          "max": 240,
+          "optimal": 150
+        },
+        "stirring": {
+          "min": 2,
+          "max": 4,
+          "optimal": 3
+        }
+      },
+      "output": {
+        "pill": "flesh_renew_pill",
+        "qty": 1
+      }
+    },
+    {
+      "id": "recipe_fire_resist",
+      "name": "避火丹",
+      "tier": 2,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "element": "ice",
+          "min_tier": 2,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 1,
+          "count": 2
+        },
+        "catalyst": {
+          "type": "spirit_stone",
+          "min_tier": 2,
+          "count": 1
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 150,
+          "max": 450,
+          "optimal": 300
+        },
+        "duration": {
+          "min": 90,
+          "max": 240,
+          "optimal": 150
+        },
+        "stirring": {
+          "min": 2,
+          "max": 4,
+          "optimal": 3
+        }
+      },
+      "output": {
+        "pill": "fire_resist_pill",
+        "qty": 1
+      }
+    },
+    {
+      "id": "recipe_ice_resist",
+      "name": "避寒丹",
+      "tier": 2,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "element": "fire",
+          "min_tier": 2,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 1,
+          "count": 2
+        },
+        "catalyst": {
+          "type": "spirit_stone",
+          "min_tier": 2,
+          "count": 1
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 200,
+          "max": 600,
+          "optimal": 400
+        },
+        "duration": {
+          "min": 90,
+          "max": 240,
+          "optimal": 150
+        },
+        "stirring": {
+          "min": 2,
+          "max": 4,
+          "optimal": 3
+        }
+      },
+      "output": {
+        "pill": "ice_resist_pill",
+        "qty": 1
+      }
+    },
+    {
+      "id": "recipe_foundation_pill",
+      "name": "筑基丹",
+      "tier": 3,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "min_tier": 3,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 2,
+          "count": 2
+        },
+        "catalyst": {
+          "type": "beast_core",
+          "min_tier": 3,
+          "count": 1
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 300,
+          "max": 700,
+          "optimal": 500
+        },
+        "duration": {
+          "min": 120,
+          "max": 300,
+          "optimal": 200
+        },
+        "stirring": {
+          "min": 3,
+          "max": 5,
+          "optimal": 4
+        }
+      },
+      "output": {
+        "pill": "foundation_pill",
+        "qty": 1
+      }
+    },
+    {
+      "id": "recipe_golden_pill",
+      "name": "结金丹",
+      "tier": 4,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "min_tier": 4,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 3,
+          "count": 2
+        },
+        "catalyst": {
+          "type": "beast_core",
+          "min_tier": 4,
+          "count": 1
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 400,
+          "max": 800,
+          "optimal": 600
+        },
+        "duration": {
+          "min": 180,
+          "max": 360,
+          "optimal": 240
+        },
+        "stirring": {
+          "min": 3,
+          "max": 5,
+          "optimal": 4
+        }
+      },
+      "output": {
+        "pill": "golden_core_pill",
+        "qty": 1
+      }
+    },
+    {
+      "id": "recipe_lifespan_pill",
+      "name": "延寿丹",
+      "tier": 4,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "min_tier": 4,
+          "attrs": "lifespan_ext",
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 3,
+          "count": 2
+        },
+        "catalyst": {
+          "type": "beast_core",
+          "min_tier": 4,
+          "count": 1
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 350,
+          "max": 750,
+          "optimal": 550
+        },
+        "duration": {
+          "min": 180,
+          "max": 360,
+          "optimal": 240
+        },
+        "stirring": {
+          "min": 3,
+          "max": 5,
+          "optimal": 4
+        }
+      },
+      "output": {
+        "pill": "lifespan_pill",
+        "qty": 1
+      }
+    },
+    {
+      "id": "recipe_qi_gathering_pill",
+      "name": "聚气丹",
+      "tier": 2,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "min_tier": 2,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "spirit_stone",
+          "min_tier": 1,
+          "count": 2
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 150,
+          "max": 450,
+          "optimal": 300
+        },
+        "duration": {
+          "min": 90,
+          "max": 180,
+          "optimal": 120
+        },
+        "stirring": {
+          "min": 2,
+          "max": 4,
+          "optimal": 3
+        }
+      },
+      "output": {
+        "pill": "qi_gathering_pill",
+        "qty": 2
+      }
+    },
+    {
+      "id": "recipe_comprehension_pill",
+      "name": "悟道丹",
+      "tier": 4,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "element": "light",
+          "min_tier": 4,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 3,
+          "count": 2
+        },
+        "catalyst": {
+          "type": "beast_core",
+          "min_tier": 4,
+          "count": 1
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 300,
+          "max": 700,
+          "optimal": 500
+        },
+        "duration": {
+          "min": 180,
+          "max": 360,
+          "optimal": 240
+        },
+        "stirring": {
+          "min": 3,
+          "max": 5,
+          "optimal": 4
+        }
+      },
+      "output": {
+        "pill": "comprehension_pill",
+        "qty": 1
+      }
+    },
+    {
+      "id": "recipe_detox_pill",
+      "name": "解毒丹",
+      "tier": 2,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "element": "wood",
+          "min_tier": 2,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 1,
+          "count": 2
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 150,
+          "max": 450,
+          "optimal": 300
+        },
+        "duration": {
+          "min": 90,
+          "max": 180,
+          "optimal": 120
+        },
+        "stirring": {
+          "min": 2,
+          "max": 4,
+          "optimal": 3
+        }
+      },
+      "output": {
+        "pill": "detox_pill",
+        "qty": 2
+      }
+    },
+    {
+      "id": "recipe_fire_toxin_pill",
+      "name": "清火丹",
+      "tier": 3,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "element": "ice",
+          "min_tier": 3,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 2,
+          "count": 2
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 200,
+          "max": 500,
+          "optimal": 350
+        },
+        "duration": {
+          "min": 120,
+          "max": 240,
+          "optimal": 180
+        },
+        "stirring": {
+          "min": 2,
+          "max": 4,
+          "optimal": 3
+        }
+      },
+      "output": {
+        "pill": "fire_toxin_pill",
+        "qty": 1
+      }
+    },
+    {
+      "id": "recipe_meridian_pill",
+      "name": "通脉丹",
+      "tier": 3,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "min_tier": 3,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 2,
+          "count": 2
+        },
+        "catalyst": {
+          "type": "beast_core",
+          "min_tier": 3,
+          "count": 1
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 250,
+          "max": 600,
+          "optimal": 425
+        },
+        "duration": {
+          "min": 120,
+          "max": 300,
+          "optimal": 200
+        },
+        "stirring": {
+          "min": 3,
+          "max": 5,
+          "optimal": 4
+        }
+      },
+      "output": {
+        "pill": "meridian_pill",
+        "qty": 1
+      }
+    },
+    {
+      "id": "recipe_spirit_pill",
+      "name": "养神丹",
+      "tier": 3,
+      "inputs": {
+        "main": {
+          "type": "misc",
+          "id": "yang_soul_wood",
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 2,
+          "count": 2
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 200,
+          "max": 500,
+          "optimal": 350
+        },
+        "duration": {
+          "min": 120,
+          "max": 240,
+          "optimal": 180
+        },
+        "stirring": {
+          "min": 2,
+          "max": 4,
+          "optimal": 3
+        }
+      },
+      "output": {
+        "pill": "spirit_pill",
+        "qty": 1
+      }
+    },
+    {
+      "id": "recipe_flesh_pill",
+      "name": "锻体丹",
+      "tier": 3,
+      "inputs": {
+        "main": {
+          "type": "beast_part",
+          "min_tier": 3,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 2,
+          "count": 2
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 250,
+          "max": 600,
+          "optimal": 425
+        },
+        "duration": {
+          "min": 120,
+          "max": 240,
+          "optimal": 180
+        },
+        "stirring": {
+          "min": 3,
+          "max": 5,
+          "optimal": 4
+        }
+      },
+      "output": {
+        "pill": "flesh_pill",
+        "qty": 1
+      }
+    },
+    {
+      "id": "recipe_swift_pill",
+      "name": "神行丹",
+      "tier": 2,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "element": "wind",
+          "min_tier": 2,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 1,
+          "count": 2
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 150,
+          "max": 450,
+          "optimal": 300
+        },
+        "duration": {
+          "min": 90,
+          "max": 180,
+          "optimal": 120
+        },
+        "stirring": {
+          "min": 2,
+          "max": 4,
+          "optimal": 3
+        }
+      },
+      "output": {
+        "pill": "swift_pill",
+        "qty": 2
+      }
+    },
+    {
+      "id": "recipe_dantian_pill",
+      "name": "补天丹",
+      "tier": 5,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "min_tier": 5,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 4,
+          "count": 2
+        },
+        "catalyst": {
+          "type": "beast_core",
+          "min_tier": 5,
+          "count": 1
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 400,
+          "max": 800,
+          "optimal": 600
+        },
+        "duration": {
+          "min": 240,
+          "max": 480,
+          "optimal": 360
+        },
+        "stirring": {
+          "min": 4,
+          "max": 6,
+          "optimal": 5
+        }
+      },
+      "output": {
+        "pill": "dantian_pill",
+        "qty": 1
+      }
+    },
+    {
+      "id": "recipe_tribulation_pill",
+      "name": "渡劫丹",
+      "tier": 6,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "min_tier": 6,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 5,
+          "count": 3
+        },
+        "catalyst": {
+          "type": "beast_core",
+          "min_tier": 6,
+          "count": 1
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 500,
+          "max": 900,
+          "optimal": 700
+        },
+        "duration": {
+          "min": 300,
+          "max": 600,
+          "optimal": 450
+        },
+        "stirring": {
+          "min": 4,
+          "max": 6,
+          "optimal": 5
+        }
+      },
+      "output": {
+        "pill": "tribulation_pill",
+        "qty": 1
+      }
+    },
+    {
+      "id": "recipe_nine_turn_pill",
+      "name": "九转金丹",
+      "tier": 7,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "min_tier": 7,
+          "count": 2
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 6,
+          "count": 3
+        },
+        "catalyst": {
+          "type": "beast_core",
+          "min_tier": 7,
+          "count": 1
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 600,
+          "max": 1000,
+          "optimal": 800
+        },
+        "duration": {
+          "min": 480,
+          "max": 960,
+          "optimal": 720
+        },
+        "stirring": {
+          "min": 5,
+          "max": 7,
+          "optimal": 6
+        }
+      },
+      "output": {
+        "pill": "nine_turn_pill",
+        "qty": 1
+      }
+    },
+    {
+      "id": "recipe_heart_devil_pill",
+      "name": "破心魔丹",
+      "tier": 5,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "element": "light",
+          "min_tier": 5,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 4,
+          "count": 2
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 350,
+          "max": 700,
+          "optimal": 525
+        },
+        "duration": {
+          "min": 240,
+          "max": 480,
+          "optimal": 360
+        },
+        "stirring": {
+          "min": 3,
+          "max": 5,
+          "optimal": 4
+        }
+      },
+      "output": {
+        "pill": "heart_devil_pill",
+        "qty": 1
+      }
+    },
+    {
+      "id": "recipe_karma_pill",
+      "name": "消业丹",
+      "tier": 5,
+      "inputs": {
+        "main": {
+          "type": "herb",
+          "min_tier": 5,
+          "count": 1
+        },
+        "auxiliary": {
+          "type": "herb",
+          "min_tier": 4,
+          "count": 2
+        },
+        "catalyst": {
+          "type": "spirit_stone",
+          "min_tier": 3,
+          "count": 3
+        }
+      },
+      "process": {
+        "temperature": {
+          "min": 300,
+          "max": 700,
+          "optimal": 500
+        },
+        "duration": {
+          "min": 240,
+          "max": 480,
+          "optimal": 360
+        },
+        "stirring": {
+          "min": 3,
+          "max": 5,
+          "optimal": 4
+        }
+      },
+      "output": {
+        "pill": "karma_pill",
+        "qty": 1
+      }
+    }
+  ]
+}

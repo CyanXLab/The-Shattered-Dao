@@ -1,0 +1,1464 @@
+{
+  "techniques": [
+    {
+      "id": "wood_basic",
+      "name": "青木诀",
+      "element": "wood",
+      "tier": 3,
+      "completeness": 0.7,
+      "desc": "木属性基础功法，以生生不息之意炼气，温和平稳。完整度七成，久练经脉有损。",
+      "stages": [
+        {
+          "name": "引气入体",
+          "realm_required": "qi_refining_1",
+          "effect": {
+            "qi_capacity": 50,
+            "wood_affinity": 10
+          },
+          "defect": {
+            "meridian_strain": 0.03
+          },
+          "reversal": {
+            "method": "配合wood系灵物调和",
+            "cost": {
+              "yun_ling_grass": 1
+            },
+            "benefit": "消除负面，修炼速度+10%"
+          }
+        },
+        {
+          "name": "凝气成丹",
+          "realm_required": "foundation_1",
+          "effect": {
+            "qi_capacity": 200,
+            "wood_affinity": 25
+          },
+          "defect": {
+            "meridian_strain": 0.04
+          },
+          "reversal": {
+            "method": "需对应灵物强化",
+            "cost": {
+              "ling_zhi_100": 1
+            },
+            "benefit": "消除负面，属性+20%"
+          }
+        },
+        {
+          "name": "化气为婴",
+          "realm_required": "golden_core_1",
+          "effect": {
+            "qi_capacity": 800,
+            "wood_affinity": 60
+          },
+          "defect": {
+            "meridian_strain": 0.05
+          },
+          "reversal": {
+            "method": "需高阶灵物养神",
+            "cost": {
+              "yang_soul_wood": 1
+            },
+            "benefit": "消除负面，额外+30年寿元"
+          }
+        },
+        {
+          "name": "元神出窍",
+          "realm_required": "nascent_soul_1",
+          "effect": {
+            "qi_capacity": 3000,
+            "wood_affinity": 150,
+            "spirit_range": 20
+          },
+          "defect": {
+            "spirit_strain": 0.04
+          },
+          "reversal": {
+            "method": "需仙品灵物",
+            "cost": {
+              "xian_zhi_1000": 1
+            },
+            "benefit": "消除负面，神识+50%"
+          }
+        },
+        {
+          "name": "合道成真",
+          "realm_required": "divine_transformation_1",
+          "effect": {
+            "qi_capacity": 10000,
+            "wood_affinity": 400,
+            "all_affinity": 50
+          },
+          "defect": {
+            "karma_strain": 0.05
+          },
+          "reversal": {
+            "method": "需悟道",
+            "cost": {
+              "dao_zhong_grass": 1
+            },
+            "benefit": "消除负面，全方位提升"
+          }
+        }
+      ],
+      "combat_skills": [
+        {
+          "name": "wood_strike",
+          "label": "木刺术",
+          "unlock": "qi_refining_3",
+          "cost": 10,
+          "damage": "wood_affinity * 1.5",
+          "type": "attack"
+        },
+        {
+          "name": "wood_burst",
+          "label": "缠绕藤",
+          "unlock": "foundation_5",
+          "cost": 50,
+          "damage": "wood_affinity * 5",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "wood_shield",
+          "label": "木盾",
+          "unlock": "foundation_7",
+          "cost": 40,
+          "type": "defense",
+          "effect": "减伤50% 3回合"
+        },
+        {
+          "name": "wood_ultimate",
+          "label": "万木归元",
+          "unlock": "golden_core_5",
+          "cost": 200,
+          "damage": "wood_affinity * 15",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "wood_domain",
+          "label": "青木领域",
+          "unlock": "nascent_soul_5",
+          "cost": 500,
+          "type": "domain",
+          "effect": "领域展开，全属性+30%"
+        }
+      ]
+    },
+    {
+      "id": "fire_basic",
+      "name": "焚天诀",
+      "element": "fire",
+      "tier": 3,
+      "completeness": 0.65,
+      "desc": "火属性功法，霸道凌厉，攻伐无双。残缺较多，火毒易攻心。",
+      "stages": [
+        {
+          "name": "引气入体",
+          "realm_required": "qi_refining_1",
+          "effect": {
+            "qi_capacity": 50,
+            "fire_affinity": 10
+          },
+          "defect": {
+            "meridian_strain": 0.03
+          },
+          "reversal": {
+            "method": "配合fire系灵物调和",
+            "cost": {
+              "qing_xin_lotus": 1
+            },
+            "benefit": "消除负面，修炼速度+10%"
+          }
+        },
+        {
+          "name": "凝气成丹",
+          "realm_required": "foundation_1",
+          "effect": {
+            "qi_capacity": 200,
+            "fire_affinity": 25
+          },
+          "defect": {
+            "meridian_strain": 0.04
+          },
+          "reversal": {
+            "method": "需对应灵物强化",
+            "cost": {
+              "ling_zhi_100": 1
+            },
+            "benefit": "消除负面，属性+20%"
+          }
+        },
+        {
+          "name": "化气为婴",
+          "realm_required": "golden_core_1",
+          "effect": {
+            "qi_capacity": 800,
+            "fire_affinity": 60
+          },
+          "defect": {
+            "meridian_strain": 0.05
+          },
+          "reversal": {
+            "method": "需高阶灵物养神",
+            "cost": {
+              "yang_soul_wood": 1
+            },
+            "benefit": "消除负面，额外+30年寿元"
+          }
+        },
+        {
+          "name": "元神出窍",
+          "realm_required": "nascent_soul_1",
+          "effect": {
+            "qi_capacity": 3000,
+            "fire_affinity": 150,
+            "spirit_range": 20
+          },
+          "defect": {
+            "spirit_strain": 0.04
+          },
+          "reversal": {
+            "method": "需仙品灵物",
+            "cost": {
+              "xian_zhi_1000": 1
+            },
+            "benefit": "消除负面，神识+50%"
+          }
+        },
+        {
+          "name": "合道成真",
+          "realm_required": "divine_transformation_1",
+          "effect": {
+            "qi_capacity": 10000,
+            "fire_affinity": 400,
+            "all_affinity": 50
+          },
+          "defect": {
+            "karma_strain": 0.05
+          },
+          "reversal": {
+            "method": "需悟道",
+            "cost": {
+              "dao_zhong_grass": 1
+            },
+            "benefit": "消除负面，全方位提升"
+          }
+        }
+      ],
+      "combat_skills": [
+        {
+          "name": "fire_strike",
+          "label": "火球术",
+          "unlock": "qi_refining_3",
+          "cost": 10,
+          "damage": "fire_affinity * 1.5",
+          "type": "attack"
+        },
+        {
+          "name": "fire_burst",
+          "label": "焚天掌",
+          "unlock": "foundation_5",
+          "cost": 50,
+          "damage": "fire_affinity * 5",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "fire_shield",
+          "label": "火墙",
+          "unlock": "foundation_7",
+          "cost": 40,
+          "type": "defense",
+          "effect": "减伤50% 3回合"
+        },
+        {
+          "name": "fire_ultimate",
+          "label": "业火红莲",
+          "unlock": "golden_core_5",
+          "cost": 200,
+          "damage": "fire_affinity * 15",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "fire_domain",
+          "label": "焚天领域",
+          "unlock": "nascent_soul_5",
+          "cost": 500,
+          "type": "domain",
+          "effect": "领域展开，全属性+30%"
+        }
+      ]
+    },
+    {
+      "id": "ice_basic",
+      "name": "冰魄诀",
+      "element": "ice",
+      "tier": 3,
+      "completeness": 0.75,
+      "desc": "冰属性功法，阴寒凝练，攻守兼备。",
+      "stages": [
+        {
+          "name": "引气入体",
+          "realm_required": "qi_refining_1",
+          "effect": {
+            "qi_capacity": 50,
+            "ice_affinity": 10
+          },
+          "defect": {
+            "meridian_strain": 0.03
+          },
+          "reversal": {
+            "method": "配合ice系灵物调和",
+            "cost": {
+              "qing_xin_lotus": 1
+            },
+            "benefit": "消除负面，修炼速度+10%"
+          }
+        },
+        {
+          "name": "凝气成丹",
+          "realm_required": "foundation_1",
+          "effect": {
+            "qi_capacity": 200,
+            "ice_affinity": 25
+          },
+          "defect": {
+            "meridian_strain": 0.04
+          },
+          "reversal": {
+            "method": "需对应灵物强化",
+            "cost": {
+              "ling_zhi_100": 1
+            },
+            "benefit": "消除负面，属性+20%"
+          }
+        },
+        {
+          "name": "化气为婴",
+          "realm_required": "golden_core_1",
+          "effect": {
+            "qi_capacity": 800,
+            "ice_affinity": 60
+          },
+          "defect": {
+            "meridian_strain": 0.05
+          },
+          "reversal": {
+            "method": "需高阶灵物养神",
+            "cost": {
+              "yang_soul_wood": 1
+            },
+            "benefit": "消除负面，额外+30年寿元"
+          }
+        },
+        {
+          "name": "元神出窍",
+          "realm_required": "nascent_soul_1",
+          "effect": {
+            "qi_capacity": 3000,
+            "ice_affinity": 150,
+            "spirit_range": 20
+          },
+          "defect": {
+            "spirit_strain": 0.04
+          },
+          "reversal": {
+            "method": "需仙品灵物",
+            "cost": {
+              "xian_zhi_1000": 1
+            },
+            "benefit": "消除负面，神识+50%"
+          }
+        },
+        {
+          "name": "合道成真",
+          "realm_required": "divine_transformation_1",
+          "effect": {
+            "qi_capacity": 10000,
+            "ice_affinity": 400,
+            "all_affinity": 50
+          },
+          "defect": {
+            "karma_strain": 0.05
+          },
+          "reversal": {
+            "method": "需悟道",
+            "cost": {
+              "dao_zhong_grass": 1
+            },
+            "benefit": "消除负面，全方位提升"
+          }
+        }
+      ],
+      "combat_skills": [
+        {
+          "name": "ice_strike",
+          "label": "冰锥术",
+          "unlock": "qi_refining_3",
+          "cost": 10,
+          "damage": "ice_affinity * 1.5",
+          "type": "attack"
+        },
+        {
+          "name": "ice_burst",
+          "label": "冰封万里",
+          "unlock": "foundation_5",
+          "cost": 50,
+          "damage": "ice_affinity * 5",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "ice_shield",
+          "label": "冰甲",
+          "unlock": "foundation_7",
+          "cost": 40,
+          "type": "defense",
+          "effect": "减伤50% 3回合"
+        },
+        {
+          "name": "ice_ultimate",
+          "label": "九幽寒冰",
+          "unlock": "golden_core_5",
+          "cost": 200,
+          "damage": "ice_affinity * 15",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "ice_domain",
+          "label": "冰魄领域",
+          "unlock": "nascent_soul_5",
+          "cost": 500,
+          "type": "domain",
+          "effect": "领域展开，全属性+30%"
+        }
+      ]
+    },
+    {
+      "id": "metal_basic",
+      "name": "庚金诀",
+      "element": "metal",
+      "tier": 3,
+      "completeness": 0.72,
+      "desc": "金属性功法，锋锐凌厉，攻伐刚猛。",
+      "stages": [
+        {
+          "name": "引气入体",
+          "realm_required": "qi_refining_1",
+          "effect": {
+            "qi_capacity": 50,
+            "metal_affinity": 10
+          },
+          "defect": {
+            "meridian_strain": 0.03
+          },
+          "reversal": {
+            "method": "配合metal系灵物调和",
+            "cost": {
+              "qing_xin_lotus": 1
+            },
+            "benefit": "消除负面，修炼速度+10%"
+          }
+        },
+        {
+          "name": "凝气成丹",
+          "realm_required": "foundation_1",
+          "effect": {
+            "qi_capacity": 200,
+            "metal_affinity": 25
+          },
+          "defect": {
+            "meridian_strain": 0.04
+          },
+          "reversal": {
+            "method": "需对应灵物强化",
+            "cost": {
+              "ling_zhi_100": 1
+            },
+            "benefit": "消除负面，属性+20%"
+          }
+        },
+        {
+          "name": "化气为婴",
+          "realm_required": "golden_core_1",
+          "effect": {
+            "qi_capacity": 800,
+            "metal_affinity": 60
+          },
+          "defect": {
+            "meridian_strain": 0.05
+          },
+          "reversal": {
+            "method": "需高阶灵物养神",
+            "cost": {
+              "yang_soul_wood": 1
+            },
+            "benefit": "消除负面，额外+30年寿元"
+          }
+        },
+        {
+          "name": "元神出窍",
+          "realm_required": "nascent_soul_1",
+          "effect": {
+            "qi_capacity": 3000,
+            "metal_affinity": 150,
+            "spirit_range": 20
+          },
+          "defect": {
+            "spirit_strain": 0.04
+          },
+          "reversal": {
+            "method": "需仙品灵物",
+            "cost": {
+              "xian_zhi_1000": 1
+            },
+            "benefit": "消除负面，神识+50%"
+          }
+        },
+        {
+          "name": "合道成真",
+          "realm_required": "divine_transformation_1",
+          "effect": {
+            "qi_capacity": 10000,
+            "metal_affinity": 400,
+            "all_affinity": 50
+          },
+          "defect": {
+            "karma_strain": 0.05
+          },
+          "reversal": {
+            "method": "需悟道",
+            "cost": {
+              "dao_zhong_grass": 1
+            },
+            "benefit": "消除负面，全方位提升"
+          }
+        }
+      ],
+      "combat_skills": [
+        {
+          "name": "metal_strike",
+          "label": "金刃术",
+          "unlock": "qi_refining_3",
+          "cost": 10,
+          "damage": "metal_affinity * 1.5",
+          "type": "attack"
+        },
+        {
+          "name": "metal_burst",
+          "label": "剑气斩",
+          "unlock": "foundation_5",
+          "cost": 50,
+          "damage": "metal_affinity * 5",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "metal_shield",
+          "label": "金刚不坏",
+          "unlock": "foundation_7",
+          "cost": 40,
+          "type": "defense",
+          "effect": "减伤50% 3回合"
+        },
+        {
+          "name": "metal_ultimate",
+          "label": "万剑归宗",
+          "unlock": "golden_core_5",
+          "cost": 200,
+          "damage": "metal_affinity * 15",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "metal_domain",
+          "label": "庚金领域",
+          "unlock": "nascent_soul_5",
+          "cost": 500,
+          "type": "domain",
+          "effect": "领域展开，全属性+30%"
+        }
+      ]
+    },
+    {
+      "id": "earth_basic",
+      "name": "厚土诀",
+      "element": "earth",
+      "tier": 3,
+      "completeness": 0.78,
+      "desc": "土属性功法，厚重绵长，防御无双。",
+      "stages": [
+        {
+          "name": "引气入体",
+          "realm_required": "qi_refining_1",
+          "effect": {
+            "qi_capacity": 50,
+            "earth_affinity": 10
+          },
+          "defect": {
+            "meridian_strain": 0.03
+          },
+          "reversal": {
+            "method": "配合earth系灵物调和",
+            "cost": {
+              "qing_xin_lotus": 1
+            },
+            "benefit": "消除负面，修炼速度+10%"
+          }
+        },
+        {
+          "name": "凝气成丹",
+          "realm_required": "foundation_1",
+          "effect": {
+            "qi_capacity": 200,
+            "earth_affinity": 25
+          },
+          "defect": {
+            "meridian_strain": 0.04
+          },
+          "reversal": {
+            "method": "需对应灵物强化",
+            "cost": {
+              "ling_zhi_100": 1
+            },
+            "benefit": "消除负面，属性+20%"
+          }
+        },
+        {
+          "name": "化气为婴",
+          "realm_required": "golden_core_1",
+          "effect": {
+            "qi_capacity": 800,
+            "earth_affinity": 60
+          },
+          "defect": {
+            "meridian_strain": 0.05
+          },
+          "reversal": {
+            "method": "需高阶灵物养神",
+            "cost": {
+              "yang_soul_wood": 1
+            },
+            "benefit": "消除负面，额外+30年寿元"
+          }
+        },
+        {
+          "name": "元神出窍",
+          "realm_required": "nascent_soul_1",
+          "effect": {
+            "qi_capacity": 3000,
+            "earth_affinity": 150,
+            "spirit_range": 20
+          },
+          "defect": {
+            "spirit_strain": 0.04
+          },
+          "reversal": {
+            "method": "需仙品灵物",
+            "cost": {
+              "xian_zhi_1000": 1
+            },
+            "benefit": "消除负面，神识+50%"
+          }
+        },
+        {
+          "name": "合道成真",
+          "realm_required": "divine_transformation_1",
+          "effect": {
+            "qi_capacity": 10000,
+            "earth_affinity": 400,
+            "all_affinity": 50
+          },
+          "defect": {
+            "karma_strain": 0.05
+          },
+          "reversal": {
+            "method": "需悟道",
+            "cost": {
+              "dao_zhong_grass": 1
+            },
+            "benefit": "消除负面，全方位提升"
+          }
+        }
+      ],
+      "combat_skills": [
+        {
+          "name": "earth_strike",
+          "label": "落石术",
+          "unlock": "qi_refining_3",
+          "cost": 10,
+          "damage": "earth_affinity * 1.5",
+          "type": "attack"
+        },
+        {
+          "name": "earth_burst",
+          "label": "地裂术",
+          "unlock": "foundation_5",
+          "cost": 50,
+          "damage": "earth_affinity * 5",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "earth_shield",
+          "label": "土盾",
+          "unlock": "foundation_7",
+          "cost": 40,
+          "type": "defense",
+          "effect": "减伤50% 3回合"
+        },
+        {
+          "name": "earth_ultimate",
+          "label": "山岳压顶",
+          "unlock": "golden_core_5",
+          "cost": 200,
+          "damage": "earth_affinity * 15",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "earth_domain",
+          "label": "厚土领域",
+          "unlock": "nascent_soul_5",
+          "cost": 500,
+          "type": "domain",
+          "effect": "领域展开，全属性+30%"
+        }
+      ]
+    },
+    {
+      "id": "wind_basic",
+      "name": "御风诀",
+      "element": "wind",
+      "tier": 4,
+      "completeness": 0.7,
+      "desc": "风属性功法，轻灵飘逸，速度加成。",
+      "stages": [
+        {
+          "name": "引气入体",
+          "realm_required": "qi_refining_1",
+          "effect": {
+            "qi_capacity": 50,
+            "wind_affinity": 10
+          },
+          "defect": {
+            "meridian_strain": 0.04
+          },
+          "reversal": {
+            "method": "配合wind系灵物调和",
+            "cost": {
+              "qing_xin_lotus": 1
+            },
+            "benefit": "消除负面，修炼速度+10%"
+          }
+        },
+        {
+          "name": "凝气成丹",
+          "realm_required": "foundation_1",
+          "effect": {
+            "qi_capacity": 200,
+            "wind_affinity": 25
+          },
+          "defect": {
+            "meridian_strain": 0.05
+          },
+          "reversal": {
+            "method": "需对应灵物强化",
+            "cost": {
+              "ling_zhi_100": 1
+            },
+            "benefit": "消除负面，属性+20%"
+          }
+        },
+        {
+          "name": "化气为婴",
+          "realm_required": "golden_core_1",
+          "effect": {
+            "qi_capacity": 800,
+            "wind_affinity": 60
+          },
+          "defect": {
+            "meridian_strain": 0.060000000000000005
+          },
+          "reversal": {
+            "method": "需高阶灵物养神",
+            "cost": {
+              "yang_soul_wood": 1
+            },
+            "benefit": "消除负面，额外+30年寿元"
+          }
+        },
+        {
+          "name": "元神出窍",
+          "realm_required": "nascent_soul_1",
+          "effect": {
+            "qi_capacity": 3000,
+            "wind_affinity": 150,
+            "spirit_range": 20
+          },
+          "defect": {
+            "spirit_strain": 0.04
+          },
+          "reversal": {
+            "method": "需仙品灵物",
+            "cost": {
+              "xian_zhi_1000": 1
+            },
+            "benefit": "消除负面，神识+50%"
+          }
+        },
+        {
+          "name": "合道成真",
+          "realm_required": "divine_transformation_1",
+          "effect": {
+            "qi_capacity": 10000,
+            "wind_affinity": 400,
+            "all_affinity": 50
+          },
+          "defect": {
+            "karma_strain": 0.05
+          },
+          "reversal": {
+            "method": "需悟道",
+            "cost": {
+              "dao_zhong_grass": 1
+            },
+            "benefit": "消除负面，全方位提升"
+          }
+        }
+      ],
+      "combat_skills": [
+        {
+          "name": "wind_strike",
+          "label": "风刃",
+          "unlock": "qi_refining_3",
+          "cost": 10,
+          "damage": "wind_affinity * 1.5",
+          "type": "attack"
+        },
+        {
+          "name": "wind_burst",
+          "label": "龙卷",
+          "unlock": "foundation_5",
+          "cost": 50,
+          "damage": "wind_affinity * 5",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "wind_shield",
+          "label": "风壁",
+          "unlock": "foundation_7",
+          "cost": 40,
+          "type": "defense",
+          "effect": "减伤50% 3回合"
+        },
+        {
+          "name": "wind_ultimate",
+          "label": "风暴之眼",
+          "unlock": "golden_core_5",
+          "cost": 200,
+          "damage": "wind_affinity * 15",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "wind_domain",
+          "label": "御风领域",
+          "unlock": "nascent_soul_5",
+          "cost": 500,
+          "type": "domain",
+          "effect": "领域展开，全属性+30%"
+        }
+      ]
+    },
+    {
+      "id": "thunder_basic",
+      "name": "九霄雷诀",
+      "element": "thunder",
+      "tier": 5,
+      "completeness": 0.6,
+      "desc": "雷属性功法，至刚至阳，威力绝伦。残缺严重，雷劫风险。",
+      "stages": [
+        {
+          "name": "引气入体",
+          "realm_required": "qi_refining_1",
+          "effect": {
+            "qi_capacity": 50,
+            "thunder_affinity": 10
+          },
+          "defect": {
+            "meridian_strain": 0.05
+          },
+          "reversal": {
+            "method": "配合thunder系灵物调和",
+            "cost": {
+              "qing_xin_lotus": 1
+            },
+            "benefit": "消除负面，修炼速度+10%"
+          }
+        },
+        {
+          "name": "凝气成丹",
+          "realm_required": "foundation_1",
+          "effect": {
+            "qi_capacity": 200,
+            "thunder_affinity": 25
+          },
+          "defect": {
+            "meridian_strain": 0.06
+          },
+          "reversal": {
+            "method": "需对应灵物强化",
+            "cost": {
+              "ling_zhi_100": 1
+            },
+            "benefit": "消除负面，属性+20%"
+          }
+        },
+        {
+          "name": "化气为婴",
+          "realm_required": "golden_core_1",
+          "effect": {
+            "qi_capacity": 800,
+            "thunder_affinity": 60
+          },
+          "defect": {
+            "meridian_strain": 0.07
+          },
+          "reversal": {
+            "method": "需高阶灵物养神",
+            "cost": {
+              "yang_soul_wood": 1
+            },
+            "benefit": "消除负面，额外+30年寿元"
+          }
+        },
+        {
+          "name": "元神出窍",
+          "realm_required": "nascent_soul_1",
+          "effect": {
+            "qi_capacity": 3000,
+            "thunder_affinity": 150,
+            "spirit_range": 20
+          },
+          "defect": {
+            "spirit_strain": 0.04
+          },
+          "reversal": {
+            "method": "需仙品灵物",
+            "cost": {
+              "xian_zhi_1000": 1
+            },
+            "benefit": "消除负面，神识+50%"
+          }
+        },
+        {
+          "name": "合道成真",
+          "realm_required": "divine_transformation_1",
+          "effect": {
+            "qi_capacity": 10000,
+            "thunder_affinity": 400,
+            "all_affinity": 50
+          },
+          "defect": {
+            "karma_strain": 0.05
+          },
+          "reversal": {
+            "method": "需悟道",
+            "cost": {
+              "dao_zhong_grass": 1
+            },
+            "benefit": "消除负面，全方位提升"
+          }
+        }
+      ],
+      "combat_skills": [
+        {
+          "name": "thunder_strike",
+          "label": "雷霆",
+          "unlock": "qi_refining_3",
+          "cost": 10,
+          "damage": "thunder_affinity * 1.5",
+          "type": "attack"
+        },
+        {
+          "name": "thunder_burst",
+          "label": "九霄雷",
+          "unlock": "foundation_5",
+          "cost": 50,
+          "damage": "thunder_affinity * 5",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "thunder_shield",
+          "label": "雷盾",
+          "unlock": "foundation_7",
+          "cost": 40,
+          "type": "defense",
+          "effect": "减伤50% 3回合"
+        },
+        {
+          "name": "thunder_ultimate",
+          "label": "万雷天降",
+          "unlock": "golden_core_5",
+          "cost": 200,
+          "damage": "thunder_affinity * 15",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "thunder_domain",
+          "label": "九霄领域",
+          "unlock": "nascent_soul_5",
+          "cost": 500,
+          "type": "domain",
+          "effect": "领域展开，全属性+30%"
+        }
+      ]
+    },
+    {
+      "id": "light_basic",
+      "name": "光明诀",
+      "element": "light",
+      "tier": 5,
+      "completeness": 0.75,
+      "desc": "光属性功法，破邪显正，正修至宝。",
+      "stages": [
+        {
+          "name": "引气入体",
+          "realm_required": "qi_refining_1",
+          "effect": {
+            "qi_capacity": 50,
+            "light_affinity": 10
+          },
+          "defect": {
+            "meridian_strain": 0.05
+          },
+          "reversal": {
+            "method": "配合light系灵物调和",
+            "cost": {
+              "qing_xin_lotus": 1
+            },
+            "benefit": "消除负面，修炼速度+10%"
+          }
+        },
+        {
+          "name": "凝气成丹",
+          "realm_required": "foundation_1",
+          "effect": {
+            "qi_capacity": 200,
+            "light_affinity": 25
+          },
+          "defect": {
+            "meridian_strain": 0.06
+          },
+          "reversal": {
+            "method": "需对应灵物强化",
+            "cost": {
+              "ling_zhi_100": 1
+            },
+            "benefit": "消除负面，属性+20%"
+          }
+        },
+        {
+          "name": "化气为婴",
+          "realm_required": "golden_core_1",
+          "effect": {
+            "qi_capacity": 800,
+            "light_affinity": 60
+          },
+          "defect": {
+            "meridian_strain": 0.07
+          },
+          "reversal": {
+            "method": "需高阶灵物养神",
+            "cost": {
+              "yang_soul_wood": 1
+            },
+            "benefit": "消除负面，额外+30年寿元"
+          }
+        },
+        {
+          "name": "元神出窍",
+          "realm_required": "nascent_soul_1",
+          "effect": {
+            "qi_capacity": 3000,
+            "light_affinity": 150,
+            "spirit_range": 20
+          },
+          "defect": {
+            "spirit_strain": 0.04
+          },
+          "reversal": {
+            "method": "需仙品灵物",
+            "cost": {
+              "xian_zhi_1000": 1
+            },
+            "benefit": "消除负面，神识+50%"
+          }
+        },
+        {
+          "name": "合道成真",
+          "realm_required": "divine_transformation_1",
+          "effect": {
+            "qi_capacity": 10000,
+            "light_affinity": 400,
+            "all_affinity": 50
+          },
+          "defect": {
+            "karma_strain": 0.05
+          },
+          "reversal": {
+            "method": "需悟道",
+            "cost": {
+              "dao_zhong_grass": 1
+            },
+            "benefit": "消除负面，全方位提升"
+          }
+        }
+      ],
+      "combat_skills": [
+        {
+          "name": "light_strike",
+          "label": "光弹",
+          "unlock": "qi_refining_3",
+          "cost": 10,
+          "damage": "light_affinity * 1.5",
+          "type": "attack"
+        },
+        {
+          "name": "light_burst",
+          "label": "光明破",
+          "unlock": "foundation_5",
+          "cost": 50,
+          "damage": "light_affinity * 5",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "light_shield",
+          "label": "光盾",
+          "unlock": "foundation_7",
+          "cost": 40,
+          "type": "defense",
+          "effect": "减伤50% 3回合"
+        },
+        {
+          "name": "light_ultimate",
+          "label": "审判之光",
+          "unlock": "golden_core_5",
+          "cost": 200,
+          "damage": "light_affinity * 15",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "light_domain",
+          "label": "光明领域",
+          "unlock": "nascent_soul_5",
+          "cost": 500,
+          "type": "domain",
+          "effect": "领域展开，全属性+30%"
+        }
+      ]
+    },
+    {
+      "id": "dark_basic",
+      "name": "九幽诀",
+      "element": "dark",
+      "tier": 5,
+      "completeness": 0.68,
+      "desc": "暗属性功法，阴煞凌厉，魔修挚爱。修炼损业力。",
+      "stages": [
+        {
+          "name": "引气入体",
+          "realm_required": "qi_refining_1",
+          "effect": {
+            "qi_capacity": 50,
+            "dark_affinity": 10
+          },
+          "defect": {
+            "meridian_strain": 0.05
+          },
+          "reversal": {
+            "method": "配合dark系灵物调和",
+            "cost": {
+              "qing_xin_lotus": 1
+            },
+            "benefit": "消除负面，修炼速度+10%"
+          }
+        },
+        {
+          "name": "凝气成丹",
+          "realm_required": "foundation_1",
+          "effect": {
+            "qi_capacity": 200,
+            "dark_affinity": 25
+          },
+          "defect": {
+            "meridian_strain": 0.06
+          },
+          "reversal": {
+            "method": "需对应灵物强化",
+            "cost": {
+              "ling_zhi_100": 1
+            },
+            "benefit": "消除负面，属性+20%"
+          }
+        },
+        {
+          "name": "化气为婴",
+          "realm_required": "golden_core_1",
+          "effect": {
+            "qi_capacity": 800,
+            "dark_affinity": 60
+          },
+          "defect": {
+            "meridian_strain": 0.07
+          },
+          "reversal": {
+            "method": "需高阶灵物养神",
+            "cost": {
+              "yang_soul_wood": 1
+            },
+            "benefit": "消除负面，额外+30年寿元"
+          }
+        },
+        {
+          "name": "元神出窍",
+          "realm_required": "nascent_soul_1",
+          "effect": {
+            "qi_capacity": 3000,
+            "dark_affinity": 150,
+            "spirit_range": 20
+          },
+          "defect": {
+            "spirit_strain": 0.04
+          },
+          "reversal": {
+            "method": "需仙品灵物",
+            "cost": {
+              "xian_zhi_1000": 1
+            },
+            "benefit": "消除负面，神识+50%"
+          }
+        },
+        {
+          "name": "合道成真",
+          "realm_required": "divine_transformation_1",
+          "effect": {
+            "qi_capacity": 10000,
+            "dark_affinity": 400,
+            "all_affinity": 50
+          },
+          "defect": {
+            "karma_strain": 0.05
+          },
+          "reversal": {
+            "method": "需悟道",
+            "cost": {
+              "dao_zhong_grass": 1
+            },
+            "benefit": "消除负面，全方位提升"
+          }
+        }
+      ],
+      "combat_skills": [
+        {
+          "name": "dark_strike",
+          "label": "暗影",
+          "unlock": "qi_refining_3",
+          "cost": 10,
+          "damage": "dark_affinity * 1.5",
+          "type": "attack"
+        },
+        {
+          "name": "dark_burst",
+          "label": "九幽噬",
+          "unlock": "foundation_5",
+          "cost": 50,
+          "damage": "dark_affinity * 5",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "dark_shield",
+          "label": "暗影遁",
+          "unlock": "foundation_7",
+          "cost": 40,
+          "type": "defense",
+          "effect": "减伤50% 3回合"
+        },
+        {
+          "name": "dark_ultimate",
+          "label": "九幽地狱",
+          "unlock": "golden_core_5",
+          "cost": 200,
+          "damage": "dark_affinity * 15",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "dark_domain",
+          "label": "九幽领域",
+          "unlock": "nascent_soul_5",
+          "cost": 500,
+          "type": "domain",
+          "effect": "领域展开，全属性+30%"
+        }
+      ]
+    },
+    {
+      "id": "void_basic",
+      "name": "虚空诀",
+      "element": "void",
+      "tier": 6,
+      "completeness": 0.55,
+      "desc": "虚空属性功法，可破空间，至高功法。残缺严重。",
+      "stages": [
+        {
+          "name": "引气入体",
+          "realm_required": "qi_refining_1",
+          "effect": {
+            "qi_capacity": 50,
+            "void_affinity": 10
+          },
+          "defect": {
+            "meridian_strain": 0.06
+          },
+          "reversal": {
+            "method": "配合void系灵物调和",
+            "cost": {
+              "qing_xin_lotus": 1
+            },
+            "benefit": "消除负面，修炼速度+10%"
+          }
+        },
+        {
+          "name": "凝气成丹",
+          "realm_required": "foundation_1",
+          "effect": {
+            "qi_capacity": 200,
+            "void_affinity": 25
+          },
+          "defect": {
+            "meridian_strain": 0.07
+          },
+          "reversal": {
+            "method": "需对应灵物强化",
+            "cost": {
+              "ling_zhi_100": 1
+            },
+            "benefit": "消除负面，属性+20%"
+          }
+        },
+        {
+          "name": "化气为婴",
+          "realm_required": "golden_core_1",
+          "effect": {
+            "qi_capacity": 800,
+            "void_affinity": 60
+          },
+          "defect": {
+            "meridian_strain": 0.08
+          },
+          "reversal": {
+            "method": "需高阶灵物养神",
+            "cost": {
+              "yang_soul_wood": 1
+            },
+            "benefit": "消除负面，额外+30年寿元"
+          }
+        },
+        {
+          "name": "元神出窍",
+          "realm_required": "nascent_soul_1",
+          "effect": {
+            "qi_capacity": 3000,
+            "void_affinity": 150,
+            "spirit_range": 20
+          },
+          "defect": {
+            "spirit_strain": 0.04
+          },
+          "reversal": {
+            "method": "需仙品灵物",
+            "cost": {
+              "xian_zhi_1000": 1
+            },
+            "benefit": "消除负面，神识+50%"
+          }
+        },
+        {
+          "name": "合道成真",
+          "realm_required": "divine_transformation_1",
+          "effect": {
+            "qi_capacity": 10000,
+            "void_affinity": 400,
+            "all_affinity": 50
+          },
+          "defect": {
+            "karma_strain": 0.05
+          },
+          "reversal": {
+            "method": "需悟道",
+            "cost": {
+              "dao_zhong_grass": 1
+            },
+            "benefit": "消除负面，全方位提升"
+          }
+        }
+      ],
+      "combat_skills": [
+        {
+          "name": "void_strike",
+          "label": "虚空斩",
+          "unlock": "qi_refining_3",
+          "cost": 10,
+          "damage": "void_affinity * 1.5",
+          "type": "attack"
+        },
+        {
+          "name": "void_burst",
+          "label": "虚空裂",
+          "unlock": "foundation_5",
+          "cost": 50,
+          "damage": "void_affinity * 5",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "void_shield",
+          "label": "虚空障",
+          "unlock": "foundation_7",
+          "cost": 40,
+          "type": "defense",
+          "effect": "减伤50% 3回合"
+        },
+        {
+          "name": "void_ultimate",
+          "label": "虚空湮灭",
+          "unlock": "golden_core_5",
+          "cost": 200,
+          "damage": "void_affinity * 15",
+          "type": "attack",
+          "aoe": true
+        },
+        {
+          "name": "void_domain",
+          "label": "虚空领域",
+          "unlock": "nascent_soul_5",
+          "cost": 500,
+          "type": "domain",
+          "effect": "领域展开，全属性+30%"
+        }
+      ]
+    }
+  ]
+}

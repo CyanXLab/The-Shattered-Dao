@@ -1,0 +1,254 @@
+{
+  "causal_chains": [
+    {
+      "id": "chain_betrayal",
+      "name": "背叛之链",
+      "trigger": "player_kills_sect_member",
+      "steps": [
+        {
+          "trigger": "player_kills_sect_member",
+          "delay": 0,
+          "effect": "sect_relation=-100, bounty_posted=true",
+          "log": "你杀了同门！宗门悬赏通缉你。"
+        },
+        {
+          "trigger": "bounty_posted",
+          "delay": "3_day",
+          "effect": "spawn_bounty_hunters",
+          "log": "悬赏引来赏金猎人。"
+        },
+        {
+          "trigger": "player_kills_bounty_hunter",
+          "delay": "1_day",
+          "effect": "bounty_increase",
+          "log": "赏金提高，更强追杀者出现。"
+        },
+        {
+          "trigger": "player_survives_10_hunters",
+          "delay": 0,
+          "effect": "dark_sect_recruiter_visit",
+          "log": "魔门使者前来招揽。"
+        },
+        {
+          "trigger": "player_joins_dark_sect",
+          "delay": "30_day",
+          "effect": "sect_war",
+          "log": "正魔大战爆发。"
+        }
+      ]
+    },
+    {
+      "id": "chain_pill_leak",
+      "name": "丹药泄密",
+      "trigger": "player_crafts_rare_pill",
+      "steps": [
+        {
+          "trigger": "player_crafts_rare_pill",
+          "delay": 0,
+          "effect": "rumor_spread",
+          "log": "你炼出极品丹药的消息不胫而走。"
+        },
+        {
+          "trigger": "rumor_spread",
+          "delay": "1_day",
+          "effect": "attract_greedy_npc",
+          "log": "引来觊觎之人。"
+        },
+        {
+          "trigger": "npc_demand_pill",
+          "delay": "2_day",
+          "effect": "choice:give_or_refuse",
+          "log": "有人上门强索丹药。"
+        }
+      ]
+    },
+    {
+      "id": "chain_revenge_son",
+      "name": "复仇之子",
+      "trigger": "player_kills_weak_npc",
+      "steps": [
+        {
+          "trigger": "player_kills_weak_npc",
+          "delay": 0,
+          "effect": "record_victim",
+          "log": "你击杀了一名看似普通的修士。"
+        },
+        {
+          "trigger": "record_victim",
+          "delay": "7_day",
+          "effect": "strong_relative_seeks_revenge",
+          "log": "死者长辈出手追杀。"
+        },
+        {
+          "trigger": "player_kills_relative",
+          "delay": "30_day",
+          "effect": "sect_war_declared",
+          "log": "死者宗门对你宣战。"
+        }
+      ]
+    },
+    {
+      "id": "chain_butterfly_kindness",
+      "name": "蝴蝶之恩",
+      "trigger": "player_helps_mortal",
+      "steps": [
+        {
+          "trigger": "player_helps_mortal",
+          "delay": 0,
+          "effect": "mortal_grateful",
+          "log": "你帮助了一个凡人。"
+        },
+        {
+          "trigger": "mortal_grateful",
+          "delay": "365_day",
+          "effect": "mortal_descendant_talent",
+          "log": "凡人后裔展现修行天赋。"
+        },
+        {
+          "trigger": "mortal_descendant_talent",
+          "delay": "1825_day",
+          "effect": "descendant_helps_player",
+          "log": "当年的善举，今日得报。"
+        }
+      ]
+    },
+    {
+      "id": "chain_deforestation",
+      "name": "滥伐之祸",
+      "trigger": "player_cuts_many_trees",
+      "steps": [
+        {
+          "trigger": "player_cuts_many_trees",
+          "delay": 0,
+          "effect": "habitat_destroyed",
+          "log": "你大量砍伐树木。"
+        },
+        {
+          "trigger": "habitat_destroyed",
+          "delay": "1_day",
+          "effect": "tree_spirit_angry",
+          "log": "树妖之灵苏醒。"
+        },
+        {
+          "trigger": "tree_spirit_angry",
+          "delay": "2_day",
+          "effect": "tree_spirit_attack",
+          "log": "树妖向你袭来。"
+        }
+      ]
+    },
+    {
+      "id": "chain_pill_empire",
+      "name": "丹药帝国",
+      "trigger": "player_crafts_100_pills",
+      "steps": [
+        {
+          "trigger": "player_crafts_100_pills",
+          "delay": 0,
+          "effect": "pill_master_reputation",
+          "log": "你成为知名炼丹师。"
+        },
+        {
+          "trigger": "pill_master_reputation",
+          "delay": "30_day",
+          "effect": "disciples_seek",
+          "log": "有弟子前来拜师。"
+        },
+        {
+          "trigger": "disciples_seek",
+          "delay": "90_day",
+          "effect": "establish_pill_sect",
+          "log": "你建立了自己的丹道宗门。"
+        }
+      ]
+    },
+    {
+      "id": "chain_beast_tide",
+      "name": "兽潮预警",
+      "trigger": "player_kills_50_beasts",
+      "steps": [
+        {
+          "trigger": "player_kills_50_beasts",
+          "delay": 0,
+          "effect": "beast_anger_rising",
+          "log": "妖兽似乎在集结。"
+        },
+        {
+          "trigger": "beast_anger_rising",
+          "delay": "7_day",
+          "effect": "beast_tide_warning",
+          "log": "兽潮将至！"
+        },
+        {
+          "trigger": "beast_tide_warning",
+          "delay": "3_day",
+          "effect": "beast_tide_event",
+          "log": "兽潮爆发！"
+        }
+      ]
+    },
+    {
+      "id": "chain_dark_cultivator_ambush",
+      "name": "魔修伏击",
+      "trigger": "player_has_reverse_jade_visible",
+      "steps": [
+        {
+          "trigger": "player_has_reverse_jade_visible",
+          "delay": "30_day",
+          "effect": "dark_cultivator_notice",
+          "log": "魔修注意到了你。"
+        },
+        {
+          "trigger": "dark_cultivator_notice",
+          "delay": "7_day",
+          "effect": "first_ambush",
+          "log": "魔修前来试探。"
+        },
+        {
+          "trigger": "player_survives_ambush",
+          "delay": "30_day",
+          "effect": "stronger_ambush",
+          "log": "更强的魔修来袭。"
+        }
+      ]
+    },
+    {
+      "id": "chain_breakthrough_master",
+      "name": "突破之师",
+      "trigger": "player_breakthrough_foundation",
+      "steps": [
+        {
+          "trigger": "player_breakthrough_foundation",
+          "delay": 0,
+          "effect": "master_proud",
+          "log": "师父为你骄傲。"
+        },
+        {
+          "trigger": "master_proud",
+          "delay": 0,
+          "effect": "master_gift_technique",
+          "log": "师父传授高阶功法。"
+        }
+      ]
+    },
+    {
+      "id": "chain_lifespan_crisis",
+      "name": "寿元危机",
+      "trigger": "player_lifespan_below_20",
+      "steps": [
+        {
+          "trigger": "player_lifespan_below_20",
+          "delay": 0,
+          "effect": "urgent_seek_pill",
+          "log": "寿元将尽，必须立刻寻找延寿丹！"
+        },
+        {
+          "trigger": "urgent_seek_pill",
+          "delay": "10_day",
+          "effect": "npc_offer_help",
+          "log": "有人愿意帮你寻找延寿丹。"
+        }
+      ]
+    }
+  ]
+}

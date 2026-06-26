@@ -1,0 +1,194 @@
+{
+  "storylines": [
+    {
+      "id": "main_reverse_jade",
+      "name": "逆道玉简之谜",
+      "chapters": [
+        {
+          "id": "ch1",
+          "name": "玉简苏醒",
+          "trigger": "game_start",
+          "objective": "前往青云宗拜师",
+          "reward": {
+            "exp": 50
+          }
+        },
+        {
+          "id": "ch2",
+          "name": "藏经阁寻秘",
+          "trigger": "join_qingyun",
+          "objective": "向赵长老请教玉简来历",
+          "reward": {
+            "exp": 100,
+            "item": "wood_slip"
+          }
+        },
+        {
+          "id": "ch3",
+          "name": "逆修之路",
+          "trigger": "learn_technique",
+          "objective": "使用玉简逆转功法缺陷",
+          "reward": {
+            "exp": 200
+          }
+        },
+        {
+          "id": "ch4",
+          "name": "魔修觊觎",
+          "trigger": "foundation_1",
+          "objective": "击败前来抢夺的魔修",
+          "reward": {
+            "exp": 500,
+            "item": "storage_ring_low"
+          }
+        },
+        {
+          "id": "ch5",
+          "name": "天道碎片",
+          "trigger": "golden_core_1",
+          "objective": "寻找天道碎片",
+          "reward": {
+            "exp": 2000
+          }
+        }
+      ]
+    },
+    {
+      "id": "main_revenge",
+      "name": "血色禁地之谜",
+      "chapters": [
+        {
+          "id": "ch1",
+          "name": "禁地开启",
+          "trigger": "foundation_3",
+          "objective": "进入血色禁地",
+          "reward": {
+            "exp": 300
+          }
+        },
+        {
+          "id": "ch2",
+          "name": "上古战场",
+          "trigger": "enter_xue_se",
+          "objective": "探索古战场遗迹",
+          "reward": {
+            "exp": 500,
+            "item": "star_iron"
+          }
+        },
+        {
+          "id": "ch3",
+          "name": "传承之秘",
+          "trigger": "find_relic",
+          "objective": "获得上古传承",
+          "reward": {
+            "exp": 1000,
+            "technique": "void_basic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "main_dragon",
+      "name": "龙宫寻宝",
+      "chapters": [
+        {
+          "id": "ch1",
+          "name": "海难",
+          "trigger": "nascent_soul_1",
+          "objective": "救助遇险的龙族",
+          "reward": {
+            "exp": 1000
+          }
+        },
+        {
+          "id": "ch2",
+          "name": "龙宫赴宴",
+          "trigger": "save_dragon",
+          "objective": "前往龙宫",
+          "reward": {
+            "exp": 2000,
+            "item": "dragon_scale"
+          }
+        },
+        {
+          "id": "ch3",
+          "name": "宝库选择",
+          "trigger": "enter_long_gong",
+          "objective": "在龙宫宝库中选择一件宝物",
+          "reward": {
+            "item": "choice"
+          }
+        }
+      ]
+    },
+    {
+      "id": "side_mortal_kindness",
+      "name": "凡人恩情",
+      "chapters": [
+        {
+          "id": "ch1",
+          "name": "救死扶伤",
+          "trigger": "help_mortal",
+          "objective": "救助一个凡人家庭",
+          "reward": {
+            "karma": 50
+          }
+        },
+        {
+          "id": "ch2",
+          "name": "后裔成才",
+          "trigger": "30_years_pass",
+          "objective": "等待凡人后裔成长",
+          "reward": {
+            "karma": 100
+          }
+        },
+        {
+          "id": "ch3",
+          "name": "回报之恩",
+          "trigger": "50_years_pass",
+          "objective": "接受后裔的报恩",
+          "reward": {
+            "exp": 5000,
+            "item": "rare"
+          }
+        }
+      ]
+    },
+    {
+      "id": "side_sect_war",
+      "name": "正魔大战",
+      "chapters": [
+        {
+          "id": "ch1",
+          "name": "导火索",
+          "trigger": "kill_demon",
+          "objective": "击败魔修",
+          "reward": {
+            "karma": 20
+          }
+        },
+        {
+          "id": "ch2",
+          "name": "全面开战",
+          "trigger": "sect_war_start",
+          "objective": "参与正魔大战",
+          "reward": {
+            "exp": 3000
+          }
+        },
+        {
+          "id": "ch3",
+          "name": "决战魔主",
+          "trigger": "reach_demon_lord",
+          "objective": "击败魔渊之主",
+          "reward": {
+            "exp": 10000,
+            "item": "legendary"
+          }
+        }
+      ]
+    }
+  ]
+}

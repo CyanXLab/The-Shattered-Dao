@@ -1,0 +1,906 @@
+{
+  "regions": [
+    {
+      "id": "qingyun_sect",
+      "name": "青云宗",
+      "type": "sect",
+      "parent": "tian_nan",
+      "description": "正道宗门，灵气浓郁，护山大阵守护。新晋弟子修炼圣地。",
+      "width": 64,
+      "height": 48,
+      "spirit_density": 0.9,
+      "pvp_allowed": false,
+      "buildings": [
+        {
+          "id": "main_hall",
+          "name": "主殿",
+          "x": 30,
+          "y": 20,
+          "w": 8,
+          "h": 6,
+          "function": "sect_master"
+        },
+        {
+          "id": "alchemy_room",
+          "name": "炼丹房",
+          "x": 18,
+          "y": 14,
+          "w": 6,
+          "h": 5,
+          "function": "alchemy"
+        },
+        {
+          "id": "forge_room",
+          "name": "炼器房",
+          "x": 42,
+          "y": 14,
+          "w": 6,
+          "h": 5,
+          "function": "forge"
+        },
+        {
+          "id": "scripture_pavilion",
+          "name": "藏经阁",
+          "x": 18,
+          "y": 30,
+          "w": 6,
+          "h": 5,
+          "function": "learn"
+        },
+        {
+          "id": "mission_hall",
+          "name": "任务堂",
+          "x": 42,
+          "y": 30,
+          "w": 6,
+          "h": 5,
+          "function": "mission"
+        },
+        {
+          "id": "dormitory",
+          "name": "弟子居",
+          "x": 30,
+          "y": 36,
+          "w": 8,
+          "h": 4,
+          "function": "rest"
+        },
+        {
+          "id": "farm",
+          "name": "药园",
+          "x": 10,
+          "y": 24,
+          "w": 6,
+          "h": 4,
+          "function": "farm"
+        },
+        {
+          "id": "auction",
+          "name": "拍卖行",
+          "x": 50,
+          "y": 24,
+          "w": 6,
+          "h": 4,
+          "function": "auction"
+        },
+        {
+          "id": "gate",
+          "name": "山门",
+          "x": 30,
+          "y": 4,
+          "w": 6,
+          "h": 3,
+          "function": "exit_to_market"
+        }
+      ],
+      "resources": [
+        {
+          "type": "herb",
+          "id": "res_1",
+          "x": 8,
+          "y": 10,
+          "item": "yun_ling_grass",
+          "respawn": 600
+        },
+        {
+          "type": "herb",
+          "id": "res_2",
+          "x": 56,
+          "y": 10,
+          "item": "yun_ling_grass",
+          "respawn": 600
+        },
+        {
+          "type": "herb",
+          "id": "res_3",
+          "x": 6,
+          "y": 38,
+          "item": "qing_xin_lotus",
+          "respawn": 900
+        },
+        {
+          "type": "herb",
+          "id": "res_4",
+          "x": 58,
+          "y": 38,
+          "item": "qing_xin_lotus",
+          "respawn": 900
+        },
+        {
+          "type": "ore",
+          "id": "res_5",
+          "x": 4,
+          "y": 24,
+          "item": "han_iron",
+          "respawn": 1200
+        },
+        {
+          "type": "ore",
+          "id": "res_6",
+          "x": 60,
+          "y": 24,
+          "item": "ling_crystal",
+          "respawn": 1500
+        }
+      ],
+      "exits": [
+        {
+          "x": 30,
+          "y": 4,
+          "target": "fang_market",
+          "tx": 30,
+          "ty": 40
+        }
+      ]
+    },
+    {
+      "id": "fang_market",
+      "name": "四方坊市",
+      "type": "market",
+      "parent": "tian_nan",
+      "description": "商贾云集之地，禁止斗法。可在此买卖物品、获取情报。",
+      "width": 64,
+      "height": 48,
+      "spirit_density": 0.5,
+      "pvp_allowed": false,
+      "buildings": [
+        {
+          "id": "auction_house",
+          "name": "拍卖行",
+          "x": 30,
+          "y": 18,
+          "w": 10,
+          "h": 6,
+          "function": "auction"
+        },
+        {
+          "id": "herb_shop",
+          "name": "百草堂",
+          "x": 14,
+          "y": 14,
+          "w": 7,
+          "h": 5,
+          "function": "shop_herb"
+        },
+        {
+          "id": "ore_shop",
+          "name": "千锤铺",
+          "x": 43,
+          "y": 14,
+          "w": 7,
+          "h": 5,
+          "function": "shop_ore"
+        },
+        {
+          "id": "pill_shop",
+          "name": "丹药阁",
+          "x": 14,
+          "y": 28,
+          "w": 7,
+          "h": 5,
+          "function": "shop_pill"
+        },
+        {
+          "id": "weapon_shop",
+          "name": "兵器坊",
+          "x": 43,
+          "y": 28,
+          "w": 7,
+          "h": 5,
+          "function": "shop_weapon"
+        },
+        {
+          "id": "talisman_shop",
+          "name": "符箓阁",
+          "x": 28,
+          "y": 38,
+          "w": 8,
+          "h": 4,
+          "function": "shop_talisman"
+        },
+        {
+          "id": "tavern",
+          "name": "醉仙楼",
+          "x": 26,
+          "y": 34,
+          "w": 12,
+          "h": 5,
+          "function": "tavern"
+        },
+        {
+          "id": "guild_hall",
+          "name": "公会堂",
+          "x": 50,
+          "y": 38,
+          "w": 8,
+          "h": 4,
+          "function": "guild"
+        },
+        {
+          "id": "gate_n",
+          "name": "北门",
+          "x": 30,
+          "y": 4,
+          "w": 6,
+          "h": 3,
+          "function": "exit_to_sect"
+        },
+        {
+          "id": "gate_s",
+          "name": "南门",
+          "x": 30,
+          "y": 42,
+          "w": 6,
+          "h": 3,
+          "function": "exit_to_mountain"
+        }
+      ],
+      "exits": [
+        {
+          "x": 30,
+          "y": 4,
+          "target": "qingyun_sect",
+          "tx": 30,
+          "ty": 6
+        },
+        {
+          "x": 30,
+          "y": 44,
+          "target": "beast_mountain",
+          "tx": 30,
+          "ty": 6
+        }
+      ]
+    },
+    {
+      "id": "beast_mountain",
+      "name": "万妖山脉",
+      "type": "beast_mountain",
+      "parent": "tian_nan",
+      "description": "妖兽栖息之地，灵药丰富但危机四伏。只有强者才能深入。",
+      "width": 64,
+      "height": 48,
+      "spirit_density": 0.7,
+      "pvp_allowed": true,
+      "buildings": [
+        {
+          "id": "hunter_camp",
+          "name": "猎户营地",
+          "x": 30,
+          "y": 6,
+          "w": 8,
+          "h": 4,
+          "function": "rest"
+        },
+        {
+          "id": "deep_cave",
+          "name": "幽冥洞",
+          "x": 12,
+          "y": 36,
+          "w": 6,
+          "h": 5,
+          "function": "dungeon"
+        },
+        {
+          "id": "fire_peak",
+          "name": "炎峰",
+          "x": 50,
+          "y": 12,
+          "w": 6,
+          "h": 5,
+          "function": "fire_area"
+        },
+        {
+          "id": "ice_lake",
+          "name": "寒冰潭",
+          "x": 50,
+          "y": 36,
+          "w": 6,
+          "h": 5,
+          "function": "ice_area"
+        },
+        {
+          "id": "ancient_ruin",
+          "name": "古遗迹",
+          "x": 30,
+          "y": 38,
+          "w": 8,
+          "h": 5,
+          "function": "ruin"
+        }
+      ],
+      "resources": [
+        {
+          "type": "herb",
+          "id": "res_10",
+          "x": 10,
+          "y": 14,
+          "item": "chi_yan_grass",
+          "respawn": 800
+        },
+        {
+          "type": "herb",
+          "id": "res_11",
+          "x": 54,
+          "y": 14,
+          "item": "chi_yan_grass",
+          "respawn": 800
+        },
+        {
+          "type": "herb",
+          "id": "res_12",
+          "x": 10,
+          "y": 30,
+          "item": "bing_lotus",
+          "respawn": 1000
+        },
+        {
+          "type": "herb",
+          "id": "res_13",
+          "x": 54,
+          "y": 30,
+          "item": "bing_lotus",
+          "respawn": 1000
+        },
+        {
+          "type": "herb",
+          "id": "res_14",
+          "x": 30,
+          "y": 24,
+          "item": "ling_zhi_100",
+          "respawn": 1800
+        },
+        {
+          "type": "ore",
+          "id": "res_15",
+          "x": 16,
+          "y": 22,
+          "item": "xuan_iron",
+          "respawn": 1500
+        },
+        {
+          "type": "ore",
+          "id": "res_16",
+          "x": 48,
+          "y": 22,
+          "item": "chi_copper",
+          "respawn": 1400
+        },
+        {
+          "type": "ore",
+          "id": "res_17",
+          "x": 30,
+          "y": 38,
+          "item": "ling_crystal",
+          "respawn": 2000
+        }
+      ],
+      "beast_spawns": [
+        {
+          "x": 26,
+          "y": 10,
+          "beast": "ye_tu",
+          "respawn": 600
+        },
+        {
+          "x": 34,
+          "y": 10,
+          "beast": "ye_tu",
+          "respawn": 600
+        },
+        {
+          "x": 22,
+          "y": 14,
+          "beast": "shan_lang",
+          "respawn": 900
+        },
+        {
+          "x": 38,
+          "y": 14,
+          "beast": "shan_lang",
+          "respawn": 900
+        },
+        {
+          "x": 26,
+          "y": 18,
+          "beast": "du_she",
+          "respawn": 900
+        },
+        {
+          "x": 34,
+          "y": 18,
+          "beast": "du_she",
+          "respawn": 900
+        },
+        {
+          "x": 14,
+          "y": 12,
+          "beast": "chiyan_tiger",
+          "respawn": 1200
+        },
+        {
+          "x": 50,
+          "y": 12,
+          "beast": "chiyan_tiger",
+          "respawn": 1200
+        },
+        {
+          "x": 14,
+          "y": 36,
+          "beast": "ice_wolf",
+          "respawn": 1200
+        },
+        {
+          "x": 50,
+          "y": 36,
+          "beast": "ice_wolf",
+          "respawn": 1200
+        },
+        {
+          "x": 30,
+          "y": 28,
+          "beast": "qingmu_snake",
+          "respawn": 1500
+        },
+        {
+          "x": 8,
+          "y": 24,
+          "beast": "jinjia_scorpion",
+          "respawn": 1500
+        },
+        {
+          "x": 56,
+          "y": 24,
+          "beast": "fengxing_leopard",
+          "respawn": 1500
+        }
+      ],
+      "exits": [
+        {
+          "x": 30,
+          "y": 4,
+          "target": "fang_market",
+          "tx": 30,
+          "ty": 42
+        }
+      ]
+    },
+    {
+      "id": "xue_se_jin_di",
+      "name": "血色禁地",
+      "type": "forbidden",
+      "parent": "tian_nan",
+      "description": "上古战场，灵药遍地但凶险异常。每30日开启一次。",
+      "width": 48,
+      "height": 48,
+      "spirit_density": 1.2,
+      "pvp_allowed": true,
+      "buildings": [
+        {
+          "id": "entrance",
+          "name": "禁地入口",
+          "x": 22,
+          "y": 4,
+          "w": 4,
+          "h": 3,
+          "function": "rest"
+        },
+        {
+          "id": "core_zone",
+          "name": "核心区",
+          "x": 20,
+          "y": 24,
+          "w": 8,
+          "h": 6,
+          "function": "ruin"
+        }
+      ],
+      "resources": [
+        {
+          "type": "herb",
+          "id": "res_20",
+          "x": 8,
+          "y": 12,
+          "item": "bi_xue_grass",
+          "respawn": 2000
+        },
+        {
+          "type": "herb",
+          "id": "res_21",
+          "x": 38,
+          "y": 12,
+          "item": "ling_zhi_500",
+          "respawn": 3000
+        },
+        {
+          "type": "herb",
+          "id": "res_22",
+          "x": 8,
+          "y": 36,
+          "item": "ji_nian_grass",
+          "respawn": 2500
+        },
+        {
+          "type": "ore",
+          "id": "res_23",
+          "x": 38,
+          "y": 36,
+          "item": "star_iron",
+          "respawn": 3500
+        }
+      ],
+      "beast_spawns": [
+        {
+          "x": 12,
+          "y": 18,
+          "beast": "shi_jing_yi_wang",
+          "respawn": 2400
+        },
+        {
+          "x": 36,
+          "y": 18,
+          "beast": "mo_ying",
+          "respawn": 2400
+        },
+        {
+          "x": 24,
+          "y": 30,
+          "beast": "tian_jie_shou",
+          "respawn": 3000
+        }
+      ],
+      "exits": [
+        {
+          "x": 22,
+          "y": 4,
+          "target": "beast_mountain",
+          "tx": 22,
+          "ty": 44
+        }
+      ],
+      "open_cycle": 30,
+      "open_duration": 3
+    },
+    {
+      "id": "fan_ren_guo_du",
+      "name": "凡人国度·洛京",
+      "type": "mortal_kingdom",
+      "parent": "tian_nan",
+      "description": "凡人王都，灵气稀薄但繁华热闹。可历练心境、收集信仰。",
+      "width": 64,
+      "height": 48,
+      "spirit_density": 0.1,
+      "pvp_allowed": false,
+      "buildings": [
+        {
+          "id": "palace",
+          "name": "皇宫",
+          "x": 28,
+          "y": 14,
+          "w": 10,
+          "h": 8,
+          "function": "mortal_palace"
+        },
+        {
+          "id": "market",
+          "name": "集市",
+          "x": 14,
+          "y": 28,
+          "w": 10,
+          "h": 6,
+          "function": "mortal_market"
+        },
+        {
+          "id": "tea_house",
+          "name": "茶馆",
+          "x": 40,
+          "y": 28,
+          "w": 8,
+          "h": 4,
+          "function": "tavern"
+        },
+        {
+          "id": "school",
+          "name": "书院",
+          "x": 16,
+          "y": 12,
+          "w": 8,
+          "h": 5,
+          "function": "teach"
+        },
+        {
+          "id": "clinic",
+          "name": "医馆",
+          "x": 40,
+          "y": 12,
+          "w": 8,
+          "h": 5,
+          "function": "heal_mortal"
+        },
+        {
+          "id": "gate_n",
+          "name": "北门",
+          "x": 30,
+          "y": 4,
+          "w": 6,
+          "h": 3,
+          "function": "exit_to_market"
+        }
+      ],
+      "exits": [
+        {
+          "x": 30,
+          "y": 4,
+          "target": "fang_market",
+          "tx": 30,
+          "ty": 44
+        }
+      ]
+    },
+    {
+      "id": "xu_kong_lie_feng",
+      "name": "虚空裂缝",
+      "type": "void_rift",
+      "parent": "tian_nan",
+      "description": "空间不稳定之处，蕴含天道碎片，可跨位面旅行。极度危险。",
+      "width": 48,
+      "height": 48,
+      "spirit_density": 1.5,
+      "pvp_allowed": true,
+      "buildings": [
+        {
+          "id": "rift_core",
+          "name": "裂缝核心",
+          "x": 20,
+          "y": 20,
+          "w": 8,
+          "h": 8,
+          "function": "void_core"
+        }
+      ],
+      "resources": [
+        {
+          "type": "ore",
+          "id": "res_30",
+          "x": 12,
+          "y": 12,
+          "item": "xu_kong_jing",
+          "respawn": 5000
+        },
+        {
+          "type": "ore",
+          "id": "res_31",
+          "x": 32,
+          "y": 32,
+          "item": "chen_jing_shi",
+          "respawn": 5000
+        }
+      ],
+      "beast_spawns": [
+        {
+          "x": 16,
+          "y": 16,
+          "beast": "mo_ying",
+          "respawn": 3000
+        },
+        {
+          "x": 30,
+          "y": 30,
+          "beast": "jiu_you_she",
+          "respawn": 4000
+        }
+      ],
+      "exits": [
+        {
+          "x": 24,
+          "y": 4,
+          "target": "beast_mountain",
+          "tx": 24,
+          "ty": 44
+        },
+        {
+          "x": 24,
+          "y": 44,
+          "target": "ling_jie",
+          "tx": 24,
+          "ty": 4
+        }
+      ]
+    },
+    {
+      "id": "ling_jie",
+      "name": "灵界·云梦泽",
+      "type": "spirit_realm",
+      "parent": "ling_jie_plane",
+      "description": "灵界一角，灵气浓郁百倍，仙人足迹所至。",
+      "width": 64,
+      "height": 64,
+      "spirit_density": 5.0,
+      "pvp_allowed": true,
+      "buildings": [
+        {
+          "id": "spirit_palace",
+          "name": "灵宫",
+          "x": 28,
+          "y": 28,
+          "w": 10,
+          "h": 8,
+          "function": "spirit_palace"
+        },
+        {
+          "id": "spirit_market",
+          "name": "灵市",
+          "x": 14,
+          "y": 14,
+          "w": 10,
+          "h": 6,
+          "function": "spirit_market"
+        }
+      ],
+      "exits": [
+        {
+          "x": 30,
+          "y": 4,
+          "target": "xu_kong_lie_feng",
+          "tx": 24,
+          "ty": 40
+        }
+      ]
+    },
+    {
+      "id": "mo_yuan",
+      "name": "魔渊",
+      "type": "demon_realm",
+      "parent": "tian_nan",
+      "description": "魔修聚集之地，魔气浓郁，正道慎入。",
+      "width": 48,
+      "height": 48,
+      "spirit_density": 1.0,
+      "pvp_allowed": true,
+      "buildings": [
+        {
+          "id": "demon_palace",
+          "name": "魔主殿",
+          "x": 20,
+          "y": 20,
+          "w": 8,
+          "h": 8,
+          "function": "demon_palace"
+        },
+        {
+          "id": "demon_market",
+          "name": "魔市",
+          "x": 10,
+          "y": 10,
+          "w": 8,
+          "h": 4,
+          "function": "demon_market"
+        }
+      ],
+      "beast_spawns": [
+        {
+          "x": 16,
+          "y": 16,
+          "beast": "mo_ying",
+          "respawn": 1500
+        },
+        {
+          "x": 30,
+          "y": 30,
+          "beast": "jiu_you_she",
+          "respawn": 2000
+        }
+      ],
+      "exits": [
+        {
+          "x": 24,
+          "y": 4,
+          "target": "xue_se_jin_di",
+          "tx": 24,
+          "ty": 44
+        }
+      ]
+    },
+    {
+      "id": "long_gong",
+      "name": "东海龙宫",
+      "type": "dragon_palace",
+      "parent": "tian_nan",
+      "description": "龙族祖地，海底深处，宝物无数但龙族守护。",
+      "width": 64,
+      "height": 48,
+      "spirit_density": 3.0,
+      "pvp_allowed": true,
+      "buildings": [
+        {
+          "id": "dragon_throne",
+          "name": "龙王宝座",
+          "x": 28,
+          "y": 22,
+          "w": 10,
+          "h": 8,
+          "function": "dragon_throne"
+        },
+        {
+          "id": "treasure_vault",
+          "name": "龙宫宝库",
+          "x": 14,
+          "y": 14,
+          "w": 8,
+          "h": 6,
+          "function": "treasure_vault"
+        }
+      ],
+      "beast_spawns": [
+        {
+          "x": 16,
+          "y": 16,
+          "beast": "qing_long",
+          "respawn": 10000
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "tian_jie",
+      "name": "天界·南天门",
+      "type": "heaven_realm",
+      "parent": "xian_jie_plane",
+      "description": "仙人居住之地，凡人不可至。渡劫飞升后可入。",
+      "width": 96,
+      "height": 96,
+      "spirit_density": 100.0,
+      "pvp_allowed": false,
+      "buildings": [
+        {
+          "id": "south_gate",
+          "name": "南天门",
+          "x": 40,
+          "y": 10,
+          "w": 16,
+          "h": 8,
+          "function": "heaven_gate"
+        },
+        {
+          "id": "jade_pool",
+          "name": "瑶池",
+          "x": 20,
+          "y": 40,
+          "w": 12,
+          "h": 8,
+          "function": "jade_pool"
+        },
+        {
+          "id": "ling_xiao",
+          "name": "凌霄宝殿",
+          "x": 40,
+          "y": 50,
+          "w": 16,
+          "h": 10,
+          "function": "ling_xiao"
+        }
+      ],
+      "exits": []
+    }
+  ]
+}

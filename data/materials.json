@@ -1,0 +1,3291 @@
+{
+  "materials": [
+    {
+      "id": "yun_ling_grass",
+      "name": "云灵草",
+      "type": "herb",
+      "tier": 1,
+      "element": "wood",
+      "attrs": {
+        "spiritual_energy": 20,
+        "wood_affinity": 10,
+        "freshness": 100
+      },
+      "value": 5,
+      "rarity": "common",
+      "desc": "最常见灵草，山谷湿润处生长，含微弱木灵气。",
+      "known": true
+    },
+    {
+      "id": "qing_xin_lotus",
+      "name": "清心莲",
+      "type": "herb",
+      "tier": 2,
+      "element": "water",
+      "attrs": {
+        "spiritual_energy": 35,
+        "water_affinity": 15,
+        "freshness": 100
+      },
+      "value": 15,
+      "rarity": "common",
+      "desc": "白色莲花，服之可清心宁神，是炼制安神丹的主药。",
+      "known": true
+    },
+    {
+      "id": "chi_yan_grass",
+      "name": "赤炎草",
+      "type": "herb",
+      "tier": 2,
+      "element": "fire",
+      "attrs": {
+        "spiritual_energy": 30,
+        "fire_affinity": 25,
+        "freshness": 100
+      },
+      "value": 18,
+      "rarity": "common",
+      "desc": "生于火山附近，叶红如焰，触之灼手。",
+      "known": true
+    },
+    {
+      "id": "bing_lotus",
+      "name": "冰莲",
+      "type": "herb",
+      "tier": 3,
+      "element": "ice",
+      "attrs": {
+        "spiritual_energy": 50,
+        "ice_affinity": 35,
+        "freshness": 100
+      },
+      "value": 40,
+      "rarity": "uncommon",
+      "desc": "极寒之地生长，花开如冰雕，可解火毒。",
+      "known": false
+    },
+    {
+      "id": "ling_zhi_100",
+      "name": "百年灵芝",
+      "type": "herb",
+      "tier": 3,
+      "element": "wood",
+      "attrs": {
+        "spiritual_energy": 80,
+        "wood_affinity": 40,
+        "freshness": 100
+      },
+      "value": 80,
+      "rarity": "uncommon",
+      "desc": "百年灵气滋养，可延寿炼丹。",
+      "known": false
+    },
+    {
+      "id": "long_xu_grass",
+      "name": "龙须草",
+      "type": "herb",
+      "tier": 4,
+      "element": "wood",
+      "attrs": {
+        "spiritual_energy": 70,
+        "wood_affinity": 50,
+        "freshness": 100
+      },
+      "value": 200,
+      "rarity": "rare",
+      "desc": "形似龙须，传闻龙族路过所留，炼丹佳品。",
+      "known": false
+    },
+    {
+      "id": "feng_xi_grass",
+      "name": "凤栖草",
+      "type": "herb",
+      "tier": 5,
+      "element": "fire",
+      "attrs": {
+        "spiritual_energy": 100,
+        "fire_affinity": 80,
+        "freshness": 100
+      },
+      "value": 350,
+      "rarity": "epic",
+      "desc": "传闻凤凰栖息之地生长，含涅槃之意。",
+      "known": false
+    },
+    {
+      "id": "ling_zhi_500",
+      "name": "五百年灵芝",
+      "type": "herb",
+      "tier": 5,
+      "element": "wood",
+      "attrs": {
+        "spiritual_energy": 250,
+        "wood_affinity": 80,
+        "freshness": 100
+      },
+      "value": 600,
+      "rarity": "epic",
+      "desc": "五百年灵气所钟，延寿神效。",
+      "known": false
+    },
+    {
+      "id": "ji_nian_grass",
+      "name": "寂灭草",
+      "type": "herb",
+      "tier": 6,
+      "element": "soul",
+      "attrs": {
+        "spiritual_energy": 200,
+        "soul_affinity": 100,
+        "freshness": 100
+      },
+      "value": 1200,
+      "rarity": "epic",
+      "desc": "生于古战场，含死气与寂灭之意，慎用。",
+      "known": false
+    },
+    {
+      "id": "tai_sui_grass",
+      "name": "太岁草",
+      "type": "herb",
+      "tier": 7,
+      "element": "earth",
+      "attrs": {
+        "spiritual_energy": 400,
+        "earth_affinity": 150,
+        "freshness": 100
+      },
+      "value": 3000,
+      "rarity": "legendary",
+      "desc": "传闻肉灵芝遗种，服之可重塑肉身。",
+      "known": false
+    },
+    {
+      "id": "xuan_bing_grass",
+      "name": "玄冰草",
+      "type": "herb",
+      "tier": 3,
+      "element": "ice",
+      "attrs": {
+        "spiritual_energy": 55,
+        "ice_affinity": 40,
+        "freshness": 100
+      },
+      "value": 60,
+      "rarity": "uncommon",
+      "desc": "万年冰川所生，寒气逼人。",
+      "known": false
+    },
+    {
+      "id": "jiuyou_grass",
+      "name": "九幽草",
+      "type": "herb",
+      "tier": 6,
+      "element": "dark",
+      "attrs": {
+        "spiritual_energy": 180,
+        "dark_affinity": 90,
+        "freshness": 100
+      },
+      "value": 1500,
+      "rarity": "epic",
+      "desc": "九幽冥土所生，可通幽冥，极阴之物。",
+      "known": false
+    },
+    {
+      "id": "san_qing_grass",
+      "name": "三清草",
+      "type": "herb",
+      "tier": 5,
+      "element": "light",
+      "attrs": {
+        "spiritual_energy": 120,
+        "light_affinity": 70,
+        "freshness": 100
+      },
+      "value": 800,
+      "rarity": "epic",
+      "desc": "三清道场遗种，炼制道丹主药。",
+      "known": false
+    },
+    {
+      "id": "wu_wei_grass",
+      "name": "五味草",
+      "type": "herb",
+      "tier": 2,
+      "element": "wood",
+      "attrs": {
+        "spiritual_energy": 25,
+        "wood_affinity": 18,
+        "freshness": 100
+      },
+      "value": 12,
+      "rarity": "common",
+      "desc": "五味俱全，调和诸药。",
+      "known": true
+    },
+    {
+      "id": "zi_xia_grass",
+      "name": "紫霞草",
+      "type": "herb",
+      "tier": 4,
+      "element": "light",
+      "attrs": {
+        "spiritual_energy": 90,
+        "light_affinity": 60,
+        "freshness": 100
+      },
+      "value": 280,
+      "rarity": "rare",
+      "desc": "紫气东来所化，炼制紫霞丹。",
+      "known": false
+    },
+    {
+      "id": "tai_yin_grass",
+      "name": "太阴草",
+      "type": "herb",
+      "tier": 4,
+      "element": "ice",
+      "attrs": {
+        "spiritual_energy": 85,
+        "ice_affinity": 55,
+        "freshness": 100
+      },
+      "value": 250,
+      "rarity": "rare",
+      "desc": "月华所钟，阴气极重。",
+      "known": false
+    },
+    {
+      "id": "tai_yang_grass",
+      "name": "太阳草",
+      "type": "herb",
+      "tier": 4,
+      "element": "fire",
+      "attrs": {
+        "spiritual_energy": 85,
+        "fire_affinity": 55,
+        "freshness": 100
+      },
+      "value": 250,
+      "rarity": "rare",
+      "desc": "日华所钟，阳气极盛。",
+      "known": false
+    },
+    {
+      "id": "hun_dun_grass",
+      "name": "混沌草",
+      "type": "herb",
+      "tier": 7,
+      "element": "void",
+      "attrs": {
+        "spiritual_energy": 500,
+        "void_affinity": 200,
+        "freshness": 100
+      },
+      "value": 5000,
+      "rarity": "legendary",
+      "desc": "天地初开遗留，混沌之气所化。",
+      "known": false
+    },
+    {
+      "id": "xian_zhi_1000",
+      "name": "千年灵芝",
+      "type": "herb",
+      "tier": 6,
+      "element": "wood",
+      "attrs": {
+        "spiritual_energy": 400,
+        "wood_affinity": 120,
+        "freshness": 100
+      },
+      "value": 2500,
+      "rarity": "legendary",
+      "desc": "千年灵气所钟，仙药之流。",
+      "known": false
+    },
+    {
+      "id": "bi_xue_grass",
+      "name": "碧血草",
+      "type": "herb",
+      "tier": 3,
+      "element": "fire",
+      "attrs": {
+        "spiritual_energy": 45,
+        "fire_affinity": 35,
+        "freshness": 100
+      },
+      "value": 55,
+      "rarity": "uncommon",
+      "desc": "古战场鲜血所养，煞气重。",
+      "known": false
+    },
+    {
+      "id": "bai_lu_grass",
+      "name": "白露草",
+      "type": "herb",
+      "tier": 1,
+      "element": "water",
+      "attrs": {
+        "spiritual_energy": 15,
+        "water_affinity": 8,
+        "freshness": 100
+      },
+      "value": 4,
+      "rarity": "common",
+      "desc": "晨露所凝，清凉润喉。",
+      "known": true
+    },
+    {
+      "id": "zi_ye_grass",
+      "name": "紫叶草",
+      "type": "herb",
+      "tier": 1,
+      "element": "wood",
+      "attrs": {
+        "spiritual_energy": 18,
+        "wood_affinity": 9,
+        "freshness": 100
+      },
+      "value": 5,
+      "rarity": "common",
+      "desc": "紫色叶片，常见炼丹辅药。",
+      "known": true
+    },
+    {
+      "id": "han_yan_grass",
+      "name": "寒烟草",
+      "type": "herb",
+      "tier": 2,
+      "element": "ice",
+      "attrs": {
+        "spiritual_energy": 28,
+        "ice_affinity": 20,
+        "freshness": 100
+      },
+      "value": 14,
+      "rarity": "common",
+      "desc": "生于阴寒之地，叶带白霜。",
+      "known": true
+    },
+    {
+      "id": "lie_yan_grass",
+      "name": "烈焰草",
+      "type": "herb",
+      "tier": 2,
+      "element": "fire",
+      "attrs": {
+        "spiritual_energy": 30,
+        "fire_affinity": 22,
+        "freshness": 100
+      },
+      "value": 16,
+      "rarity": "common",
+      "desc": "叶红似火，灼热异常。",
+      "known": true
+    },
+    {
+      "id": "feng_yin_grass",
+      "name": "风音草",
+      "type": "herb",
+      "tier": 2,
+      "element": "wind",
+      "attrs": {
+        "spiritual_energy": 25,
+        "wind_affinity": 18,
+        "freshness": 100
+      },
+      "value": 13,
+      "rarity": "common",
+      "desc": "风吹之有声，可炼音波功法。",
+      "known": true
+    },
+    {
+      "id": "lei_xin_grass",
+      "name": "雷芯草",
+      "type": "herb",
+      "tier": 3,
+      "element": "thunder",
+      "attrs": {
+        "spiritual_energy": 50,
+        "thunder_affinity": 35,
+        "freshness": 100
+      },
+      "value": 65,
+      "rarity": "uncommon",
+      "desc": "雷击之地所生，含雷意。",
+      "known": false
+    },
+    {
+      "id": "dian_xin_grass",
+      "name": "电芯草",
+      "type": "herb",
+      "tier": 3,
+      "element": "thunder",
+      "attrs": {
+        "spiritual_energy": 45,
+        "thunder_affinity": 32,
+        "freshness": 100
+      },
+      "value": 60,
+      "rarity": "uncommon",
+      "desc": "雷电所钟，触之麻手。",
+      "known": false
+    },
+    {
+      "id": "he_shou_wu",
+      "name": "何首乌",
+      "type": "herb",
+      "tier": 3,
+      "element": "wood",
+      "attrs": {
+        "spiritual_energy": 70,
+        "wood_affinity": 45,
+        "freshness": 100
+      },
+      "value": 90,
+      "rarity": "uncommon",
+      "desc": "百年首乌，延年益寿。",
+      "known": false
+    },
+    {
+      "id": "ren_shen_grass",
+      "name": "人参果",
+      "type": "herb",
+      "tier": 4,
+      "element": "wood",
+      "attrs": {
+        "spiritual_energy": 100,
+        "wood_affinity": 60,
+        "freshness": 100
+      },
+      "value": 220,
+      "rarity": "rare",
+      "desc": "三千年一开花，三千年一结果。",
+      "known": false
+    },
+    {
+      "id": "xian_tao_grass",
+      "name": "仙桃草",
+      "type": "herb",
+      "tier": 5,
+      "element": "wood",
+      "attrs": {
+        "spiritual_energy": 150,
+        "wood_affinity": 90,
+        "freshness": 100
+      },
+      "value": 700,
+      "rarity": "epic",
+      "desc": "仙桃园所遗，服之延寿百年。",
+      "known": false
+    },
+    {
+      "id": "bi_an_grass",
+      "name": "彼岸花",
+      "type": "herb",
+      "tier": 5,
+      "element": "soul",
+      "attrs": {
+        "spiritual_energy": 130,
+        "soul_affinity": 80,
+        "freshness": 100
+      },
+      "value": 650,
+      "rarity": "epic",
+      "desc": "黄泉路边所开，通阴阳。",
+      "known": false
+    },
+    {
+      "id": "mo_zhi_grass",
+      "name": "魔芝草",
+      "type": "herb",
+      "tier": 5,
+      "element": "dark",
+      "attrs": {
+        "spiritual_energy": 120,
+        "dark_affinity": 75,
+        "freshness": 100
+      },
+      "value": 580,
+      "rarity": "epic",
+      "desc": "魔气所生，魔修挚爱。",
+      "known": false
+    },
+    {
+      "id": "fo_xin_grass",
+      "name": "佛心草",
+      "type": "herb",
+      "tier": 5,
+      "element": "light",
+      "attrs": {
+        "spiritual_energy": 125,
+        "light_affinity": 78,
+        "freshness": 100
+      },
+      "value": 600,
+      "rarity": "epic",
+      "desc": "佛门圣物，可镇压心魔。",
+      "known": false
+    },
+    {
+      "id": "dao_zhong_grass",
+      "name": "道种草",
+      "type": "herb",
+      "tier": 6,
+      "element": "void",
+      "attrs": {
+        "spiritual_energy": 200,
+        "void_affinity": 110,
+        "freshness": 100
+      },
+      "value": 1800,
+      "rarity": "epic",
+      "desc": "大道种子所化，悟道佳品。",
+      "known": false
+    },
+    {
+      "id": "xian_yi_grass",
+      "name": "仙意草",
+      "type": "herb",
+      "tier": 6,
+      "element": "light",
+      "attrs": {
+        "spiritual_energy": 190,
+        "light_affinity": 105,
+        "freshness": 100
+      },
+      "value": 1600,
+      "rarity": "epic",
+      "desc": "仙气所钟，凡人不可近。",
+      "known": false
+    },
+    {
+      "id": "mo_yi_grass",
+      "name": "魔意草",
+      "type": "herb",
+      "tier": 6,
+      "element": "dark",
+      "attrs": {
+        "spiritual_energy": 190,
+        "dark_affinity": 105,
+        "freshness": 100
+      },
+      "value": 1600,
+      "rarity": "epic",
+      "desc": "魔意所聚，正修慎用。",
+      "known": false
+    },
+    {
+      "id": "tian_xin_grass",
+      "name": "天心草",
+      "type": "herb",
+      "tier": 7,
+      "element": "void",
+      "attrs": {
+        "spiritual_energy": 450,
+        "void_affinity": 180,
+        "freshness": 100
+      },
+      "value": 4500,
+      "rarity": "legendary",
+      "desc": "天心所钟，传说可窥天道。",
+      "known": false
+    },
+    {
+      "id": "di_xin_grass",
+      "name": "地心草",
+      "type": "herb",
+      "tier": 7,
+      "element": "earth",
+      "attrs": {
+        "spiritual_energy": 440,
+        "earth_affinity": 175,
+        "freshness": 100
+      },
+      "value": 4200,
+      "rarity": "legendary",
+      "desc": "地心火脉所生，至刚至阳。",
+      "known": false
+    },
+    {
+      "id": "xian_luan_grass",
+      "name": "仙鸾草",
+      "type": "herb",
+      "tier": 7,
+      "element": "light",
+      "attrs": {
+        "spiritual_energy": 460,
+        "light_affinity": 185,
+        "freshness": 100
+      },
+      "value": 4800,
+      "rarity": "legendary",
+      "desc": "仙鸾所食，仙家灵草。",
+      "known": false
+    },
+    {
+      "id": "mo_long_grass",
+      "name": "魔龙草",
+      "type": "herb",
+      "tier": 7,
+      "element": "dark",
+      "attrs": {
+        "spiritual_energy": 460,
+        "dark_affinity": 185,
+        "freshness": 100
+      },
+      "value": 4800,
+      "rarity": "legendary",
+      "desc": "魔龙所养，至阴至煞。",
+      "known": false
+    },
+    {
+      "id": "han_iron",
+      "name": "寒铁矿",
+      "type": "ore",
+      "tier": 2,
+      "element": "ice",
+      "attrs": {
+        "hardness": 60,
+        "toughness": 48,
+        "durability": 100
+      },
+      "value": 20,
+      "rarity": "common",
+      "desc": "寒气森森，炼器基础材料。",
+      "known": true
+    },
+    {
+      "id": "chi_copper",
+      "name": "赤铜矿",
+      "type": "ore",
+      "tier": 2,
+      "element": "fire",
+      "attrs": {
+        "hardness": 50,
+        "toughness": 40,
+        "durability": 100
+      },
+      "value": 22,
+      "rarity": "common",
+      "desc": "赤红如血，火属性材料。",
+      "known": true
+    },
+    {
+      "id": "xuan_iron",
+      "name": "玄铁矿",
+      "type": "ore",
+      "tier": 3,
+      "element": "metal",
+      "attrs": {
+        "hardness": 80,
+        "toughness": 64,
+        "durability": 100
+      },
+      "value": 60,
+      "rarity": "uncommon",
+      "desc": "深黑色，硬度极高，炼器上品。",
+      "known": true
+    },
+    {
+      "id": "ling_crystal",
+      "name": "灵晶石",
+      "type": "ore",
+      "tier": 3,
+      "element": "spirit",
+      "attrs": {
+        "hardness": 70,
+        "toughness": 56,
+        "durability": 100
+      },
+      "value": 80,
+      "rarity": "uncommon",
+      "desc": "蕴含灵气，可作阵法核心。",
+      "known": true
+    },
+    {
+      "id": "purple_gold",
+      "name": "紫金",
+      "type": "ore",
+      "tier": 4,
+      "element": "metal",
+      "attrs": {
+        "hardness": 90,
+        "toughness": 72,
+        "durability": 100
+      },
+      "value": 180,
+      "rarity": "rare",
+      "desc": "紫光闪闪，灵气传导极佳。",
+      "known": false
+    },
+    {
+      "id": "star_iron",
+      "name": "陨星铁",
+      "type": "ore",
+      "tier": 5,
+      "element": "metal",
+      "attrs": {
+        "hardness": 120,
+        "toughness": 96,
+        "durability": 100
+      },
+      "value": 400,
+      "rarity": "epic",
+      "desc": "天外陨铁，含星力。",
+      "known": false
+    },
+    {
+      "id": "tian_yuan_iron",
+      "name": "天元铁",
+      "type": "ore",
+      "tier": 6,
+      "element": "metal",
+      "attrs": {
+        "hardness": 160,
+        "toughness": 128,
+        "durability": 100
+      },
+      "value": 1500,
+      "rarity": "epic",
+      "desc": "天地元气所凝，至坚。",
+      "known": false
+    },
+    {
+      "id": "xian_yin_shi",
+      "name": "仙银石",
+      "type": "ore",
+      "tier": 7,
+      "element": "metal",
+      "attrs": {
+        "hardness": 220,
+        "toughness": 176,
+        "durability": 100
+      },
+      "value": 4500,
+      "rarity": "legendary",
+      "desc": "仙家遗物，银光夺目。",
+      "known": false
+    },
+    {
+      "id": "bing_jing",
+      "name": "冰晶",
+      "type": "ore",
+      "tier": 3,
+      "element": "ice",
+      "attrs": {
+        "hardness": 70,
+        "toughness": 56,
+        "durability": 100
+      },
+      "value": 70,
+      "rarity": "uncommon",
+      "desc": "千年寒冰所化，可炼冰系法宝。",
+      "known": true
+    },
+    {
+      "id": "huo_jing",
+      "name": "火晶",
+      "type": "ore",
+      "tier": 3,
+      "element": "fire",
+      "attrs": {
+        "hardness": 70,
+        "toughness": 56,
+        "durability": 100
+      },
+      "value": 70,
+      "rarity": "uncommon",
+      "desc": "地心火脉所结，可炼火系法宝。",
+      "known": true
+    },
+    {
+      "id": "lei_jing",
+      "name": "雷晶",
+      "type": "ore",
+      "tier": 4,
+      "element": "thunder",
+      "attrs": {
+        "hardness": 90,
+        "toughness": 72,
+        "durability": 100
+      },
+      "value": 200,
+      "rarity": "rare",
+      "desc": "雷霆所凝，威力惊人。",
+      "known": false
+    },
+    {
+      "id": "feng_jing",
+      "name": "风晶",
+      "type": "ore",
+      "tier": 4,
+      "element": "wind",
+      "attrs": {
+        "hardness": 85,
+        "toughness": 68,
+        "durability": 100
+      },
+      "value": 180,
+      "rarity": "rare",
+      "desc": "飓风核心，速度加成。",
+      "known": false
+    },
+    {
+      "id": "an_jing",
+      "name": "暗晶",
+      "type": "ore",
+      "tier": 5,
+      "element": "dark",
+      "attrs": {
+        "hardness": 110,
+        "toughness": 88,
+        "durability": 100
+      },
+      "value": 380,
+      "rarity": "epic",
+      "desc": "暗影所聚，魔修钟爱。",
+      "known": false
+    },
+    {
+      "id": "guang_jing",
+      "name": "光晶",
+      "type": "ore",
+      "tier": 5,
+      "element": "light",
+      "attrs": {
+        "hardness": 110,
+        "toughness": 88,
+        "durability": 100
+      },
+      "value": 380,
+      "rarity": "epic",
+      "desc": "光辉所凝，正修至宝。",
+      "known": false
+    },
+    {
+      "id": "xu_kong_jing",
+      "name": "虚空晶",
+      "type": "ore",
+      "tier": 6,
+      "element": "void",
+      "attrs": {
+        "hardness": 150,
+        "toughness": 120,
+        "durability": 100
+      },
+      "value": 1400,
+      "rarity": "epic",
+      "desc": "虚空所化，可破空间。",
+      "known": false
+    },
+    {
+      "id": "long_lin_shi",
+      "name": "龙鳞石",
+      "type": "ore",
+      "tier": 5,
+      "element": "metal",
+      "attrs": {
+        "hardness": 130,
+        "toughness": 104,
+        "durability": 100
+      },
+      "value": 500,
+      "rarity": "epic",
+      "desc": "传闻龙鳞所化，至坚至韧。",
+      "known": false
+    },
+    {
+      "id": "feng_yu_shi",
+      "name": "凤羽石",
+      "type": "ore",
+      "tier": 5,
+      "element": "fire",
+      "attrs": {
+        "hardness": 130,
+        "toughness": 104,
+        "durability": 100
+      },
+      "value": 500,
+      "rarity": "epic",
+      "desc": "传闻凤羽所化，含涅槃意。",
+      "known": false
+    },
+    {
+      "id": "hu_qiu_shi",
+      "name": "虎丘石",
+      "type": "ore",
+      "tier": 4,
+      "element": "earth",
+      "attrs": {
+        "hardness": 95,
+        "toughness": 76,
+        "durability": 100
+      },
+      "value": 220,
+      "rarity": "rare",
+      "desc": "虎形山丘所产，土属性。",
+      "known": false
+    },
+    {
+      "id": "she_tu_shi",
+      "name": "蛇土石",
+      "type": "ore",
+      "tier": 4,
+      "element": "earth",
+      "attrs": {
+        "hardness": 90,
+        "toughness": 72,
+        "durability": 100
+      },
+      "value": 200,
+      "rarity": "rare",
+      "desc": "蛇盘之地所产，含毒。",
+      "known": false
+    },
+    {
+      "id": "wu_jin_shi",
+      "name": "乌金石",
+      "type": "ore",
+      "tier": 3,
+      "element": "metal",
+      "attrs": {
+        "hardness": 75,
+        "toughness": 60,
+        "durability": 100
+      },
+      "value": 75,
+      "rarity": "uncommon",
+      "desc": "黑色金属，坚硬。",
+      "known": true
+    },
+    {
+      "id": "bai_yin_shi",
+      "name": "白银石",
+      "type": "ore",
+      "tier": 2,
+      "element": "metal",
+      "attrs": {
+        "hardness": 55,
+        "toughness": 44,
+        "durability": 100
+      },
+      "value": 25,
+      "rarity": "common",
+      "desc": "白银矿，常见。",
+      "known": true
+    },
+    {
+      "id": "huang_jin_shi",
+      "name": "黄金石",
+      "type": "ore",
+      "tier": 3,
+      "element": "metal",
+      "attrs": {
+        "hardness": 78,
+        "toughness": 62,
+        "durability": 100
+      },
+      "value": 90,
+      "rarity": "uncommon",
+      "desc": "黄金矿，价值较高。",
+      "known": true
+    },
+    {
+      "id": "shan_jing_shi",
+      "name": "山精石",
+      "type": "ore",
+      "tier": 4,
+      "element": "earth",
+      "attrs": {
+        "hardness": 95,
+        "toughness": 76,
+        "durability": 100
+      },
+      "value": 230,
+      "rarity": "rare",
+      "desc": "山岳精华所凝。",
+      "known": false
+    },
+    {
+      "id": "shui_jing_shi",
+      "name": "水精石",
+      "type": "ore",
+      "tier": 3,
+      "element": "water",
+      "attrs": {
+        "hardness": 72,
+        "toughness": 57,
+        "durability": 100
+      },
+      "value": 72,
+      "rarity": "uncommon",
+      "desc": "水底所产，灵气清澈。",
+      "known": true
+    },
+    {
+      "id": "mu_jing_shi",
+      "name": "木精石",
+      "type": "ore",
+      "tier": 3,
+      "element": "wood",
+      "attrs": {
+        "hardness": 72,
+        "toughness": 57,
+        "durability": 100
+      },
+      "value": 72,
+      "rarity": "uncommon",
+      "desc": "古木所产，含木灵气。",
+      "known": true
+    },
+    {
+      "id": "ri_jing_shi",
+      "name": "日精石",
+      "type": "ore",
+      "tier": 5,
+      "element": "light",
+      "attrs": {
+        "hardness": 120,
+        "toughness": 96,
+        "durability": 100
+      },
+      "value": 420,
+      "rarity": "epic",
+      "desc": "日华所钟。",
+      "known": false
+    },
+    {
+      "id": "yue_jing_shi",
+      "name": "月精石",
+      "type": "ore",
+      "tier": 5,
+      "element": "ice",
+      "attrs": {
+        "hardness": 120,
+        "toughness": 96,
+        "durability": 100
+      },
+      "value": 420,
+      "rarity": "epic",
+      "desc": "月华所钟。",
+      "known": false
+    },
+    {
+      "id": "chen_jing_shi",
+      "name": "辰精石",
+      "type": "ore",
+      "tier": 6,
+      "element": "void",
+      "attrs": {
+        "hardness": 145,
+        "toughness": 116,
+        "durability": 100
+      },
+      "value": 1300,
+      "rarity": "epic",
+      "desc": "星辰之力所凝。",
+      "known": false
+    },
+    {
+      "id": "xian_tie",
+      "name": "仙铁",
+      "type": "ore",
+      "tier": 7,
+      "element": "metal",
+      "attrs": {
+        "hardness": 200,
+        "toughness": 160,
+        "durability": 100
+      },
+      "value": 4000,
+      "rarity": "legendary",
+      "desc": "仙家所用之铁。",
+      "known": false
+    },
+    {
+      "id": "mo_tie",
+      "name": "魔铁",
+      "type": "ore",
+      "tier": 6,
+      "element": "dark",
+      "attrs": {
+        "hardness": 155,
+        "toughness": 124,
+        "durability": 100
+      },
+      "value": 1400,
+      "rarity": "epic",
+      "desc": "魔气所侵之铁。",
+      "known": false
+    },
+    {
+      "id": "tiger_fur",
+      "name": "赤焰虎皮",
+      "type": "beast_part",
+      "tier": 3,
+      "element": "fire",
+      "attrs": {
+        "fire_affinity": 30,
+        "spiritual_energy": 25,
+        "beast_core_quality": 3
+      },
+      "value": 50,
+      "rarity": "uncommon",
+      "desc": "赤焰虎之皮，火抗加成。",
+      "known": true
+    },
+    {
+      "id": "tiger_claw",
+      "name": "虎爪",
+      "type": "beast_part",
+      "tier": 3,
+      "element": "fire",
+      "attrs": {
+        "fire_affinity": 50,
+        "beast_core_quality": 3
+      },
+      "value": 45,
+      "rarity": "uncommon",
+      "desc": "锋利异常，可炼利器。",
+      "known": true
+    },
+    {
+      "id": "tiger_core",
+      "name": "赤焰虎妖丹",
+      "type": "beast_part",
+      "tier": 3,
+      "element": "fire",
+      "attrs": {
+        "fire_affinity": 60,
+        "spiritual_energy": 80,
+        "beast_core_quality": 3
+      },
+      "value": 150,
+      "rarity": "uncommon",
+      "desc": "蕴含虎之精魄与火灵气。",
+      "known": true
+    },
+    {
+      "id": "wolf_fur",
+      "name": "冰狼皮",
+      "type": "beast_part",
+      "tier": 3,
+      "element": "ice",
+      "attrs": {
+        "ice_affinity": 30,
+        "spiritual_energy": 22,
+        "beast_core_quality": 3
+      },
+      "value": 48,
+      "rarity": "uncommon",
+      "desc": "冰狼之皮，冰抗加成。",
+      "known": true
+    },
+    {
+      "id": "wolf_core",
+      "name": "冰狼妖丹",
+      "type": "beast_part",
+      "tier": 3,
+      "element": "ice",
+      "attrs": {
+        "ice_affinity": 60,
+        "spiritual_energy": 80,
+        "beast_core_quality": 3
+      },
+      "value": 150,
+      "rarity": "uncommon",
+      "desc": "蕴含狼之精魄与冰灵气。",
+      "known": true
+    },
+    {
+      "id": "snake_core",
+      "name": "青木蟒妖丹",
+      "type": "beast_part",
+      "tier": 4,
+      "element": "wood",
+      "attrs": {
+        "wood_affinity": 70,
+        "spiritual_energy": 100,
+        "beast_core_quality": 4
+      },
+      "value": 280,
+      "rarity": "rare",
+      "desc": "蕴含蟒之精魄与木灵气。",
+      "known": false
+    },
+    {
+      "id": "scorpion_core",
+      "name": "金甲蝎妖丹",
+      "type": "beast_part",
+      "tier": 4,
+      "element": "metal",
+      "attrs": {
+        "metal_affinity": 70,
+        "spiritual_energy": 100,
+        "beast_core_quality": 4
+      },
+      "value": 280,
+      "rarity": "rare",
+      "desc": "蕴含蝎之精魄与金灵气。",
+      "known": false
+    },
+    {
+      "id": "leopard_core",
+      "name": "风行豹妖丹",
+      "type": "beast_part",
+      "tier": 4,
+      "element": "wind",
+      "attrs": {
+        "wind_affinity": 70,
+        "spiritual_energy": 100,
+        "beast_core_quality": 4
+      },
+      "value": 280,
+      "rarity": "rare",
+      "desc": "蕴含豹之精魄与风灵气。",
+      "known": false
+    },
+    {
+      "id": "dragon_scale",
+      "name": "蛟龙鳞",
+      "type": "beast_part",
+      "tier": 6,
+      "element": "water",
+      "attrs": {
+        "water_affinity": 200,
+        "spiritual_energy": 300,
+        "beast_core_quality": 6
+      },
+      "value": 2500,
+      "rarity": "epic",
+      "desc": "蛟龙之鳞，至坚至韧，水属性。",
+      "known": false
+    },
+    {
+      "id": "phoenix_feather",
+      "name": "凤翎",
+      "type": "beast_part",
+      "tier": 7,
+      "element": "fire",
+      "attrs": {
+        "fire_affinity": 250,
+        "spiritual_energy": 350,
+        "beast_core_quality": 7
+      },
+      "value": 4500,
+      "rarity": "legendary",
+      "desc": "凤凰之羽，含涅槃意，至宝。",
+      "known": false
+    },
+    {
+      "id": "fox_tail",
+      "name": "九尾狐尾",
+      "type": "beast_part",
+      "tier": 5,
+      "element": "illusion",
+      "attrs": {
+        "illusion_affinity": 100,
+        "spiritual_energy": 150,
+        "beast_core_quality": 5
+      },
+      "value": 800,
+      "rarity": "epic",
+      "desc": "九尾狐之尾，幻术佳品。",
+      "known": false
+    },
+    {
+      "id": "basilisk_eye",
+      "name": "蛇怪之眼",
+      "type": "beast_part",
+      "tier": 4,
+      "element": "earth",
+      "attrs": {
+        "earth_affinity": 80,
+        "spiritual_energy": 120,
+        "beast_core_quality": 4
+      },
+      "value": 320,
+      "rarity": "rare",
+      "desc": "蛇怪之眼，可炼摄魂法宝。",
+      "known": false
+    },
+    {
+      "id": "qilin_horn",
+      "name": "麒麟角",
+      "type": "beast_part",
+      "tier": 7,
+      "element": "light",
+      "attrs": {
+        "light_affinity": 240,
+        "spiritual_energy": 400,
+        "beast_core_quality": 7
+      },
+      "value": 5000,
+      "rarity": "legendary",
+      "desc": "麒麟之角，仙家至宝。",
+      "known": false
+    },
+    {
+      "id": "black_turtle_shell",
+      "name": "玄武甲",
+      "type": "beast_part",
+      "tier": 7,
+      "element": "water",
+      "attrs": {
+        "water_affinity": 260,
+        "spiritual_energy": 350,
+        "beast_core_quality": 7
+      },
+      "value": 4800,
+      "rarity": "legendary",
+      "desc": "玄武之甲，防御无双。",
+      "known": false
+    },
+    {
+      "id": "white_tiger_fang",
+      "name": "白虎牙",
+      "type": "beast_part",
+      "tier": 6,
+      "element": "metal",
+      "attrs": {
+        "metal_affinity": 180,
+        "spiritual_energy": 280,
+        "beast_core_quality": 6
+      },
+      "value": 2200,
+      "rarity": "epic",
+      "desc": "白虎之牙，锐利无匹。",
+      "known": false
+    },
+    {
+      "id": "azure_dragon_whisker",
+      "name": "青龙须",
+      "type": "beast_part",
+      "tier": 6,
+      "element": "wood",
+      "attrs": {
+        "wood_affinity": 170,
+        "spiritual_energy": 260,
+        "beast_core_quality": 6
+      },
+      "value": 2000,
+      "rarity": "epic",
+      "desc": "青龙之须，木属性圣物。",
+      "known": false
+    },
+    {
+      "id": "vermillion_bird_feather",
+      "name": "朱雀羽",
+      "type": "beast_part",
+      "tier": 7,
+      "element": "fire",
+      "attrs": {
+        "fire_affinity": 255,
+        "spiritual_energy": 380,
+        "beast_core_quality": 7
+      },
+      "value": 4900,
+      "rarity": "legendary",
+      "desc": "朱雀之羽，火属性至宝。",
+      "known": false
+    },
+    {
+      "id": "snake_gallbladder",
+      "name": "蟒蛇胆",
+      "type": "beast_part",
+      "tier": 4,
+      "element": "wood",
+      "attrs": {
+        "wood_affinity": 75,
+        "spiritual_energy": 110,
+        "beast_core_quality": 4
+      },
+      "value": 300,
+      "rarity": "rare",
+      "desc": "可炼明目丹。",
+      "known": false
+    },
+    {
+      "id": "bear_paw",
+      "name": "熊掌",
+      "type": "beast_part",
+      "tier": 3,
+      "element": "earth",
+      "attrs": {
+        "earth_affinity": 50,
+        "beast_core_quality": 3
+      },
+      "value": 60,
+      "rarity": "uncommon",
+      "desc": "猛熊之掌，可炼大力丹。",
+      "known": true
+    },
+    {
+      "id": "eagle_claw",
+      "name": "鹰爪",
+      "type": "beast_part",
+      "tier": 3,
+      "element": "wind",
+      "attrs": {
+        "wind_affinity": 55,
+        "beast_core_quality": 3
+      },
+      "value": 55,
+      "rarity": "uncommon",
+      "desc": "苍鹰之爪，锐利。",
+      "known": true
+    },
+    {
+      "id": "centipede_core",
+      "name": "蜈蚣妖丹",
+      "type": "beast_part",
+      "tier": 4,
+      "element": "earth",
+      "attrs": {
+        "earth_affinity": 65,
+        "spiritual_energy": 95,
+        "beast_core_quality": 4
+      },
+      "value": 260,
+      "rarity": "rare",
+      "desc": "百足蜈蚣之丹，含毒。",
+      "known": false
+    },
+    {
+      "id": "spider_silk",
+      "name": "蛛丝",
+      "type": "beast_part",
+      "tier": 3,
+      "element": "wind",
+      "attrs": {
+        "wind_affinity": 40,
+        "beast_core_quality": 3
+      },
+      "value": 70,
+      "rarity": "uncommon",
+      "desc": "妖蛛之丝，坚韧异常。",
+      "known": true
+    },
+    {
+      "id": "bat_wing",
+      "name": "蝙蝠翼",
+      "type": "beast_part",
+      "tier": 2,
+      "element": "dark",
+      "attrs": {
+        "dark_affinity": 25,
+        "beast_core_quality": 2
+      },
+      "value": 20,
+      "rarity": "common",
+      "desc": "夜行蝙蝠之翼。",
+      "known": true
+    },
+    {
+      "id": "rhino_horn",
+      "name": "犀角",
+      "type": "beast_part",
+      "tier": 4,
+      "element": "earth",
+      "attrs": {
+        "earth_affinity": 85,
+        "beast_core_quality": 4
+      },
+      "value": 200,
+      "rarity": "rare",
+      "desc": "灵犀之角，可解百毒。",
+      "known": false
+    },
+    {
+      "id": "deer_antler",
+      "name": "鹿茸",
+      "type": "beast_part",
+      "tier": 3,
+      "element": "wood",
+      "attrs": {
+        "wood_affinity": 50,
+        "spiritual_energy": 60,
+        "beast_core_quality": 3
+      },
+      "value": 90,
+      "rarity": "uncommon",
+      "desc": "灵鹿之茸，大补。",
+      "known": true
+    },
+    {
+      "id": "qi_pill",
+      "name": "回气丹",
+      "type": "pill",
+      "tier": 1,
+      "attrs": {},
+      "effect": {
+        "restore_qi": 30
+      },
+      "value": 10,
+      "rarity": "common",
+      "desc": "恢复30点灵气，新手必备。",
+      "known": true
+    },
+    {
+      "id": "flesh_renew_pill",
+      "name": "续骨丹",
+      "type": "pill",
+      "tier": 2,
+      "attrs": {},
+      "effect": {
+        "heal_hp": 50
+      },
+      "value": 30,
+      "rarity": "common",
+      "desc": "恢复50点气血，治愈外伤。",
+      "known": true
+    },
+    {
+      "id": "foundation_pill",
+      "name": "筑基丹",
+      "type": "pill",
+      "tier": 3,
+      "attrs": {},
+      "effect": {
+        "breakthrough_assist": 0.3
+      },
+      "value": 500,
+      "rarity": "rare",
+      "desc": "突破筑基时使用，成功率+30%。",
+      "known": true
+    },
+    {
+      "id": "golden_core_pill",
+      "name": "结金丹",
+      "type": "pill",
+      "tier": 4,
+      "attrs": {},
+      "effect": {
+        "breakthrough_assist": 0.4
+      },
+      "value": 1500,
+      "rarity": "epic",
+      "desc": "突破金丹时使用，成功率+40%。",
+      "known": false
+    },
+    {
+      "id": "lifespan_pill",
+      "name": "延寿丹",
+      "type": "pill",
+      "tier": 4,
+      "attrs": {},
+      "effect": {
+        "add_lifespan": 10
+      },
+      "value": 2000,
+      "rarity": "epic",
+      "desc": "延寿10年，每类限服3次。",
+      "known": false
+    },
+    {
+      "id": "fire_resist_pill",
+      "name": "避火丹",
+      "type": "pill",
+      "tier": 2,
+      "attrs": {},
+      "effect": {
+        "fire_resist": 50,
+        "duration": 600
+      },
+      "value": 80,
+      "rarity": "uncommon",
+      "desc": "火抗+50，持续10分钟。",
+      "known": true
+    },
+    {
+      "id": "ice_resist_pill",
+      "name": "避寒丹",
+      "type": "pill",
+      "tier": 2,
+      "attrs": {},
+      "effect": {
+        "ice_resist": 50,
+        "duration": 600
+      },
+      "value": 80,
+      "rarity": "uncommon",
+      "desc": "冰抗+50，持续10分钟。",
+      "known": true
+    },
+    {
+      "id": "fury_pill",
+      "name": "狂暴丹",
+      "type": "pill",
+      "tier": 3,
+      "attrs": {},
+      "effect": {
+        "attack_boost": 30,
+        "duration": 300
+      },
+      "value": 200,
+      "rarity": "rare",
+      "desc": "攻击+30，5分钟，副作用：力竭。",
+      "known": true
+    },
+    {
+      "id": "qi_gathering_pill",
+      "name": "聚气丹",
+      "type": "pill",
+      "tier": 2,
+      "attrs": {},
+      "effect": {
+        "cultivate_bonus": 0.2
+      },
+      "value": 100,
+      "rarity": "uncommon",
+      "desc": "修炼时服用，效率+20%。",
+      "known": true
+    },
+    {
+      "id": "comprehension_pill",
+      "name": "悟道丹",
+      "type": "pill",
+      "tier": 4,
+      "attrs": {},
+      "effect": {
+        "comprehension_boost": 50
+      },
+      "value": 800,
+      "rarity": "rare",
+      "desc": "悟性+50，持续1小时。",
+      "known": false
+    },
+    {
+      "id": "detox_pill",
+      "name": "解毒丹",
+      "type": "pill",
+      "tier": 2,
+      "attrs": {},
+      "effect": {
+        "detox": 100
+      },
+      "value": 50,
+      "rarity": "common",
+      "desc": "解除一般毒素。",
+      "known": true
+    },
+    {
+      "id": "fire_toxin_pill",
+      "name": "清火丹",
+      "type": "pill",
+      "tier": 3,
+      "attrs": {},
+      "effect": {
+        "cure_fire_toxin": 1
+      },
+      "value": 200,
+      "rarity": "rare",
+      "desc": "清除火毒。",
+      "known": true
+    },
+    {
+      "id": "meridian_pill",
+      "name": "通脉丹",
+      "type": "pill",
+      "tier": 3,
+      "attrs": {},
+      "effect": {
+        "meridian_repair": 20
+      },
+      "value": 300,
+      "rarity": "rare",
+      "desc": "修复经脉20点。",
+      "known": true
+    },
+    {
+      "id": "dantian_pill",
+      "name": "补天丹",
+      "type": "pill",
+      "tier": 5,
+      "attrs": {},
+      "effect": {
+        "dantian_repair": 1
+      },
+      "value": 3000,
+      "rarity": "legendary",
+      "desc": "修复丹田裂纹1处。",
+      "known": false
+    },
+    {
+      "id": "foundation_rebuild_pill",
+      "name": "重塑丹",
+      "type": "pill",
+      "tier": 6,
+      "attrs": {},
+      "effect": {
+        "rebuild_dantian": 1
+      },
+      "value": 8000,
+      "rarity": "legendary",
+      "desc": "重塑丹田，逆天之药。",
+      "known": false
+    },
+    {
+      "id": "spirit_pill",
+      "name": "养神丹",
+      "type": "pill",
+      "tier": 3,
+      "attrs": {},
+      "effect": {
+        "spirit_repair": 20
+      },
+      "value": 250,
+      "rarity": "rare",
+      "desc": "修复神识20点。",
+      "known": true
+    },
+    {
+      "id": "flesh_pill",
+      "name": "锻体丹",
+      "type": "pill",
+      "tier": 3,
+      "attrs": {},
+      "effect": {
+        "flesh_boost": 10
+      },
+      "value": 200,
+      "rarity": "rare",
+      "desc": "肉身强度+10。",
+      "known": true
+    },
+    {
+      "id": "invisible_pill",
+      "name": "隐身丹",
+      "type": "pill",
+      "tier": 4,
+      "attrs": {},
+      "effect": {
+        "invisible": 600
+      },
+      "value": 500,
+      "rarity": "rare",
+      "desc": "隐身10分钟。",
+      "known": false
+    },
+    {
+      "id": "swift_pill",
+      "name": "神行丹",
+      "type": "pill",
+      "tier": 2,
+      "attrs": {},
+      "effect": {
+        "speed_boost": 30,
+        "duration": 600
+      },
+      "value": 60,
+      "rarity": "common",
+      "desc": "速度+30%。",
+      "known": true
+    },
+    {
+      "id": "power_pill",
+      "name": "力大丹",
+      "type": "pill",
+      "tier": 2,
+      "attrs": {},
+      "effect": {
+        "strength_boost": 20,
+        "duration": 600
+      },
+      "value": 50,
+      "rarity": "common",
+      "desc": "力量+20。",
+      "known": true
+    },
+    {
+      "id": "heart_devil_pill",
+      "name": "破心魔丹",
+      "type": "pill",
+      "tier": 5,
+      "attrs": {},
+      "effect": {
+        "heart_devil_resist": 0.5
+      },
+      "value": 2000,
+      "rarity": "epic",
+      "desc": "突破时心魔概率-50%。",
+      "known": false
+    },
+    {
+      "id": "karma_pill",
+      "name": "消业丹",
+      "type": "pill",
+      "tier": 5,
+      "attrs": {},
+      "effect": {
+        "karma_cleanse": 100
+      },
+      "value": 2500,
+      "rarity": "epic",
+      "desc": "消除100点业力。",
+      "known": false
+    },
+    {
+      "id": "reincarnation_pill",
+      "name": "轮回丹",
+      "type": "pill",
+      "tier": 7,
+      "attrs": {},
+      "effect": {
+        "reincarnation_keep": 0.5
+      },
+      "value": 10000,
+      "rarity": "legendary",
+      "desc": "转世保留50%记忆。",
+      "known": false
+    },
+    {
+      "id": "tribulation_pill",
+      "name": "渡劫丹",
+      "type": "pill",
+      "tier": 6,
+      "attrs": {},
+      "effect": {
+        "tribulation_resist": 0.3
+      },
+      "value": 5000,
+      "rarity": "legendary",
+      "desc": "渡劫成功率+30%。",
+      "known": false
+    },
+    {
+      "id": "nine_turn_pill",
+      "name": "九转金丹",
+      "type": "pill",
+      "tier": 7,
+      "attrs": {},
+      "effect": {
+        "all_boost": 50,
+        "add_lifespan": 100
+      },
+      "value": 50000,
+      "rarity": "legendary",
+      "desc": "仙丹，全方位提升，延寿百年。",
+      "known": false
+    },
+    {
+      "id": "iron_sword",
+      "name": "铁剑",
+      "type": "weapon",
+      "tier": 1,
+      "attrs": {
+        "damage": 15,
+        "sharpness": 20,
+        "durability": 100,
+        "slot": "weapon"
+      },
+      "value": 30,
+      "rarity": "common",
+      "desc": "凡铁所铸，新手用剑。",
+      "known": true
+    },
+    {
+      "id": "spirit_sword",
+      "name": "灵纹剑",
+      "type": "weapon",
+      "tier": 3,
+      "attrs": {
+        "damage": 50,
+        "sharpness": 60,
+        "qi_channeling": 30,
+        "durability": 150,
+        "slot": "weapon"
+      },
+      "value": 300,
+      "rarity": "uncommon",
+      "desc": "刻有灵纹，可灌注灵气。",
+      "known": true
+    },
+    {
+      "id": "fire_sword",
+      "name": "赤焰剑",
+      "type": "weapon",
+      "tier": 4,
+      "attrs": {
+        "damage": 80,
+        "fire_affinity": 40,
+        "sharpness": 80,
+        "qi_channeling": 50,
+        "durability": 180,
+        "slot": "weapon"
+      },
+      "value": 800,
+      "rarity": "rare",
+      "desc": "蕴含火灵，挥之生焰。",
+      "known": false
+    },
+    {
+      "id": "ice_sword",
+      "name": "寒冰剑",
+      "type": "weapon",
+      "tier": 4,
+      "attrs": {
+        "damage": 75,
+        "ice_affinity": 40,
+        "sharpness": 75,
+        "qi_channeling": 50,
+        "durability": 180,
+        "slot": "weapon"
+      },
+      "value": 800,
+      "rarity": "rare",
+      "desc": "寒气逼人，斩之冻髓。",
+      "known": false
+    },
+    {
+      "id": "thunder_sword",
+      "name": "雷霆剑",
+      "type": "weapon",
+      "tier": 5,
+      "attrs": {
+        "damage": 120,
+        "thunder_affinity": 60,
+        "sharpness": 100,
+        "qi_channeling": 80,
+        "durability": 220,
+        "slot": "weapon"
+      },
+      "value": 1800,
+      "rarity": "epic",
+      "desc": "雷霆所凝，斩之麻痹。",
+      "known": false
+    },
+    {
+      "id": "wind_sword",
+      "name": "风行剑",
+      "type": "weapon",
+      "tier": 4,
+      "attrs": {
+        "damage": 70,
+        "wind_affinity": 35,
+        "speed_boost": 10,
+        "sharpness": 80,
+        "qi_channeling": 50,
+        "durability": 180,
+        "slot": "weapon"
+      },
+      "value": 750,
+      "rarity": "rare",
+      "desc": "轻盈如风，速度加成。",
+      "known": false
+    },
+    {
+      "id": "dragon_sword",
+      "name": "青龙剑",
+      "type": "weapon",
+      "tier": 6,
+      "attrs": {
+        "damage": 200,
+        "wood_affinity": 100,
+        "sharpness": 150,
+        "qi_channeling": 120,
+        "durability": 300,
+        "slot": "weapon"
+      },
+      "value": 5000,
+      "rarity": "legendary",
+      "desc": "青龙之魂所附，威力绝伦。",
+      "known": false
+    },
+    {
+      "id": "phoenix_sword",
+      "name": "朱雀剑",
+      "type": "weapon",
+      "tier": 6,
+      "attrs": {
+        "damage": 220,
+        "fire_affinity": 120,
+        "sharpness": 160,
+        "qi_channeling": 130,
+        "durability": 320,
+        "slot": "weapon"
+      },
+      "value": 6000,
+      "rarity": "legendary",
+      "desc": "朱雀之魂所附，涅槃重生。",
+      "known": false
+    },
+    {
+      "id": "immortal_sword",
+      "name": "仙剑·诛仙",
+      "type": "weapon",
+      "tier": 7,
+      "attrs": {
+        "damage": 500,
+        "all_affinity": 200,
+        "sharpness": 300,
+        "qi_channeling": 250,
+        "durability": 500,
+        "slot": "weapon"
+      },
+      "value": 50000,
+      "rarity": "legendary",
+      "desc": "上古仙剑，斩仙屠魔。",
+      "known": false
+    },
+    {
+      "id": "demon_sword",
+      "name": "魔剑·血煞",
+      "type": "weapon",
+      "tier": 6,
+      "attrs": {
+        "damage": 250,
+        "dark_affinity": 150,
+        "sharpness": 180,
+        "qi_channeling": 100,
+        "durability": 280,
+        "side_effect": "karma",
+        "slot": "weapon"
+      },
+      "value": 5500,
+      "rarity": "legendary",
+      "desc": "魔气所凝，斩之吸血，但损业力。",
+      "known": false
+    },
+    {
+      "id": "wood_sword",
+      "name": "青木剑",
+      "type": "weapon",
+      "tier": 2,
+      "attrs": {
+        "damage": 25,
+        "wood_affinity": 15,
+        "sharpness": 30,
+        "durability": 80,
+        "slot": "weapon"
+      },
+      "value": 80,
+      "rarity": "common",
+      "desc": "青木所制，木属性。",
+      "known": true
+    },
+    {
+      "id": "earth_sword",
+      "name": "厚土剑",
+      "type": "weapon",
+      "tier": 2,
+      "attrs": {
+        "damage": 30,
+        "earth_affinity": 18,
+        "sharpness": 25,
+        "durability": 120,
+        "slot": "weapon"
+      },
+      "value": 90,
+      "rarity": "common",
+      "desc": "厚土所铸，坚固耐用。",
+      "known": true
+    },
+    {
+      "id": "metal_sword",
+      "name": "庚金剑",
+      "type": "weapon",
+      "tier": 3,
+      "attrs": {
+        "damage": 60,
+        "metal_affinity": 30,
+        "sharpness": 70,
+        "durability": 160,
+        "slot": "weapon"
+      },
+      "value": 350,
+      "rarity": "uncommon",
+      "desc": "庚金所铸，锋利异常。",
+      "known": true
+    },
+    {
+      "id": "void_sword",
+      "name": "虚空剑",
+      "type": "weapon",
+      "tier": 6,
+      "attrs": {
+        "damage": 180,
+        "void_affinity": 100,
+        "sharpness": 140,
+        "qi_channeling": 110,
+        "durability": 280,
+        "slot": "weapon"
+      },
+      "value": 4500,
+      "rarity": "legendary",
+      "desc": "虚空所化，可破空间。",
+      "known": false
+    },
+    {
+      "id": "light_sword",
+      "name": "光明剑",
+      "type": "weapon",
+      "tier": 5,
+      "attrs": {
+        "damage": 130,
+        "light_affinity": 70,
+        "sharpness": 110,
+        "qi_channeling": 90,
+        "durability": 240,
+        "slot": "weapon"
+      },
+      "value": 2000,
+      "rarity": "epic",
+      "desc": "光明所凝，破邪显正。",
+      "known": false
+    },
+    {
+      "id": "dark_sword",
+      "name": "暗影剑",
+      "type": "weapon",
+      "tier": 5,
+      "attrs": {
+        "damage": 140,
+        "dark_affinity": 75,
+        "sharpness": 100,
+        "qi_channeling": 80,
+        "durability": 220,
+        "slot": "weapon"
+      },
+      "value": 1900,
+      "rarity": "epic",
+      "desc": "暗影所聚，杀人无形。",
+      "known": false
+    },
+    {
+      "id": "poison_sword",
+      "name": "碧毒剑",
+      "type": "weapon",
+      "tier": 3,
+      "attrs": {
+        "damage": 50,
+        "poison": 30,
+        "sharpness": 55,
+        "durability": 140,
+        "slot": "weapon"
+      },
+      "value": 320,
+      "rarity": "uncommon",
+      "desc": "淬毒之剑，斩之中毒。",
+      "known": true
+    },
+    {
+      "id": "soul_sword",
+      "name": "诛魂剑",
+      "type": "weapon",
+      "tier": 5,
+      "attrs": {
+        "damage": 110,
+        "soul_attack": 50,
+        "sharpness": 90,
+        "qi_channeling": 70,
+        "durability": 200,
+        "slot": "weapon"
+      },
+      "value": 1700,
+      "rarity": "epic",
+      "desc": "专伤神魂，防不胜防。",
+      "known": false
+    },
+    {
+      "id": "bone_sword",
+      "name": "白骨剑",
+      "type": "weapon",
+      "tier": 4,
+      "attrs": {
+        "damage": 85,
+        "dark_affinity": 30,
+        "sharpness": 75,
+        "durability": 170,
+        "slot": "weapon"
+      },
+      "value": 700,
+      "rarity": "rare",
+      "desc": "妖骨所制，阴气重。",
+      "known": false
+    },
+    {
+      "id": "crystal_sword",
+      "name": "水晶剑",
+      "type": "weapon",
+      "tier": 3,
+      "attrs": {
+        "damage": 55,
+        "spiritual_conductivity": 50,
+        "sharpness": 65,
+        "qi_channeling": 40,
+        "durability": 130,
+        "slot": "weapon"
+      },
+      "value": 380,
+      "rarity": "uncommon",
+      "desc": "灵晶所制，灵气传导佳。",
+      "known": true
+    },
+    {
+      "id": "cloth_armor",
+      "name": "布衣",
+      "type": "armor",
+      "tier": 1,
+      "attrs": {
+        "defense": 5,
+        "durability": 80,
+        "slot": "armor"
+      },
+      "value": 15,
+      "rarity": "common",
+      "desc": "普通布衣，聊胜于无。",
+      "known": true
+    },
+    {
+      "id": "leather_armor",
+      "name": "皮甲",
+      "type": "armor",
+      "tier": 2,
+      "attrs": {
+        "defense": 20,
+        "durability": 100,
+        "slot": "armor"
+      },
+      "value": 60,
+      "rarity": "common",
+      "desc": "兽皮所制，轻便耐用。",
+      "known": true
+    },
+    {
+      "id": "spirit_armor",
+      "name": "灵纹甲",
+      "type": "armor",
+      "tier": 3,
+      "attrs": {
+        "defense": 50,
+        "qi_channeling": 20,
+        "durability": 150,
+        "slot": "armor"
+      },
+      "value": 280,
+      "rarity": "uncommon",
+      "desc": "刻有灵纹，可御灵气。",
+      "known": true
+    },
+    {
+      "id": "fire_armor",
+      "name": "赤焰甲",
+      "type": "armor",
+      "tier": 4,
+      "attrs": {
+        "defense": 80,
+        "fire_resist": 30,
+        "qi_channeling": 30,
+        "durability": 200,
+        "slot": "armor"
+      },
+      "value": 700,
+      "rarity": "rare",
+      "desc": "火抗加成，火焰不侵。",
+      "known": false
+    },
+    {
+      "id": "ice_armor",
+      "name": "寒冰甲",
+      "type": "armor",
+      "tier": 4,
+      "attrs": {
+        "defense": 80,
+        "ice_resist": 30,
+        "qi_channeling": 30,
+        "durability": 200,
+        "slot": "armor"
+      },
+      "value": 700,
+      "rarity": "rare",
+      "desc": "冰抗加成，寒气不侵。",
+      "known": false
+    },
+    {
+      "id": "thunder_armor",
+      "name": "雷霆甲",
+      "type": "armor",
+      "tier": 5,
+      "attrs": {
+        "defense": 120,
+        "thunder_resist": 40,
+        "qi_channeling": 50,
+        "durability": 240,
+        "slot": "armor"
+      },
+      "value": 1600,
+      "rarity": "epic",
+      "desc": "雷霆所凝，雷击不伤。",
+      "known": false
+    },
+    {
+      "id": "dragon_armor",
+      "name": "青龙甲",
+      "type": "armor",
+      "tier": 6,
+      "attrs": {
+        "defense": 200,
+        "wood_resist": 50,
+        "qi_channeling": 100,
+        "durability": 300,
+        "slot": "armor"
+      },
+      "value": 4500,
+      "rarity": "legendary",
+      "desc": "青龙之鳞所制，防御无双。",
+      "known": false
+    },
+    {
+      "id": "phoenix_armor",
+      "name": "朱雀甲",
+      "type": "armor",
+      "tier": 6,
+      "attrs": {
+        "defense": 220,
+        "fire_resist": 80,
+        "qi_channeling": 110,
+        "durability": 320,
+        "slot": "armor"
+      },
+      "value": 5500,
+      "rarity": "legendary",
+      "desc": "朱雀之羽所制，烈火不侵。",
+      "known": false
+    },
+    {
+      "id": "black_turtle_armor",
+      "name": "玄武甲",
+      "type": "armor",
+      "tier": 7,
+      "attrs": {
+        "defense": 350,
+        "all_resist": 50,
+        "qi_channeling": 180,
+        "durability": 500,
+        "slot": "armor"
+      },
+      "value": 30000,
+      "rarity": "legendary",
+      "desc": "玄武之甲，万法不侵。",
+      "known": false
+    },
+    {
+      "id": "demon_armor",
+      "name": "血煞甲",
+      "type": "armor",
+      "tier": 5,
+      "attrs": {
+        "defense": 130,
+        "dark_resist": 40,
+        "qi_channeling": 60,
+        "durability": 240,
+        "side_effect": "karma",
+        "slot": "armor"
+      },
+      "value": 1800,
+      "rarity": "epic",
+      "desc": "魔气所凝，防御强悍但损业力。",
+      "known": false
+    },
+    {
+      "id": "wood_armor",
+      "name": "青木甲",
+      "type": "armor",
+      "tier": 2,
+      "attrs": {
+        "defense": 25,
+        "wood_resist": 15,
+        "durability": 90,
+        "slot": "armor"
+      },
+      "value": 70,
+      "rarity": "common",
+      "desc": "青木所制，木属性。",
+      "known": true
+    },
+    {
+      "id": "earth_armor",
+      "name": "厚土甲",
+      "type": "armor",
+      "tier": 3,
+      "attrs": {
+        "defense": 60,
+        "earth_resist": 25,
+        "durability": 180,
+        "slot": "armor"
+      },
+      "value": 320,
+      "rarity": "uncommon",
+      "desc": "厚土所铸，最为坚固。",
+      "known": true
+    },
+    {
+      "id": "metal_armor",
+      "name": "庚金甲",
+      "type": "armor",
+      "tier": 4,
+      "attrs": {
+        "defense": 90,
+        "metal_resist": 30,
+        "qi_channeling": 25,
+        "durability": 220,
+        "slot": "armor"
+      },
+      "value": 750,
+      "rarity": "rare",
+      "desc": "庚金所铸，重甲。",
+      "known": false
+    },
+    {
+      "id": "light_armor",
+      "name": "光明甲",
+      "type": "armor",
+      "tier": 5,
+      "attrs": {
+        "defense": 125,
+        "light_resist": 50,
+        "qi_channeling": 80,
+        "durability": 240,
+        "slot": "armor"
+      },
+      "value": 1900,
+      "rarity": "epic",
+      "desc": "光明所凝，邪魔不侵。",
+      "known": false
+    },
+    {
+      "id": "spirit_robe",
+      "name": "道袍",
+      "type": "armor",
+      "tier": 3,
+      "attrs": {
+        "defense": 35,
+        "qi_channeling": 40,
+        "all_affinity": 5,
+        "durability": 120,
+        "slot": "armor"
+      },
+      "value": 300,
+      "rarity": "uncommon",
+      "desc": "道门法袍，灵气流畅。",
+      "known": true
+    },
+    {
+      "id": "talisman_fire",
+      "name": "火灵符",
+      "type": "talisman",
+      "tier": 2,
+      "attrs": {
+        "uses": 1
+      },
+      "effect": {
+        "damage": 40,
+        "element": "fire"
+      },
+      "value": 50,
+      "rarity": "uncommon",
+      "desc": "释放火球，造成40点火属性伤害。",
+      "known": true
+    },
+    {
+      "id": "talisman_ice",
+      "name": "冰灵符",
+      "type": "talisman",
+      "tier": 2,
+      "attrs": {
+        "uses": 1
+      },
+      "effect": {
+        "damage": 40,
+        "element": "ice"
+      },
+      "value": 50,
+      "rarity": "uncommon",
+      "desc": "释放冰锥，造成40点冰属性伤害。",
+      "known": true
+    },
+    {
+      "id": "talisman_thunder",
+      "name": "雷灵符",
+      "type": "talisman",
+      "tier": 3,
+      "attrs": {
+        "uses": 1
+      },
+      "effect": {
+        "damage": 70,
+        "element": "thunder"
+      },
+      "value": 120,
+      "rarity": "rare",
+      "desc": "释放雷电，造成70点雷属性伤害。",
+      "known": true
+    },
+    {
+      "id": "talisman_heal",
+      "name": "回春符",
+      "type": "talisman",
+      "tier": 2,
+      "attrs": {
+        "uses": 1
+      },
+      "effect": {
+        "heal_hp": 80
+      },
+      "value": 60,
+      "rarity": "uncommon",
+      "desc": "恢复80点气血。",
+      "known": true
+    },
+    {
+      "id": "talisman_shield",
+      "name": "护身符",
+      "type": "talisman",
+      "tier": 3,
+      "attrs": {
+        "uses": 1
+      },
+      "effect": {
+        "shield": 100,
+        "duration": 300
+      },
+      "value": 100,
+      "rarity": "rare",
+      "desc": "护盾100点，5分钟。",
+      "known": true
+    },
+    {
+      "id": "talisman_escape",
+      "name": "遁地符",
+      "type": "talisman",
+      "tier": 3,
+      "attrs": {
+        "uses": 1
+      },
+      "effect": {
+        "escape": true
+      },
+      "value": 150,
+      "rarity": "rare",
+      "desc": "紧急遁地，脱离战斗。",
+      "known": true
+    },
+    {
+      "id": "talisman_invisible",
+      "name": "隐身符",
+      "type": "talisman",
+      "tier": 4,
+      "attrs": {
+        "uses": 1
+      },
+      "effect": {
+        "invisible": 300
+      },
+      "value": 300,
+      "rarity": "rare",
+      "desc": "隐身5分钟。",
+      "known": false
+    },
+    {
+      "id": "talisman_summon",
+      "name": "召唤符",
+      "type": "talisman",
+      "tier": 4,
+      "attrs": {
+        "uses": 1
+      },
+      "effect": {
+        "summon_tier": 3
+      },
+      "value": 400,
+      "rarity": "rare",
+      "desc": "召唤3阶妖兽助战。",
+      "known": false
+    },
+    {
+      "id": "talisman_seal",
+      "name": "封印符",
+      "type": "talisman",
+      "tier": 5,
+      "attrs": {
+        "uses": 1
+      },
+      "effect": {
+        "seal_target": true
+      },
+      "value": 800,
+      "rarity": "epic",
+      "desc": "封印目标3回合。",
+      "known": false
+    },
+    {
+      "id": "talisman_explode",
+      "name": "爆裂符",
+      "type": "talisman",
+      "tier": 3,
+      "attrs": {
+        "uses": 1
+      },
+      "effect": {
+        "damage": 120,
+        "aoe": true
+      },
+      "value": 180,
+      "rarity": "rare",
+      "desc": "爆炸造成120点AOE伤害。",
+      "known": true
+    },
+    {
+      "id": "talisman_wood",
+      "name": "木灵符",
+      "type": "talisman",
+      "tier": 2,
+      "attrs": {
+        "uses": 1
+      },
+      "effect": {
+        "damage": 35,
+        "element": "wood"
+      },
+      "value": 45,
+      "rarity": "uncommon",
+      "desc": "释放藤蔓，造成35点木属性伤害。",
+      "known": true
+    },
+    {
+      "id": "talisman_metal",
+      "name": "金灵符",
+      "type": "talisman",
+      "tier": 2,
+      "attrs": {
+        "uses": 1
+      },
+      "effect": {
+        "damage": 38,
+        "element": "metal"
+      },
+      "value": 48,
+      "rarity": "uncommon",
+      "desc": "释放金刃，造成38点金属性伤害。",
+      "known": true
+    },
+    {
+      "id": "talisman_earth",
+      "name": "土灵符",
+      "type": "talisman",
+      "tier": 2,
+      "attrs": {
+        "uses": 1
+      },
+      "effect": {
+        "damage": 36,
+        "element": "earth"
+      },
+      "value": 46,
+      "rarity": "uncommon",
+      "desc": "释放落石，造成36点土属性伤害。",
+      "known": true
+    },
+    {
+      "id": "talisman_wind",
+      "name": "风灵符",
+      "type": "talisman",
+      "tier": 2,
+      "attrs": {
+        "uses": 1
+      },
+      "effect": {
+        "damage": 34,
+        "element": "wind"
+      },
+      "value": 44,
+      "rarity": "uncommon",
+      "desc": "释放风刃，造成34点风属性伤害。",
+      "known": true
+    },
+    {
+      "id": "talisman_soul",
+      "name": "诛魂符",
+      "type": "talisman",
+      "tier": 5,
+      "attrs": {
+        "uses": 1
+      },
+      "effect": {
+        "soul_damage": 80
+      },
+      "value": 700,
+      "rarity": "epic",
+      "desc": "专伤神魂，造成80点神魂伤害。",
+      "known": false
+    },
+    {
+      "id": "spirit_stone_low",
+      "name": "下品灵石",
+      "type": "spirit_stone",
+      "tier": 1,
+      "attrs": {
+        "spiritual_energy": 10
+      },
+      "value": 1,
+      "rarity": "common",
+      "desc": "下品灵石，杂质较多，修炼效率较低。",
+      "known": true
+    },
+    {
+      "id": "spirit_stone_mid",
+      "name": "中品灵石",
+      "type": "spirit_stone",
+      "tier": 3,
+      "attrs": {
+        "spiritual_energy": 100
+      },
+      "value": 100,
+      "rarity": "uncommon",
+      "desc": "中品灵石，1:100兑换下品。",
+      "known": true
+    },
+    {
+      "id": "spirit_stone_high",
+      "name": "上品灵石",
+      "type": "spirit_stone",
+      "tier": 5,
+      "attrs": {
+        "spiritual_energy": 1000
+      },
+      "value": 10000,
+      "rarity": "rare",
+      "desc": "上品灵石，1:100兑换中品。",
+      "known": true
+    },
+    {
+      "id": "spirit_stone_top",
+      "name": "极品灵石",
+      "type": "spirit_stone",
+      "tier": 7,
+      "attrs": {
+        "spiritual_energy": 10000
+      },
+      "value": 1000000,
+      "rarity": "legendary",
+      "desc": "极品灵石，有价无市。",
+      "known": true
+    },
+    {
+      "id": "wood_block",
+      "name": "木材",
+      "type": "misc",
+      "tier": 1,
+      "attrs": {
+        "wood_affinity": 5,
+        "durability": 30
+      },
+      "value": 2,
+      "rarity": "common",
+      "desc": "普通木材。",
+      "known": true
+    },
+    {
+      "id": "leather",
+      "name": "兽皮",
+      "type": "misc",
+      "tier": 1,
+      "attrs": {
+        "durability": 40,
+        "defense": 5
+      },
+      "value": 5,
+      "rarity": "common",
+      "desc": "普通兽皮。",
+      "known": true
+    },
+    {
+      "id": "yang_soul_wood",
+      "name": "养魂木",
+      "type": "misc",
+      "tier": 4,
+      "attrs": {
+        "soul_nourish": 50,
+        "wood_affinity": 30,
+        "durability": 100
+      },
+      "value": 200,
+      "rarity": "rare",
+      "desc": "滋养神魂之木。",
+      "known": true
+    },
+    {
+      "id": "storage_ring_low",
+      "name": "储物戒·下品",
+      "type": "misc",
+      "tier": 3,
+      "attrs": {
+        "storage_slots": 20,
+        "durability": 100
+      },
+      "value": 500,
+      "rarity": "rare",
+      "desc": "储物空间20格。",
+      "known": true
+    },
+    {
+      "id": "storage_ring_mid",
+      "name": "储物戒·中品",
+      "type": "misc",
+      "tier": 5,
+      "attrs": {
+        "storage_slots": 100,
+        "durability": 100
+      },
+      "value": 5000,
+      "rarity": "epic",
+      "desc": "储物空间100格。",
+      "known": true
+    },
+    {
+      "id": "storage_ring_high",
+      "name": "储物戒·上品",
+      "type": "misc",
+      "tier": 7,
+      "attrs": {
+        "storage_slots": 500,
+        "durability": 100
+      },
+      "value": 50000,
+      "rarity": "legendary",
+      "desc": "储物空间500格。",
+      "known": true
+    },
+    {
+      "id": "contract_talisman",
+      "name": "契约符",
+      "type": "misc",
+      "tier": 3,
+      "attrs": {
+        "tame_power": 50,
+        "durability": 100
+      },
+      "value": 200,
+      "rarity": "rare",
+      "desc": "驯服妖兽用。",
+      "known": true
+    },
+    {
+      "id": "sound_transmit_talisman",
+      "name": "传音符",
+      "type": "misc",
+      "tier": 2,
+      "attrs": {
+        "range": 1000,
+        "durability": 100
+      },
+      "value": 30,
+      "rarity": "common",
+      "desc": "千里传音。",
+      "known": true
+    },
+    {
+      "id": "jade_slip_blank",
+      "name": "空白玉简",
+      "type": "misc",
+      "tier": 2,
+      "attrs": {
+        "storage": 1,
+        "durability": 100
+      },
+      "value": 50,
+      "rarity": "common",
+      "desc": "可记录功法/丹方。",
+      "known": true
+    },
+    {
+      "id": "reverse_jade",
+      "name": "逆道玉简",
+      "type": "misc",
+      "tier": 9,
+      "attrs": {
+        "reverse_power": 100,
+        "durability": 100
+      },
+      "value": 0,
+      "rarity": "legendary",
+      "desc": "可逆转功法缺陷，蕴含逆天之道。",
+      "known": true
+    },
+    {
+      "id": "wood_slip",
+      "name": "青木诀玉简",
+      "type": "jade_slip",
+      "tier": 3,
+      "attrs": {},
+      "teaches": "wood_basic",
+      "value": 500,
+      "rarity": "rare",
+      "desc": "记载青木诀。",
+      "known": true
+    },
+    {
+      "id": "fire_slip",
+      "name": "焚天诀玉简",
+      "type": "jade_slip",
+      "tier": 3,
+      "attrs": {},
+      "teaches": "fire_basic",
+      "value": 500,
+      "rarity": "rare",
+      "desc": "记载焚天诀。",
+      "known": true
+    },
+    {
+      "id": "ice_slip",
+      "name": "冰魄诀玉简",
+      "type": "jade_slip",
+      "tier": 3,
+      "attrs": {},
+      "teaches": "ice_basic",
+      "value": 500,
+      "rarity": "rare",
+      "desc": "记载冰魄诀。",
+      "known": true
+    },
+    {
+      "id": "metal_slip",
+      "name": "庚金诀玉简",
+      "type": "jade_slip",
+      "tier": 3,
+      "attrs": {},
+      "teaches": "metal_basic",
+      "value": 500,
+      "rarity": "rare",
+      "desc": "记载庚金诀。",
+      "known": true
+    },
+    {
+      "id": "earth_slip",
+      "name": "厚土诀玉简",
+      "type": "jade_slip",
+      "tier": 3,
+      "attrs": {},
+      "teaches": "earth_basic",
+      "value": 500,
+      "rarity": "rare",
+      "desc": "记载厚土诀。",
+      "known": true
+    },
+    {
+      "id": "wind_slip",
+      "name": "御风诀玉简",
+      "type": "jade_slip",
+      "tier": 4,
+      "attrs": {},
+      "teaches": "wind_basic",
+      "value": 800,
+      "rarity": "rare",
+      "desc": "记载御风诀。",
+      "known": true
+    },
+    {
+      "id": "thunder_slip",
+      "name": "九霄雷诀玉简",
+      "type": "jade_slip",
+      "tier": 5,
+      "attrs": {},
+      "teaches": "thunder_basic",
+      "value": 2000,
+      "rarity": "epic",
+      "desc": "记载九霄雷诀。",
+      "known": true
+    },
+    {
+      "id": "light_slip",
+      "name": "光明诀玉简",
+      "type": "jade_slip",
+      "tier": 5,
+      "attrs": {},
+      "teaches": "light_basic",
+      "value": 2000,
+      "rarity": "epic",
+      "desc": "记载光明诀。",
+      "known": true
+    },
+    {
+      "id": "dark_slip",
+      "name": "九幽诀玉简",
+      "type": "jade_slip",
+      "tier": 5,
+      "attrs": {},
+      "teaches": "dark_basic",
+      "value": 2000,
+      "rarity": "epic",
+      "desc": "记载九幽诀。",
+      "known": true
+    },
+    {
+      "id": "void_slip",
+      "name": "虚空诀玉简",
+      "type": "jade_slip",
+      "tier": 6,
+      "attrs": {},
+      "teaches": "void_basic",
+      "value": 5000,
+      "rarity": "epic",
+      "desc": "记载虚空诀。",
+      "known": true
+    },
+    {
+      "id": "spirit_gather_flag",
+      "name": "聚灵阵旗",
+      "type": "formation",
+      "tier": 3,
+      "attrs": {
+        "formation": "spirit_gather",
+        "power": 30
+      },
+      "value": 200,
+      "rarity": "rare",
+      "desc": "布设聚灵阵用。",
+      "known": true
+    },
+    {
+      "id": "spirit_gather_disk",
+      "name": "聚灵阵盘",
+      "type": "formation",
+      "tier": 4,
+      "attrs": {
+        "formation": "spirit_gather",
+        "power": 60
+      },
+      "value": 800,
+      "rarity": "rare",
+      "desc": "完整聚灵阵阵盘。",
+      "known": false
+    },
+    {
+      "id": "defense_flag",
+      "name": "护身阵旗",
+      "type": "formation",
+      "tier": 3,
+      "attrs": {
+        "formation": "defense",
+        "power": 30
+      },
+      "value": 250,
+      "rarity": "rare",
+      "desc": "布设护身阵用。",
+      "known": true
+    },
+    {
+      "id": "defense_disk",
+      "name": "护身阵盘",
+      "type": "formation",
+      "tier": 4,
+      "attrs": {
+        "formation": "defense",
+        "power": 60
+      },
+      "value": 900,
+      "rarity": "rare",
+      "desc": "完整护身阵阵盘。",
+      "known": false
+    },
+    {
+      "id": "kill_flag",
+      "name": "杀阵阵旗",
+      "type": "formation",
+      "tier": 4,
+      "attrs": {
+        "formation": "kill",
+        "power": 50
+      },
+      "value": 600,
+      "rarity": "rare",
+      "desc": "布设杀阵用。",
+      "known": false
+    },
+    {
+      "id": "kill_disk",
+      "name": "杀阵阵盘",
+      "type": "formation",
+      "tier": 5,
+      "attrs": {
+        "formation": "kill",
+        "power": 100
+      },
+      "value": 2500,
+      "rarity": "epic",
+      "desc": "完整杀阵阵盘。",
+      "known": false
+    },
+    {
+      "id": "illusion_flag",
+      "name": "幻阵阵旗",
+      "type": "formation",
+      "tier": 4,
+      "attrs": {
+        "formation": "illusion",
+        "power": 40
+      },
+      "value": 500,
+      "rarity": "rare",
+      "desc": "布设幻阵用。",
+      "known": false
+    },
+    {
+      "id": "time_disk",
+      "name": "时间阵盘",
+      "type": "formation",
+      "tier": 6,
+      "attrs": {
+        "formation": "time",
+        "power": 10
+      },
+      "value": 8000,
+      "rarity": "legendary",
+      "desc": "时间阵盘，1日=1年。",
+      "known": false
+    },
+    {
+      "id": "seed_yun_ling",
+      "name": "云灵草种子",
+      "type": "seed",
+      "tier": 1,
+      "attrs": {
+        "plant_id": "yun_ling_grass",
+        "grow_days": 50
+      },
+      "value": 10,
+      "rarity": "common",
+      "desc": "种下后5日成熟。",
+      "known": true
+    },
+    {
+      "id": "seed_qing_xin",
+      "name": "清心莲种子",
+      "type": "seed",
+      "tier": 2,
+      "attrs": {
+        "plant_id": "qing_xin_lotus",
+        "grow_days": 80
+      },
+      "value": 30,
+      "rarity": "common",
+      "desc": "种下后8日成熟。",
+      "known": true
+    },
+    {
+      "id": "seed_chi_yan",
+      "name": "赤炎草种子",
+      "type": "seed",
+      "tier": 2,
+      "attrs": {
+        "plant_id": "chi_yan_grass",
+        "grow_days": 80
+      },
+      "value": 30,
+      "rarity": "common",
+      "desc": "种下后8日成熟。",
+      "known": true
+    },
+    {
+      "id": "seed_bing_lotus",
+      "name": "冰莲种子",
+      "type": "seed",
+      "tier": 3,
+      "attrs": {
+        "plant_id": "bing_lotus",
+        "grow_days": 120
+      },
+      "value": 80,
+      "rarity": "uncommon",
+      "desc": "种下后12日成熟。",
+      "known": true
+    },
+    {
+      "id": "seed_ling_zhi",
+      "name": "灵芝种子",
+      "type": "seed",
+      "tier": 3,
+      "attrs": {
+        "plant_id": "ling_zhi_100",
+        "grow_days": 150
+      },
+      "value": 100,
+      "rarity": "uncommon",
+      "desc": "种下后15日成熟。",
+      "known": true
+    },
+    {
+      "id": "seed_long_xu",
+      "name": "龙须草种子",
+      "type": "seed",
+      "tier": 4,
+      "attrs": {
+        "plant_id": "long_xu_grass",
+        "grow_days": 200
+      },
+      "value": 250,
+      "rarity": "rare",
+      "desc": "种下后20日成熟。",
+      "known": true
+    },
+    {
+      "id": "seed_feng_xi",
+      "name": "凤栖草种子",
+      "type": "seed",
+      "tier": 5,
+      "attrs": {
+        "plant_id": "feng_xi_grass",
+        "grow_days": 300
+      },
+      "value": 500,
+      "rarity": "epic",
+      "desc": "种下后30日成熟。",
+      "known": true
+    },
+    {
+      "id": "seed_he_shou_wu",
+      "name": "何首乌种子",
+      "type": "seed",
+      "tier": 3,
+      "attrs": {
+        "plant_id": "he_shou_wu",
+        "grow_days": 130
+      },
+      "value": 90,
+      "rarity": "uncommon",
+      "desc": "种下后15日成熟。",
+      "known": true
+    },
+    {
+      "id": "seed_bai_lu",
+      "name": "白露草种子",
+      "type": "seed",
+      "tier": 1,
+      "attrs": {
+        "plant_id": "bai_lu_grass",
+        "grow_days": 45
+      },
+      "value": 8,
+      "rarity": "common",
+      "desc": "种下后5日成熟。",
+      "known": true
+    },
+    {
+      "id": "seed_zi_ye",
+      "name": "紫叶草种子",
+      "type": "seed",
+      "tier": 1,
+      "attrs": {
+        "plant_id": "zi_ye_grass",
+        "grow_days": 45
+      },
+      "value": 8,
+      "rarity": "common",
+      "desc": "种下后5日成熟。",
+      "known": true
+    }
+  ]
+}

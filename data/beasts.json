@@ -1,0 +1,1377 @@
+{
+  "beasts": [
+    {
+      "id": "ye_tu",
+      "name": "灵兔",
+      "tier": 1,
+      "element": "wood",
+      "hp": 50,
+      "attack": 8,
+      "defense": 3,
+      "speed": 15,
+      "qi": 20,
+      "skills": [
+        {
+          "name": "撕咬",
+          "damage_mult": 1.0,
+          "cost": 0
+        },
+        {
+          "name": "急速突袭",
+          "damage_mult": 1.3,
+          "cost": 10
+        }
+      ],
+      "drops": [
+        {
+          "item": "leather",
+          "prob": 0.7
+        },
+        {
+          "item": "yun_ling_grass",
+          "prob": 0.3
+        }
+      ],
+      "exp": 15,
+      "spirit_stones": [
+        1,
+        3
+      ],
+      "tamable": true,
+      "habitat": "凡人国度",
+      "desc": "灵兔，1阶wood属性妖兽，栖息于凡人国度。"
+    },
+    {
+      "id": "shan_lang",
+      "name": "山狼",
+      "tier": 2,
+      "element": "wind",
+      "hp": 120,
+      "attack": 18,
+      "defense": 8,
+      "speed": 25,
+      "qi": 50,
+      "skills": [
+        {
+          "name": "撕咬",
+          "damage_mult": 1.0,
+          "cost": 0
+        },
+        {
+          "name": "风刃",
+          "damage_mult": 1.4,
+          "cost": 20,
+          "element": "wind"
+        },
+        {
+          "name": "狼群嚎叫",
+          "damage_mult": 1.2,
+          "cost": 30,
+          "cooldown": 3
+        }
+      ],
+      "drops": [
+        {
+          "item": "leather",
+          "prob": 0.9
+        },
+        {
+          "item": "wolf_core",
+          "prob": 0.5
+        }
+      ],
+      "exp": 35,
+      "spirit_stones": [
+        2,
+        5
+      ],
+      "tamable": true,
+      "habitat": "万妖山脉外围",
+      "desc": "山狼，2阶wind属性妖兽，栖息于万妖山脉外围。"
+    },
+    {
+      "id": "du_she",
+      "name": "碧磷蛇",
+      "tier": 2,
+      "element": "wood",
+      "hp": 100,
+      "attack": 20,
+      "defense": 6,
+      "speed": 20,
+      "qi": 60,
+      "skills": [
+        {
+          "name": "撕咬",
+          "damage_mult": 1.0,
+          "cost": 0,
+          "poison": true
+        },
+        {
+          "name": "毒液喷射",
+          "damage_mult": 1.3,
+          "cost": 25,
+          "element": "wood",
+          "poison": true
+        },
+        {
+          "name": "缠绕",
+          "damage_mult": 0.8,
+          "cost": 15,
+          "stun": true,
+          "cooldown": 2
+        }
+      ],
+      "drops": [
+        {
+          "item": "leather",
+          "prob": 0.8
+        },
+        {
+          "item": "snake_gallbladder",
+          "prob": 0.6
+        },
+        {
+          "item": "qing_xin_lotus",
+          "prob": 0.2
+        }
+      ],
+      "exp": 40,
+      "spirit_stones": [
+        2,
+        5
+      ],
+      "tamable": false,
+      "habitat": "万妖山脉",
+      "desc": "碧磷蛇，2阶wood属性妖兽，栖息于万妖山脉。"
+    },
+    {
+      "id": "chiyan_tiger",
+      "name": "赤焰虎",
+      "tier": 3,
+      "element": "fire",
+      "hp": 300,
+      "attack": 35,
+      "defense": 20,
+      "speed": 30,
+      "qi": 200,
+      "skills": [
+        {
+          "name": "撕咬",
+          "damage_mult": 1.0,
+          "cost": 0
+        },
+        {
+          "name": "火焰喷射",
+          "damage_mult": 1.5,
+          "cost": 30,
+          "element": "fire",
+          "burn": true
+        },
+        {
+          "name": "虎王之怒",
+          "damage_mult": 2.0,
+          "cost": 60,
+          "element": "fire",
+          "cooldown": 3
+        }
+      ],
+      "drops": [
+        {
+          "item": "tiger_fur",
+          "prob": 0.9
+        },
+        {
+          "item": "tiger_claw",
+          "prob": 0.6
+        },
+        {
+          "item": "tiger_core",
+          "prob": 0.7
+        },
+        {
+          "item": "chi_yan_grass",
+          "prob": 0.3
+        }
+      ],
+      "exp": 80,
+      "spirit_stones": [
+        3,
+        8
+      ],
+      "tamable": true,
+      "habitat": "万妖山脉炎峰",
+      "desc": "赤焰虎，3阶fire属性妖兽，栖息于万妖山脉炎峰。"
+    },
+    {
+      "id": "ice_wolf",
+      "name": "冰狼",
+      "tier": 3,
+      "element": "ice",
+      "hp": 280,
+      "attack": 38,
+      "defense": 18,
+      "speed": 40,
+      "qi": 180,
+      "skills": [
+        {
+          "name": "撕咬",
+          "damage_mult": 1.0,
+          "cost": 0
+        },
+        {
+          "name": "冰锥术",
+          "damage_mult": 1.4,
+          "cost": 25,
+          "element": "ice",
+          "slow": true
+        },
+        {
+          "name": "冰封狼嚎",
+          "damage_mult": 1.8,
+          "cost": 50,
+          "element": "ice",
+          "freeze": true,
+          "cooldown": 3
+        }
+      ],
+      "drops": [
+        {
+          "item": "wolf_fur",
+          "prob": 0.9
+        },
+        {
+          "item": "wolf_core",
+          "prob": 0.7
+        },
+        {
+          "item": "bing_lotus",
+          "prob": 0.3
+        }
+      ],
+      "exp": 80,
+      "spirit_stones": [
+        3,
+        8
+      ],
+      "tamable": true,
+      "habitat": "万妖山脉寒冰潭",
+      "desc": "冰狼，3阶ice属性妖兽，栖息于万妖山脉寒冰潭。"
+    },
+    {
+      "id": "qingmu_snake",
+      "name": "青木蟒",
+      "tier": 4,
+      "element": "wood",
+      "hp": 500,
+      "attack": 45,
+      "defense": 30,
+      "speed": 25,
+      "qi": 300,
+      "skills": [
+        {
+          "name": "缠绕",
+          "damage_mult": 1.0,
+          "cost": 0,
+          "stun": true
+        },
+        {
+          "name": "毒液喷射",
+          "damage_mult": 1.3,
+          "cost": 30,
+          "element": "wood",
+          "poison": true
+        },
+        {
+          "name": "蟒尾横扫",
+          "damage_mult": 1.7,
+          "cost": 50,
+          "aoe": true,
+          "cooldown": 2
+        }
+      ],
+      "drops": [
+        {
+          "item": "leather",
+          "prob": 0.9
+        },
+        {
+          "item": "snake_core",
+          "prob": 0.8
+        },
+        {
+          "item": "long_xu_grass",
+          "prob": 0.4
+        }
+      ],
+      "exp": 150,
+      "spirit_stones": [
+        8,
+        18
+      ],
+      "tamable": false,
+      "habitat": "万妖山脉深处",
+      "desc": "青木蟒，4阶wood属性妖兽，栖息于万妖山脉深处。"
+    },
+    {
+      "id": "jinjia_scorpion",
+      "name": "金甲蝎",
+      "tier": 4,
+      "element": "metal",
+      "hp": 600,
+      "attack": 40,
+      "defense": 50,
+      "speed": 20,
+      "qi": 250,
+      "skills": [
+        {
+          "name": "钳击",
+          "damage_mult": 1.0,
+          "cost": 0
+        },
+        {
+          "name": "尾刺",
+          "damage_mult": 1.4,
+          "cost": 25,
+          "poison": true
+        },
+        {
+          "name": "金甲护体",
+          "damage_mult": 0,
+          "cost": 40,
+          "defense_boost": 30,
+          "cooldown": 3
+        }
+      ],
+      "drops": [
+        {
+          "item": "leather",
+          "prob": 0.9
+        },
+        {
+          "item": "scorpion_core",
+          "prob": 0.8
+        },
+        {
+          "item": "xuan_iron",
+          "prob": 0.5
+        }
+      ],
+      "exp": 150,
+      "spirit_stones": [
+        8,
+        18
+      ],
+      "tamable": false,
+      "habitat": "万妖山脉矿洞",
+      "desc": "金甲蝎，4阶metal属性妖兽，栖息于万妖山脉矿洞。"
+    },
+    {
+      "id": "fengxing_leopard",
+      "name": "风行豹",
+      "tier": 4,
+      "element": "wind",
+      "hp": 380,
+      "attack": 55,
+      "defense": 22,
+      "speed": 70,
+      "qi": 220,
+      "skills": [
+        {
+          "name": "利爪",
+          "damage_mult": 1.0,
+          "cost": 0
+        },
+        {
+          "name": "风刃",
+          "damage_mult": 1.5,
+          "cost": 30,
+          "element": "wind"
+        },
+        {
+          "name": "疾风突袭",
+          "damage_mult": 2.2,
+          "cost": 60,
+          "element": "wind",
+          "double_attack": true,
+          "cooldown": 3
+        }
+      ],
+      "drops": [
+        {
+          "item": "leather",
+          "prob": 0.9
+        },
+        {
+          "item": "leopard_core",
+          "prob": 0.8
+        },
+        {
+          "item": "ling_crystal",
+          "prob": 0.4
+        }
+      ],
+      "exp": 150,
+      "spirit_stones": [
+        8,
+        18
+      ],
+      "tamable": false,
+      "habitat": "万妖山脉平原",
+      "desc": "风行豹，4阶wind属性妖兽，栖息于万妖山脉平原。"
+    },
+    {
+      "id": "leiying",
+      "name": "雷鹰",
+      "tier": 4,
+      "element": "thunder",
+      "hp": 320,
+      "attack": 60,
+      "defense": 18,
+      "speed": 65,
+      "qi": 240,
+      "skills": [
+        {
+          "name": "利爪",
+          "damage_mult": 1.0,
+          "cost": 0
+        },
+        {
+          "name": "雷电",
+          "damage_mult": 1.6,
+          "cost": 35,
+          "element": "thunder",
+          "stun": true
+        },
+        {
+          "name": "雷暴",
+          "damage_mult": 2.0,
+          "cost": 70,
+          "element": "thunder",
+          "aoe": true,
+          "cooldown": 3
+        }
+      ],
+      "drops": [
+        {
+          "item": "eagle_claw",
+          "prob": 0.8
+        },
+        {
+          "item": "lei_jing",
+          "prob": 0.5
+        }
+      ],
+      "exp": 160,
+      "spirit_stones": [
+        8,
+        20
+      ],
+      "tamable": true,
+      "habitat": "万妖山脉高峰",
+      "desc": "雷鹰，4阶thunder属性妖兽，栖息于万妖山脉高峰。"
+    },
+    {
+      "id": "xiong_feng",
+      "name": "凶蜂",
+      "tier": 2,
+      "element": "wind",
+      "hp": 80,
+      "attack": 15,
+      "defense": 5,
+      "speed": 35,
+      "qi": 30,
+      "skills": [
+        {
+          "name": "蛰刺",
+          "damage_mult": 1.0,
+          "cost": 0,
+          "poison": true
+        },
+        {
+          "name": "蜂群",
+          "damage_mult": 1.3,
+          "cost": 15,
+          "aoe": true
+        }
+      ],
+      "drops": [
+        {
+          "item": "leather",
+          "prob": 0.3
+        },
+        {
+          "item": "feng_yin_grass",
+          "prob": 0.2
+        }
+      ],
+      "exp": 25,
+      "spirit_stones": [
+        1,
+        3
+      ],
+      "tamable": false,
+      "habitat": "万妖山脉林间",
+      "desc": "凶蜂，2阶wind属性妖兽，栖息于万妖山脉林间。"
+    },
+    {
+      "id": "shi_jing_yi_wang",
+      "name": "食晶蚁王",
+      "tier": 5,
+      "element": "earth",
+      "hp": 1000,
+      "attack": 70,
+      "defense": 60,
+      "speed": 30,
+      "qi": 500,
+      "skills": [
+        {
+          "name": "钳咬",
+          "damage_mult": 1.0,
+          "cost": 0
+        },
+        {
+          "name": "土崩击",
+          "damage_mult": 1.6,
+          "cost": 40,
+          "element": "earth"
+        },
+        {
+          "name": "蚁群召唤",
+          "damage_mult": 1.2,
+          "cost": 80,
+          "summon": true,
+          "cooldown": 4
+        },
+        {
+          "name": "晶化护甲",
+          "damage_mult": 0,
+          "cost": 60,
+          "defense_boost": 80,
+          "cooldown": 3
+        }
+      ],
+      "drops": [
+        {
+          "item": "ling_crystal",
+          "prob": 1.0,
+          "qty": [
+            2,
+            4
+          ]
+        },
+        {
+          "item": "star_iron",
+          "prob": 0.5
+        },
+        {
+          "item": "spirit_stone_mid",
+          "prob": 0.8,
+          "qty": [
+            1,
+            3
+          ]
+        }
+      ],
+      "exp": 300,
+      "spirit_stones": [
+        20,
+        50
+      ],
+      "tamable": false,
+      "habitat": "万妖山脉矿洞深处",
+      "desc": "食晶蚁王，5阶earth属性妖兽，栖息于万妖山脉矿洞深处。"
+    },
+    {
+      "id": "huo_long",
+      "name": "火龙",
+      "tier": 6,
+      "element": "fire",
+      "hp": 3000,
+      "attack": 200,
+      "defense": 100,
+      "speed": 80,
+      "qi": 2000,
+      "skills": [
+        {
+          "name": "龙爪",
+          "damage_mult": 1.5,
+          "cost": 0
+        },
+        {
+          "name": "龙息",
+          "damage_mult": 2.0,
+          "cost": 200,
+          "element": "fire",
+          "aoe": true,
+          "burn": true
+        },
+        {
+          "name": "龙威",
+          "damage_mult": 0,
+          "cost": 300,
+          "stun": true,
+          "aoe": true,
+          "cooldown": 5
+        },
+        {
+          "name": "龙吟",
+          "damage_mult": 1.8,
+          "cost": 400,
+          "aoe": true,
+          "cooldown": 3
+        }
+      ],
+      "drops": [
+        {
+          "item": "dragon_scale",
+          "prob": 1.0,
+          "qty": [
+            3,
+            6
+          ]
+        },
+        {
+          "item": "spirit_stone_high",
+          "prob": 0.8,
+          "qty": [
+            2,
+            5
+          ]
+        }
+      ],
+      "exp": 800,
+      "spirit_stones": [
+        100,
+        200
+      ],
+      "tamable": false,
+      "habitat": "火龙洞",
+      "desc": "火龙，6阶fire属性妖兽，栖息于火龙洞。"
+    },
+    {
+      "id": "bing_long",
+      "name": "冰龙",
+      "tier": 6,
+      "element": "ice",
+      "hp": 3200,
+      "attack": 190,
+      "defense": 110,
+      "speed": 70,
+      "qi": 2000,
+      "skills": [
+        {
+          "name": "龙爪",
+          "damage_mult": 1.5,
+          "cost": 0
+        },
+        {
+          "name": "冰息",
+          "damage_mult": 2.0,
+          "cost": 200,
+          "element": "ice",
+          "aoe": true,
+          "freeze": true
+        },
+        {
+          "name": "龙威",
+          "damage_mult": 0,
+          "cost": 300,
+          "stun": true,
+          "aoe": true,
+          "cooldown": 5
+        }
+      ],
+      "drops": [
+        {
+          "item": "dragon_scale",
+          "prob": 1.0,
+          "qty": [
+            3,
+            6
+          ]
+        },
+        {
+          "item": "bing_jing",
+          "prob": 0.8,
+          "qty": [
+            5,
+            10
+          ]
+        }
+      ],
+      "exp": 800,
+      "spirit_stones": [
+        100,
+        200
+      ],
+      "tamable": false,
+      "habitat": "冰龙窟",
+      "desc": "冰龙，6阶ice属性妖兽，栖息于冰龙窟。"
+    },
+    {
+      "id": "jiu_you_she",
+      "name": "九幽蛇",
+      "tier": 6,
+      "element": "dark",
+      "hp": 2500,
+      "attack": 220,
+      "defense": 90,
+      "speed": 90,
+      "qi": 1800,
+      "skills": [
+        {
+          "name": "撕咬",
+          "damage_mult": 1.5,
+          "cost": 0,
+          "poison": true
+        },
+        {
+          "name": "九幽毒雾",
+          "damage_mult": 1.8,
+          "cost": 250,
+          "element": "dark",
+          "aoe": true,
+          "poison": true
+        },
+        {
+          "name": "灵魂吞噬",
+          "damage_mult": 2.2,
+          "cost": 350,
+          "soul_damage": true,
+          "cooldown": 3
+        }
+      ],
+      "drops": [
+        {
+          "item": "snake_core",
+          "prob": 1.0
+        },
+        {
+          "item": "jiuyou_grass",
+          "prob": 0.5
+        },
+        {
+          "item": "spirit_stone_high",
+          "prob": 0.5,
+          "qty": [
+            1,
+            3
+          ]
+        }
+      ],
+      "exp": 700,
+      "spirit_stones": [
+        80,
+        180
+      ],
+      "tamable": false,
+      "habitat": "九幽冥土",
+      "desc": "九幽蛇，6阶dark属性妖兽，栖息于九幽冥土。"
+    },
+    {
+      "id": "jin_chi_peng",
+      "name": "金翅鹏",
+      "tier": 5,
+      "element": "wind",
+      "hp": 1500,
+      "attack": 120,
+      "defense": 70,
+      "speed": 120,
+      "qi": 800,
+      "skills": [
+        {
+          "name": "鹏击",
+          "damage_mult": 1.5,
+          "cost": 0
+        },
+        {
+          "name": "金翅斩",
+          "damage_mult": 2.0,
+          "cost": 150,
+          "element": "metal"
+        },
+        {
+          "name": "风暴",
+          "damage_mult": 1.8,
+          "cost": 200,
+          "element": "wind",
+          "aoe": true,
+          "cooldown": 3
+        }
+      ],
+      "drops": [
+        {
+          "item": "eagle_claw",
+          "prob": 1.0,
+          "qty": [
+            2,
+            4
+          ]
+        },
+        {
+          "item": "purple_gold",
+          "prob": 0.6
+        },
+        {
+          "item": "spirit_stone_high",
+          "prob": 0.3,
+          "qty": [
+            1,
+            2
+          ]
+        }
+      ],
+      "exp": 400,
+      "spirit_stones": [
+        30,
+        80
+      ],
+      "tamable": false,
+      "habitat": "高空云海",
+      "desc": "金翅鹏，5阶wind属性妖兽，栖息于高空云海。"
+    },
+    {
+      "id": "xuan_wu",
+      "name": "玄武",
+      "tier": 7,
+      "element": "water",
+      "hp": 8000,
+      "attack": 350,
+      "defense": 400,
+      "speed": 50,
+      "qi": 5000,
+      "skills": [
+        {
+          "name": "玄武撞击",
+          "damage_mult": 1.5,
+          "cost": 0
+        },
+        {
+          "name": "水流斩",
+          "damage_mult": 2.0,
+          "cost": 500,
+          "element": "water",
+          "aoe": true
+        },
+        {
+          "name": "玄武甲",
+          "damage_mult": 0,
+          "cost": 800,
+          "defense_boost": 200,
+          "cooldown": 5
+        },
+        {
+          "name": "水神领域",
+          "damage_mult": 2.5,
+          "cost": 1500,
+          "element": "water",
+          "domain": true,
+          "cooldown": 10
+        }
+      ],
+      "drops": [
+        {
+          "item": "black_turtle_shell",
+          "prob": 1.0,
+          "qty": [
+            2,
+            4
+          ]
+        },
+        {
+          "item": "spirit_stone_top",
+          "prob": 0.3,
+          "qty": [
+            1,
+            2
+          ]
+        }
+      ],
+      "exp": 2000,
+      "spirit_stones": [
+        500,
+        1000
+      ],
+      "tamable": false,
+      "habitat": "北海深渊",
+      "desc": "玄武，7阶water属性妖兽，栖息于北海深渊。"
+    },
+    {
+      "id": "qing_long",
+      "name": "青龙",
+      "tier": 7,
+      "element": "wood",
+      "hp": 7500,
+      "attack": 380,
+      "defense": 320,
+      "speed": 100,
+      "qi": 5000,
+      "skills": [
+        {
+          "name": "龙爪",
+          "damage_mult": 1.5,
+          "cost": 0
+        },
+        {
+          "name": "青木领域",
+          "damage_mult": 2.0,
+          "cost": 800,
+          "element": "wood",
+          "domain": true
+        },
+        {
+          "name": "神龙摆尾",
+          "damage_mult": 2.2,
+          "cost": 1000,
+          "aoe": true,
+          "cooldown": 3
+        }
+      ],
+      "drops": [
+        {
+          "item": "azure_dragon_whisker",
+          "prob": 1.0,
+          "qty": [
+            2,
+            4
+          ]
+        },
+        {
+          "item": "dragon_scale",
+          "prob": 1.0,
+          "qty": [
+            3,
+            6
+          ]
+        },
+        {
+          "item": "spirit_stone_top",
+          "prob": 0.3,
+          "qty": [
+            1,
+            2
+          ]
+        }
+      ],
+      "exp": 2000,
+      "spirit_stones": [
+        500,
+        1000
+      ],
+      "tamable": false,
+      "habitat": "东海龙宫",
+      "desc": "青龙，7阶wood属性妖兽，栖息于东海龙宫。"
+    },
+    {
+      "id": "zhu_que",
+      "name": "朱雀",
+      "tier": 7,
+      "element": "fire",
+      "hp": 7000,
+      "attack": 420,
+      "defense": 280,
+      "speed": 120,
+      "qi": 5000,
+      "skills": [
+        {
+          "name": "朱雀啄",
+          "damage_mult": 1.5,
+          "cost": 0
+        },
+        {
+          "name": "涅槃火焰",
+          "damage_mult": 2.5,
+          "cost": 1000,
+          "element": "fire",
+          "aoe": true,
+          "burn": true,
+          "cooldown": 3
+        },
+        {
+          "name": "凤凰涅槃",
+          "damage_mult": 0,
+          "cost": 2000,
+          "heal_self": true,
+          "cooldown": 10
+        }
+      ],
+      "drops": [
+        {
+          "item": "vermillion_bird_feather",
+          "prob": 1.0,
+          "qty": [
+            2,
+            4
+          ]
+        },
+        {
+          "item": "feng_xi_grass",
+          "prob": 0.5
+        },
+        {
+          "item": "spirit_stone_top",
+          "prob": 0.3,
+          "qty": [
+            1,
+            2
+          ]
+        }
+      ],
+      "exp": 2000,
+      "spirit_stones": [
+        500,
+        1000
+      ],
+      "tamable": false,
+      "habitat": "南方火山",
+      "desc": "朱雀，7阶fire属性妖兽，栖息于南方火山。"
+    },
+    {
+      "id": "bai_hu",
+      "name": "白虎",
+      "tier": 7,
+      "element": "metal",
+      "hp": 7800,
+      "attack": 450,
+      "defense": 300,
+      "speed": 110,
+      "qi": 5000,
+      "skills": [
+        {
+          "name": "虎啸",
+          "damage_mult": 1.5,
+          "cost": 0
+        },
+        {
+          "name": "庚金剑气",
+          "damage_mult": 2.5,
+          "cost": 1000,
+          "element": "metal",
+          "armor_pierce": true
+        },
+        {
+          "name": "白虎领域",
+          "damage_mult": 2.0,
+          "cost": 1500,
+          "element": "metal",
+          "domain": true,
+          "cooldown": 8
+        }
+      ],
+      "drops": [
+        {
+          "item": "white_tiger_fang",
+          "prob": 1.0,
+          "qty": [
+            2,
+            4
+          ]
+        },
+        {
+          "item": "star_iron",
+          "prob": 0.8,
+          "qty": [
+            2,
+            5
+          ]
+        },
+        {
+          "item": "spirit_stone_top",
+          "prob": 0.3,
+          "qty": [
+            1,
+            2
+          ]
+        }
+      ],
+      "exp": 2000,
+      "spirit_stones": [
+        500,
+        1000
+      ],
+      "tamable": false,
+      "habitat": "西方白虎岭",
+      "desc": "白虎，7阶metal属性妖兽，栖息于西方白虎岭。"
+    },
+    {
+      "id": "qi_lin",
+      "name": "麒麟",
+      "tier": 7,
+      "element": "light",
+      "hp": 8500,
+      "attack": 400,
+      "defense": 350,
+      "speed": 90,
+      "qi": 5500,
+      "skills": [
+        {
+          "name": "麒麟踏",
+          "damage_mult": 1.5,
+          "cost": 0
+        },
+        {
+          "name": "圣光",
+          "damage_mult": 2.0,
+          "cost": 800,
+          "element": "light",
+          "aoe": true
+        },
+        {
+          "name": "麒麟瑞气",
+          "damage_mult": 0,
+          "cost": 1500,
+          "heal_self": true,
+          "karma_boost": true,
+          "cooldown": 8
+        }
+      ],
+      "drops": [
+        {
+          "item": "qilin_horn",
+          "prob": 1.0,
+          "qty": [
+            1,
+            2
+          ]
+        },
+        {
+          "item": "spirit_stone_top",
+          "prob": 0.5,
+          "qty": [
+            1,
+            3
+          ]
+        }
+      ],
+      "exp": 2500,
+      "spirit_stones": [
+        600,
+        1200
+      ],
+      "tamable": false,
+      "habitat": "麒麟圣地",
+      "desc": "麒麟，7阶light属性妖兽，栖息于麒麟圣地。"
+    },
+    {
+      "id": "jiu_you_mo_long",
+      "name": "九幽魔龙",
+      "tier": 7,
+      "element": "dark",
+      "hp": 9000,
+      "attack": 480,
+      "defense": 320,
+      "speed": 100,
+      "qi": 6000,
+      "skills": [
+        {
+          "name": "魔龙爪",
+          "damage_mult": 1.5,
+          "cost": 0
+        },
+        {
+          "name": "九幽领域",
+          "damage_mult": 2.5,
+          "cost": 1200,
+          "element": "dark",
+          "domain": true,
+          "soul_damage": true,
+          "cooldown": 8
+        },
+        {
+          "name": "魔龙吞噬",
+          "damage_mult": 2.0,
+          "cost": 1000,
+          "absorb": true
+        }
+      ],
+      "drops": [
+        {
+          "item": "mo_long_grass",
+          "prob": 0.8
+        },
+        {
+          "item": "mo_tie",
+          "prob": 1.0,
+          "qty": [
+            3,
+            6
+          ]
+        },
+        {
+          "item": "spirit_stone_top",
+          "prob": 0.4,
+          "qty": [
+            2,
+            4
+          ]
+        }
+      ],
+      "exp": 3000,
+      "spirit_stones": [
+        800,
+        1500
+      ],
+      "tamable": false,
+      "habitat": "九幽魔渊",
+      "desc": "九幽魔龙，7阶dark属性妖兽，栖息于九幽魔渊。"
+    },
+    {
+      "id": "tian_jie_shou",
+      "name": "天劫兽",
+      "tier": 6,
+      "element": "thunder",
+      "hp": 5000,
+      "attack": 250,
+      "defense": 180,
+      "speed": 90,
+      "qi": 3000,
+      "skills": [
+        {
+          "name": "雷击",
+          "damage_mult": 1.5,
+          "cost": 0,
+          "element": "thunder"
+        },
+        {
+          "name": "天劫降临",
+          "damage_mult": 2.5,
+          "cost": 800,
+          "element": "thunder",
+          "aoe": true,
+          "cooldown": 5
+        }
+      ],
+      "drops": [
+        {
+          "item": "lei_jing",
+          "prob": 1.0,
+          "qty": [
+            3,
+            6
+          ]
+        },
+        {
+          "item": "spirit_stone_high",
+          "prob": 0.8,
+          "qty": [
+            3,
+            8
+          ]
+        }
+      ],
+      "exp": 1500,
+      "spirit_stones": [
+        200,
+        400
+      ],
+      "tamable": false,
+      "habitat": "天劫之地",
+      "desc": "天劫兽，6阶thunder属性妖兽，栖息于天劫之地。"
+    },
+    {
+      "id": "xian_jian_jing",
+      "name": "剑灵精",
+      "tier": 5,
+      "element": "metal",
+      "hp": 2000,
+      "attack": 150,
+      "defense": 100,
+      "speed": 80,
+      "qi": 1000,
+      "skills": [
+        {
+          "name": "剑气斩",
+          "damage_mult": 1.5,
+          "cost": 0
+        },
+        {
+          "name": "万剑归宗",
+          "damage_mult": 2.5,
+          "cost": 300,
+          "element": "metal",
+          "aoe": true,
+          "cooldown": 3
+        }
+      ],
+      "drops": [
+        {
+          "item": "spirit_sword",
+          "prob": 0.3
+        },
+        {
+          "item": "purple_gold",
+          "prob": 0.5
+        },
+        {
+          "item": "spirit_stone_mid",
+          "prob": 1.0,
+          "qty": [
+            3,
+            8
+          ]
+        }
+      ],
+      "exp": 600,
+      "spirit_stones": [
+        50,
+        120
+      ],
+      "tamable": false,
+      "habitat": "古剑冢",
+      "desc": "剑灵精，5阶metal属性妖兽，栖息于古剑冢。"
+    },
+    {
+      "id": "mo_ying",
+      "name": "魔影",
+      "tier": 5,
+      "element": "dark",
+      "hp": 1800,
+      "attack": 140,
+      "defense": 80,
+      "speed": 100,
+      "qi": 800,
+      "skills": [
+        {
+          "name": "暗影爪",
+          "damage_mult": 1.3,
+          "cost": 0
+        },
+        {
+          "name": "暗影吞噬",
+          "damage_mult": 1.8,
+          "cost": 200,
+          "element": "dark"
+        },
+        {
+          "name": "影分身",
+          "damage_mult": 0,
+          "cost": 250,
+          "summon": true,
+          "cooldown": 5
+        }
+      ],
+      "drops": [
+        {
+          "item": "mo_zhi_grass",
+          "prob": 0.3
+        },
+        {
+          "item": "spirit_stone_mid",
+          "prob": 0.8,
+          "qty": [
+            2,
+            5
+          ]
+        }
+      ],
+      "exp": 500,
+      "spirit_stones": [
+        40,
+        100
+      ],
+      "tamable": false,
+      "habitat": "魔气浓郁之地",
+      "desc": "魔影，5阶dark属性妖兽，栖息于魔气浓郁之地。"
+    }
+  ]
+}

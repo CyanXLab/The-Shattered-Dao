@@ -1,0 +1,630 @@
+/* 逆仙录·天道残卷 - 样式表 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  background: #0a0a14;
+  color: #e8e0c8;
+  overflow: hidden;
+  height: 100vh;
+  user-select: none;
+}
+
+#loading {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; color: #d4af37;
+  background: radial-gradient(circle at center, #1a1525 0%, #050510 100%);
+  z-index: 9999;
+}
+
+/* 登录界面 */
+#login-screen {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle at center, #1a1525 0%, #050510 100%);
+  z-index: 999;
+}
+.login-box {
+  background: rgba(15, 10, 26, 0.95);
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  padding: 40px;
+  width: 380px;
+  text-align: center;
+  box-shadow: 0 0 60px rgba(212, 175, 55, 0.3);
+}
+.login-box h1 {
+  color: #d4af37;
+  font-size: 28px;
+  margin-bottom: 8px;
+  letter-spacing: 4px;
+}
+.subtitle {
+  color: #8a7a9a;
+  font-size: 13px;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.tabs {
+  display: flex;
+  border: 1px solid #2a2438;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.tabs .tab {
+  flex: 1;
+  padding: 8px;
+  cursor: pointer;
+  color: #8a7a9a;
+  transition: all 0.2s;
+}
+.tabs .tab.active {
+  background: #d4af37;
+  color: #0a0a14;
+}
+#login-form input, #register-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #1a1525;
+  border: 1px solid #2a2438;
+  border-radius: 4px;
+  color: #e8e0c8;
+  font-size: 14px;
+  font-family: inherit;
+}
+#login-form input:focus, #register-form input:focus {
+  outline: none;
+  border-color: #d4af37;
+}
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(180deg, #d4af37 0%, #a8862a 100%);
+  border: none;
+  color: #0a0a14;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 2px;
+}
+.btn-primary:hover { background: linear-gradient(180deg, #ffd700 0%, #d4af37 100%); }
+.auth-msg {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #ff6b6b;
+  min-height: 16px;
+}
+
+/* 顶部状态栏 */
+#top-bar {
+  display: flex; align-items: center; gap: 12px;
+  padding: 8px 16px;
+  background: linear-gradient(180deg, #1a1428 0%, #0f0a1a 100%);
+  border-bottom: 2px solid #d4af37;
+  height: 56px;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.status-block {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 0 8px;
+  border-right: 1px solid #2a2438;
+  min-width: 70px;
+}
+.status-block:last-child { border-right: none; }
+.status-label { color: #8a7a9a; font-size: 11px; }
+.status-value { color: #d4af37; font-weight: bold; font-size: 14px; }
+.hp-block, .qi-block { min-width: 140px; }
+.bar-container {
+  position: relative;
+  width: 120px; height: 16px;
+  background: #1a1525;
+  border: 1px solid #3a3450;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.bar-fill { height: 100%; transition: width 0.3s ease; }
+.hp-fill { background: linear-gradient(90deg, #6b1a1a 0%, #c83232 100%); }
+.qi-fill { background: linear-gradient(90deg, #1a4a6b 0%, #3296c8 100%); }
+.beast-hp-fill { background: linear-gradient(90deg, #4a1a4a 0%, #9632c8 100%); }
+.bar-text {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+.progress-bar { width: 100%; height: 4px; background: #1a1525; border-radius: 2px; overflow: hidden; }
+.progress-bar.small { height: 4px; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, #d4af37, #ffd700); transition: width 0.3s; }
+.btn-sm {
+  background: #2a2438;
+  border: 1px solid #3a3450;
+  color: #e8e0c8;
+  padding: 4px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+}
+.btn-sm:hover { border-color: #d4af37; color: #d4af37; }
+
+/* 主游戏区 */
+#main-area {
+  display: flex;
+  height: calc(100vh - 56px);
+}
+#map-container {
+  flex: 1;
+  position: relative;
+  background: #050510;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+#game-canvas {
+  border: 2px solid #2a2438;
+  background: #0a0a14;
+  cursor: crosshair;
+  image-rendering: pixelated;
+  max-width: 100%;
+  max-height: 100%;
+}
+#region-info {
+  position: absolute; top: 10px; left: 10px;
+  background: rgba(15, 10, 26, 0.85);
+  padding: 6px 12px;
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+  font-size: 13px;
+}
+#region-name { color: #d4af37; font-weight: bold; margin-right: 8px; }
+#region-desc { color: #8a7a9a; font-size: 11px; }
+#coords {
+  position: absolute; bottom: 10px; left: 10px;
+  background: rgba(15, 10, 26, 0.85);
+  padding: 4px 8px;
+  border: 1px solid #3a3450;
+  border-radius: 4px;
+  font-size: 11px; color: #8a7a9a;
+  font-family: monospace;
+}
+
+#side-panel {
+  width: 320px;
+  background: #0f0a1a;
+  border-left: 2px solid #d4af37;
+  display: flex; flex-direction: column;
+}
+.panel-section {
+  padding: 10px;
+  border-bottom: 1px solid #2a2438;
+}
+.panel-section h3 {
+  color: #d4af37;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #2a2438;
+  padding-bottom: 4px;
+}
+.btn-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+}
+.action-btn {
+  background: linear-gradient(180deg, #2a2438 0%, #1a1525 100%);
+  border: 1px solid #3a3450;
+  color: #e8e0c8;
+  padding: 8px 4px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+.action-btn:hover {
+  background: linear-gradient(180deg, #3a3450 0%, #2a2438 100%);
+  border-color: #d4af37;
+  color: #d4af37;
+}
+.action-btn.danger { color: #c83232; }
+.action-btn.danger:hover { border-color: #c83232; color: #ff5050; }
+
+.log-section { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+#event-log {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: #3a3450 #1a1525;
+}
+#event-log::-webkit-scrollbar { width: 6px; }
+#event-log::-webkit-scrollbar-thumb { background: #3a3450; border-radius: 3px; }
+#event-log::-webkit-scrollbar-track { background: #1a1525; }
+.log-entry {
+  padding: 4px 6px;
+  margin-bottom: 3px;
+  border-left: 2px solid #3a3450;
+  background: rgba(26, 21, 37, 0.5);
+  border-radius: 0 3px 3px 0;
+  animation: slideIn 0.3s ease;
+}
+.log-entry.info { color: #e8e0c8; }
+.log-entry.combat { color: #ff6b6b; }
+.log-entry.victory { color: #6bc832; }
+.log-entry.defeat { color: #ff6b6b; background: rgba(200,50,50,0.1); }
+.log-entry.cultivate { color: #6b9aff; }
+.log-entry.gather { color: #9ad96b; }
+.log-entry.item { color: #d4af37; }
+.log-entry.travel { color: #a8a8c8; }
+.log-entry.learn { color: #c896ff; }
+.log-entry.alchemy { color: #ffaa6b; }
+.log-entry.alchemy_fail { color: #ff6b6b; }
+.log-entry.breakthrough { color: #ffd700; font-weight: bold; background: rgba(212,175,55,0.1); }
+.log-entry.reverse { color: #ff6bff; font-weight: bold; background: rgba(200,50,200,0.1); }
+.log-entry.event { color: #ffd700; font-style: italic; }
+.log-entry.warn { color: #ffaa6b; }
+.log-entry.death { color: #ff0000; font-weight: bold; font-size: 14px; }
+.log-entry.rest { color: #9ad96b; }
+.log-entry.seclusion { color: #c896ff; }
+.log-entry.shop { color: #d4af37; }
+.log-entry.social { color: #ff6bff; }
+.log-entry.farm { color: #9ad96b; }
+.log-entry.tame { color: #c896ff; }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* 模态框 */
+#modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+}
+#modal-content {
+  background: linear-gradient(180deg, #1a1428 0%, #0f0a1a 100%);
+  border: 2px solid #d4af37;
+  border-radius: 6px;
+  width: 80%; max-width: 800px;
+  max-height: 85vh;
+  display: flex; flex-direction: column;
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+}
+#modal-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #d4af37;
+  background: rgba(212, 175, 55, 0.1);
+}
+#modal-title { color: #d4af37; font-size: 16px; font-weight: bold; letter-spacing: 2px; }
+.close-btn {
+  background: none; border: none; color: #c83232;
+  font-size: 24px; cursor: pointer; padding: 0 8px;
+}
+.close-btn:hover { color: #ff5050; }
+#modal-body {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* 战斗界面 */
+#combat-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1100;
+}
+#combat-panel {
+  background: linear-gradient(180deg, #1a0a0a 0%, #0a0505 100%);
+  border: 2px solid #c83232;
+  border-radius: 6px;
+  width: 90%; max-width: 650px;
+  padding: 20px;
+  box-shadow: 0 0 60px rgba(200, 50, 50, 0.4);
+}
+#combat-beast-info, #combat-player-info {
+  margin-bottom: 12px;
+  padding: 10px;
+  background: rgba(26, 10, 10, 0.6);
+  border-radius: 4px;
+}
+#combat-beast-name { color: #ff6b6b; font-size: 18px; font-weight: bold; margin-bottom: 6px; }
+#combat-player-name { color: #d4af37; font-size: 16px; font-weight: bold; margin-bottom: 6px; }
+#combat-log {
+  height: 140px;
+  overflow-y: auto;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid #2a1a1a;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 12px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+#combat-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+}
+.combat-btn {
+  background: linear-gradient(180deg, #2a2438 0%, #1a1525 100%);
+  border: 1px solid #3a3450;
+  color: #e8e0c8;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+.combat-btn:hover { border-color: #d4af37; color: #d4af37; }
+.combat-btn.skill { color: #3296c8; }
+.combat-btn.item { color: #d4af37; }
+.combat-btn.flee { color: #c83232; }
+#combat-options {
+  margin-top: 10px;
+  padding: 10px;
+  background: rgba(26,21,37,0.5);
+  border-radius: 4px;
+}
+.combat-option-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+.combat-option-group select {
+  background: #1a1525;
+  border: 1px solid #3a3450;
+  color: #e8e0c8;
+  padding: 4px;
+  border-radius: 3px;
+  font-family: inherit;
+}
+.combat-option-group input[type="range"] {
+  flex: 1;
+}
+#combat-skills, #combat-items {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.skill-btn, .item-btn {
+  background: rgba(26, 21, 37, 0.8);
+  border: 1px solid #3a3450;
+  color: #e8e0c8;
+  padding: 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+  text-align: left;
+}
+.skill-btn:hover, .item-btn:hover {
+  border-color: #d4af37; color: #d4af37;
+  background: rgba(212, 175, 55, 0.1);
+}
+.skill-btn .skill-cost { color: #3296c8; float: right; }
+
+/* 通用列表项 */
+.item-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 10px;
+  background: rgba(26, 21, 37, 0.5);
+  border: 1px solid #2a2438;
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+.item-row:hover { border-color: #3a3450; background: rgba(42, 36, 56, 0.6); }
+.item-name { color: #e8e0c8; font-size: 13px; }
+.item-qty { color: #d4af37; font-size: 12px; margin-left: 6px; }
+.item-tier { color: #8a7a9a; font-size: 11px; margin-left: 6px; }
+.tier-1 { color: #c0c0c0; }
+.tier-2 { color: #a8e8a8; }
+.tier-3 { color: #6bc8ff; }
+.tier-4 { color: #c896ff; }
+.tier-5 { color: #ffaa6b; }
+.tier-6 { color: #ff6b6b; }
+.tier-7 { color: #ffd700; }
+.tier-8 { color: #ff6bff; }
+.tier-9 { color: #ffffff; text-shadow: 0 0 6px #ffd700; }
+.rarity-common { color: #c0c0c0; }
+.rarity-uncommon { color: #6bc832; }
+.rarity-rare { color: #3296c8; }
+.rarity-epic { color: #c832c8; }
+.rarity-legendary { color: #ffd700; text-shadow: 0 0 6px #ffd700; }
+
+.btn {
+  background: linear-gradient(180deg, #2a2438 0%, #1a1525 100%);
+  border: 1px solid #3a3450;
+  color: #e8e0c8;
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+}
+.btn:hover { border-color: #d4af37; color: #d4af37; }
+.btn.gold { background: linear-gradient(180deg, #4a3a1a 0%, #2a2010 100%); border-color: #d4af37; color: #d4af37; }
+.btn.gold:hover { background: linear-gradient(180deg, #6a5a2a 0%, #4a3a1a 100%); }
+.btn.danger { color: #c83232; border-color: #6b1a1a; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.tab-bar {
+  display: flex;
+  border-bottom: 1px solid #2a2438;
+  margin-bottom: 10px;
+}
+.tab {
+  padding: 6px 14px;
+  cursor: pointer;
+  color: #8a7a9a;
+  border-bottom: 2px solid transparent;
+  font-size: 13px;
+}
+.tab.active { color: #d4af37; border-bottom-color: #d4af37; }
+
+.section-title {
+  color: #d4af37;
+  font-size: 14px;
+  margin: 12px 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #2a2438;
+}
+.detail-box {
+  background: rgba(26, 21, 37, 0.5);
+  border: 1px solid #2a2438;
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.attr-row { display: flex; justify-content: space-between; padding: 2px 0; }
+.attr-name { color: #8a7a9a; }
+.attr-value { color: #d4af37; }
+
+/* 炼丹界面 */
+.alchemy-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.alchemy-section {
+  background: rgba(26, 21, 37, 0.5);
+  border: 1px solid #2a2438;
+  border-radius: 4px;
+  padding: 10px;
+}
+.alchemy-canvas-wrap {
+  text-align: center;
+  margin: 10px 0;
+}
+#alchemy-canvas {
+  border: 1px solid #3a3450;
+  background: #0a0505;
+  border-radius: 4px;
+}
+.alchemy-controls {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.alchemy-slider-wrap {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px;
+}
+.alchemy-slider-wrap input[type="range"] { flex: 1; }
+.alchemy-result {
+  text-align: center;
+  font-size: 18px;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+  background: rgba(212, 175, 55, 0.1);
+}
+
+/* Toast */
+#toast-container {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  z-index: 2000;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.toast {
+  background: rgba(15, 10, 26, 0.95);
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+  padding: 10px 16px;
+  color: #e8e0c8;
+  font-size: 13px;
+  min-width: 200px;
+  max-width: 350px;
+  animation: toastIn 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+.toast.error { border-color: #c83232; color: #ff6b6b; }
+.toast.success { border-color: #6bc832; color: #9ad96b; }
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* NPC对话 */
+.npc-dialog {
+  background: rgba(26, 21, 37, 0.7);
+  border-left: 3px solid #d4af37;
+  padding: 12px;
+  border-radius: 0 4px 4px 0;
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #e8e0c8;
+}
+.npc-name { color: #d4af37; font-weight: bold; margin-bottom: 6px; font-size: 15px; }
+.npc-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+
+/* 修炼选项 */
+.cultivate-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin: 10px 0;
+}
+.cultivate-btn {
+  background: linear-gradient(180deg, #2a2438 0%, #1a1525 100%);
+  border: 1px solid #3a3450;
+  color: #e8e0c8;
+  padding: 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: center;
+}
+.cultivate-btn:hover { border-color: #d4af37; color: #d4af37; }
+.cultivate-btn .hours { display: block; color: #d4af37; font-size: 16px; font-weight: bold; margin-bottom: 2px; }
+.cultivate-btn .desc { color: #8a7a9a; font-size: 11px; }
+
+/* 身体系统 */
+.body-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.meridian-list {
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 11px;
+}
+.meridian-row {
+  display: flex; justify-content: space-between;
+  padding: 3px 6px;
+  border-bottom: 1px solid #2a2438;
+}
+.meridian-row.blocked { color: #ff6b6b; }
+
+@media (max-width: 1100px) {
+  #side-panel { width: 280px; }
+  .btn-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  #top-bar { font-size: 11px; flex-wrap: wrap; height: auto; }
+  .status-block { min-width: 60px; padding: 0 4px; }
+  .hp-block, .qi-block { min-width: 100px; }
+  .bar-container { width: 80px; }
+  #side-panel { width: 240px; }
+  #main-area { height: calc(100vh - 100px); }
+}
