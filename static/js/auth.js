@@ -7,8 +7,8 @@ const Auth = {
     const me = await API.me();
     if (me.ok) {
       if (me.is_admin) {
-        // 管理员进入管理后台
-        this.startAdmin();
+        // 管理员可选择进管理后台或玩游戏
+        this.showAdminChoice();
       } else {
         // 普通玩家检查是否已创建角色
         const cs = await API.get('/character_status');
@@ -22,6 +22,25 @@ const Auth = {
       document.getElementById('loading').style.display = 'none';
       document.getElementById('login-screen').style.display = 'flex';
     }
+  },
+
+  showAdminChoice() {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('login-screen').style.display = 'none';
+    // 显示管理员选择弹窗
+    const overlay = document.createElement('div');
+    overlay.id = 'admin-choice';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center;z-index:9999';
+    overlay.innerHTML = `
+      <div style="background:linear-gradient(180deg,#1a1428,#0f0a1a);border:2px solid #d4af37;border-radius:8px;padding:40px;text-align:center;max-width:400px">
+        <h2 style="color:#d4af37;margin-bottom:20px;letter-spacing:4px">管理员账户</h2>
+        <p style="color:#a8a8c8;font-size:13px;margin-bottom:24px">您以管理员身份登录，请选择进入方式</p>
+        <button onclick="Auth.startAdmin()" style="display:block;width:100%;padding:12px;margin-bottom:10px;background:linear-gradient(180deg,#4a3a1a,#2a2010);border:1px solid #d4af37;color:#d4af37;border-radius:4px;cursor:pointer;font-size:14px;font-family:inherit">进入管理后台</button>
+        <button onclick="Auth.startGame()" style="display:block;width:100%;padding:12px;margin-bottom:10px;background:#2a2438;border:1px solid #3a3450;color:#e8e0c8;border-radius:4px;cursor:pointer;font-size:14px;font-family:inherit">以玩家身份进入游戏</button>
+        <button onclick="Auth.logout()" style="display:block;width:100%;padding:8px;background:none;border:1px solid #6b1a1a;color:#c83232;border-radius:4px;cursor:pointer;font-size:12px;font-family:inherit;margin-top:8px">登出</button>
+      </div>
+    `;
+    document.body.appendChild(overlay);
   },
 
   switchTab(tab) {
@@ -82,16 +101,16 @@ const Auth = {
 
   renderRootOptions() {
     const roots = [
-      {id: 'pseudo', name: '伪灵根', desc: '资质平庸，修炼效率60%，但故事感最强', hp: 80, qi: 200},
+      {id: 'pseudo', name: '伪灵根', desc: '资质平庸，修炼效率60%，故事感最强', hp: 80, qi: 200},
       {id: 'false', name: '假灵根', desc: '资质一般，修炼效率80%', hp: 90, qi: 250},
       {id: 'true', name: '真灵根', desc: '资质优秀，修炼效率100%', hp: 100, qi: 300},
-      {id: 'heavenly', name: '天灵根', desc: '资质绝顶，修炼效率120%（难度低）', hp: 120, qi: 400}
+      {id: 'heavenly', name: '天灵根', desc: '资质绝顶，修炼效率120%（简单）', hp: 120, qi: 400}
     ];
     const html = roots.map(r => `
-      <div class="detail-box" style="cursor:pointer;margin:6px 0;border-color:${this.selectedRoot===r.id?'#d4af37':'#2a2438'}" onclick="Auth.selectRoot('${r.id}')">
-        <div style="color:${this.selectedRoot===r.id?'#d4af37':'#e8e0c8'};font-weight:bold">${this.selectedRoot===r.id?'●':'○'} ${r.name}</div>
-        <div style="color:#8a7a9a;font-size:11px;margin-top:2px">${r.desc}</div>
-        <div style="color:#8a7a9a;font-size:11px">初始 HP:${r.hp} 灵气:${r.qi}</div>
+      <div class="root-option ${this.selectedRoot===r.id?'selected':''}" onclick="Auth.selectRoot('${r.id}')">
+        <div class="root-name">${this.selectedRoot===r.id?'●':'○'} ${r.name}</div>
+        <div class="root-desc">${r.desc}</div>
+        <div class="root-stat">HP:${r.hp} 灵气:${r.qi}</div>
       </div>
     `).join('');
     document.getElementById('root-options').innerHTML = html;
@@ -111,9 +130,9 @@ const Auth = {
       {id: 'earth_basic', name: '厚土诀', element: '土', desc: '厚重绵长，防御无双'}
     ];
     const html = techs.map(t => `
-      <div class="detail-box" style="cursor:pointer;margin:6px 0;border-color:${this.selectedTechnique===t.id?'#d4af37':'#2a2438'}" onclick="Auth.selectTechnique('${t.id}')">
-        <div style="color:${this.selectedTechnique===t.id?'#d4af37':'#e8e0c8'};font-weight:bold">${this.selectedTechnique===t.id?'●':'○'} ${t.name} <span style="color:#8a7a9a;font-weight:normal;font-size:11px">${t.element}属性</span></div>
-        <div style="color:#8a7a9a;font-size:11px;margin-top:2px">${t.desc}</div>
+      <div class="tech-option ${this.selectedTechnique===t.id?'selected':''}" onclick="Auth.selectTechnique('${t.id}')">
+        <div class="root-name">${this.selectedTechnique===t.id?'●':'○'} ${t.name} <span class="root-element">${t.element}</span></div>
+        <div class="root-desc">${t.desc}</div>
       </div>
     `).join('');
     document.getElementById('technique-options').innerHTML = html;

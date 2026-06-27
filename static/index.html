@@ -33,18 +33,20 @@
 
 <!-- 角色创建界面 -->
 <div id="char-create-screen" style="display:none">
-  <div class="login-box" style="width:480px">
+  <div class="char-create-box">
     <h1>创建角色</h1>
     <p class="subtitle">选择你的道号、灵根与起始功法</p>
-    <div class="detail-box" style="text-align:left">
-      <div class="attr-row"><span class="attr-name">道号</span><input type="text" id="char-name" placeholder="输入道号" style="width:180px;padding:4px;background:#1a1525;border:1px solid #3a3450;color:#e8e0c8;border-radius:3px;"></div>
+    <div class="char-create-body">
+      <div class="detail-box" style="text-align:left">
+        <div class="attr-row"><span class="attr-name">道号</span><input type="text" id="char-name" placeholder="输入道号（2-10字）" style="flex:1;width:auto;padding:4px 8px;background:#1a1525;border:1px solid #3a3450;color:#e8e0c8;border-radius:3px;font-family:inherit"></div>
+      </div>
+      <div class="section-title" style="text-align:left">灵根（决定修炼资质）</div>
+      <div id="root-options" style="text-align:left"></div>
+      <div class="section-title" style="text-align:left">起始功法</div>
+      <div id="technique-options" style="text-align:left"></div>
+      <button class="btn-primary" onclick="Auth.doCreateCharacter()" style="margin-top:16px">踏入修仙之路</button>
+      <div id="char-msg" class="auth-msg"></div>
     </div>
-    <div class="section-title" style="text-align:left">灵根（决定修炼资质）</div>
-    <div id="root-options" style="text-align:left"></div>
-    <div class="section-title" style="text-align:left">起始功法</div>
-    <div id="technique-options" style="text-align:left"></div>
-    <button class="btn-primary" onclick="Auth.doCreateCharacter()" style="margin-top:16px">踏入修仙之路</button>
-    <div id="char-msg" class="auth-msg"></div>
   </div>
 </div>
 

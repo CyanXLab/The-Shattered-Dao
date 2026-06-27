@@ -99,6 +99,92 @@ body {
   min-height: 16px;
 }
 
+/* 角色创建界面 */
+#char-create-screen {
+  position: fixed; inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+  background: radial-gradient(circle at center, #1a1525 0%, #050510 100%);
+  z-index: 999;
+}
+.char-create-box {
+  background: rgba(15, 10, 26, 0.95);
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  padding: 30px 40px;
+  width: 520px;
+  max-width: 100%;
+  text-align: center;
+  box-shadow: 0 0 60px rgba(212, 175, 55, 0.3);
+  margin: auto;
+}
+.char-create-box h1 {
+  color: #d4af37;
+  font-size: 24px;
+  margin-bottom: 8px;
+  letter-spacing: 4px;
+}
+.char-create-body {
+  text-align: left;
+  max-height: none;
+}
+.char-create-body .detail-box {
+  margin-bottom: 10px;
+}
+.char-create-body .attr-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.char-create-body .attr-row .attr-name {
+  min-width: 50px;
+}
+/* 灵根/功法选项卡片 */
+.root-option, .tech-option {
+  background: rgba(26, 21, 37, 0.6);
+  border: 1px solid #2a2438;
+  border-radius: 4px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.root-option:hover, .tech-option:hover {
+  border-color: #3a3450;
+  background: rgba(42, 36, 56, 0.7);
+}
+.root-option.selected, .tech-option.selected {
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.1);
+}
+.root-name {
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 13px;
+}
+.root-option:not(.selected) .root-name, .tech-option:not(.selected) .root-name {
+  color: #e8e0c8;
+}
+.root-desc {
+  color: #8a7a9a;
+  font-size: 11px;
+  margin-top: 2px;
+}
+.root-stat {
+  color: #6bc832;
+  font-size: 11px;
+  margin-top: 2px;
+}
+.root-element {
+  color: #8a7a9a;
+  font-weight: normal;
+  font-size: 11px;
+  margin-left: 6px;
+}
+
 /* 顶部状态栏 */
 #top-bar {
   display: flex; align-items: center; gap: 12px;
